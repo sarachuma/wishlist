@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вишлист</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Geologica:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        @font-face {
+            font-family: 'BOU COLLEGIATE RUS';
+            src: url('fonts/Bou_Collegiate.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Geologica Local';
+            src: url('fonts/Geologica.ttf') format('truetype');
+            font-weight: 100 900;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        :root {
+            --bg-deep: #030624;         
+            --bg-velvet: #0C1E5B;       
+            --bg-sunset: #002daa;       
+            
+            --accent-light: #ff4d4d;      
+            --accent-main: #fe0000;       
+            --accent-dark: #741511;       
+            
+            --warm-star: #fce8a1;       
+            --cute-pink: #ff8fa3;       
+            
+            --text-main: #f0edf5;       
+            --text-muted: #8b9dc3;      
+            
+            --font-title: 'Geologica Local', 'Geologica', sans-serif;
+            --font-text: 'Geologica Local', 'Geologica', sans-serif;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            opacity: 0.8;
+        }
+
+        body {
+            background-color: var(--bg-deep);
+            background-image: url('background6.webp'); 
+            background-size: cover;
+            background-position: center top;
+            background-attachment: fixed;
+            color: var(--text-main);
+            font-family: var(--font-text);
+            margin: 0;
+            padding: 50px 20px;
+            min-height: 100vh;
+            overflow-x: hidden; 
+        }
+
+        .main-wrapper { display: flex; justify-content: center; align-items: stretch; width: 100%; }
+        .girl-col { width: 0; position: relative; z-index: 999; pointer-events: none; }
+        .sticky-box { position: sticky; top: 50vh; width: 0; height: 0; overflow: visible; }
+        .girl-img { position: absolute; height: 650px; top: -325px; filter: drop-shadow(0 15px 35px rgba(0,0,0,0.8)) contrast(1.1) brightness(0.9); }
+        .left-img { right: -210px; }
+        .right-img { left: -77px; }
+
+        @media (max-width: 1550px) { .girl-col { display: none; } }
+
+        .container {
+            width: 100%; max-width: 1150px; min-height: 80vh; 
+            background: rgba(3, 6, 36, 0.88); backdrop-filter: blur(20px); 
+            position: relative; box-shadow: 0 25px 60px rgba(0,0,0,0.9), 0 0 40px rgba(254, 0, 0, 0.15); 
+            border: 2px solid var(--accent-dark); border-radius: 4px; padding: 4px; 
+        }
+
+        .container::before {
+            content: ''; position: absolute; top: 6px; left: 6px; right: 6px; bottom: 6px;
+            border: 1px solid rgba(254, 0, 0, 0.2); border-radius: 2px; pointer-events: none; z-index: 10;
+        }
+
+        .content-wrapper { background: transparent; position: relative; z-index: 2; height: 100%; border-radius: 2px; min-height: 80vh; }
+
+        .header {
+            padding: 35px 30px 25px; text-align: center; position: relative;
+            border-bottom: 2px solid rgba(254, 0, 0, 0.3); 
+            background: radial-gradient(circle at 50% 0%, rgba(254, 0, 0, 0.15) 0%, transparent 80%);
+        }
+        .header::after {
+            content: '♥'; position: absolute; bottom: -14px; left: 50%; transform: translateX(-50%);
+            color: var(--accent-main); font-size: 20px; background: var(--bg-deep); padding: 0 15px;
+            border: 1px solid rgba(254, 0, 0, 0.4); text-shadow: 0 0 10px var(--accent-main);
+        }
+
+        .header-top h1 { 
+            font-family: var(--font-title); font-size: 52px; font-weight: 700; margin: 0 0 15px 0;
+            position: relative; display: inline-block; color: #ffffff;
+            text-shadow: -3px 0 var(--bg-sunset), 3px 0 var(--accent-main), 0 0 20px rgba(254, 0, 0, 0.5); 
+        }
+        .header-top h1::before, .header-top h1::after {
+            content: '♦'; display: inline-block; font-size: 26px; vertical-align: middle; margin: 0 15px;
+            color: var(--accent-main); filter: drop-shadow(0 0 8px rgba(254, 0, 0, 0.6)); 
+        }
+
+        .back-btn {
+            position: absolute; top: 20px; left: 30px; display: inline-flex; align-items: center; gap: 10px;
+            background: rgba(254, 0, 0, 0.1); color: #ffffff; text-shadow: 2px 2px 0px var(--accent-dark), 0 0 15px var(--accent-main);
+            padding: 10px 20px; border: 1px solid rgba(254, 0, 0, 0.3); border-radius: 2px;
+            font-family: var(--font-title); font-weight: 700; font-size: 18px; transition: all 0.3s ease; z-index: 10;
+            text-decoration: none; 
+        }
+        .back-btn:hover { background: var(--accent-main); color: #ffffff; box-shadow: 0 0 20px rgba(254, 0, 0, 0.6); text-shadow: none; }
+
+        .creator-badge {
+            position: absolute; top: 20px; right: 30px; display: flex; align-items: center; gap: 10px;
+            background: rgba(12, 30, 91, 0.6); padding: 6px 16px 6px 6px; cursor: pointer;
+            transition: all 0.3s ease; opacity: 0.9; border: 1px solid rgba(254, 0, 0, 0.3); border-radius: 2px;
+        }
+        .creator-badge:hover { opacity: 1; background: rgba(254, 0, 0, 0.1); border-color: var(--accent-main); box-shadow: 0 0 15px rgba(254, 0, 0, 0.3); }
+        .creator-badge img { width: 35px; height: 35px; object-fit: cover; border: 2px solid var(--accent-main); transition: all 0.3s ease; border-radius: 2px; }
+        .creator-info { display: flex; flex-direction: column; text-align: left; transition: all 0.3s ease; }
+        .creator-name { font-size: 20px; font-weight: 700; color: #fff; font-family: var(--font-title); transition: text-shadow 0.3s ease; letter-spacing: 1px;}
+        .creator-badge:hover .creator-name { text-shadow: 0 0 8px rgba(254, 0, 0, 0.8); color: var(--text-main); }
+
+        .controls-panel { display: flex; gap: 15px; flex-wrap: wrap; align-items: center; justify-content: center; margin-top: 5px; }
+        
+        .search-box, .sort-select {
+            background: rgba(3, 6, 36, 0.8); border: 1px solid rgba(254, 0, 0, 0.4); border-radius: 2px;
+            padding: 0 16px; outline: none; transition: all 0.3s ease; text-align: left; 
+            box-sizing: border-box; height: 40px; 
+        }
+        .search-box { width: 260px; color: var(--text-main); font-size: 15px; font-family: var(--font-text); }
+        .search-box::placeholder { color: var(--text-muted); font-size: 13px; font-family: var(--font-text); }
+        .search-box:focus, .sort-select:focus { border-color: var(--accent-main); color: #fff; box-shadow: 0 0 15px rgba(254, 0, 0, 0.4); }
+        
+        .sort-select { 
+            cursor: pointer; appearance: none; padding-right: 30px; font-size: 15px; color: var(--text-main); font-family: var(--font-title); letter-spacing: 1px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23fe0000' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E"); 
+            background-repeat: no-repeat; background-position: right 12px center; 
+        }
+        .sort-select option { background: var(--bg-deep); color: var(--text-main); font-family: var(--font-text); font-size: 14px;}
+
+        .view-toggle-btn {
+            background: rgba(254, 0, 0, 0.1); border: 1px solid var(--accent-main); border-radius: 2px;
+            padding: 0 20px; color: #ffffff; text-shadow: 2px 2px 0px var(--accent-dark), 0 0 15px var(--accent-main); font-size: 17px; font-family: var(--font-title); font-weight: 700;
+            cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 8px;
+            box-sizing: border-box; height: 40px; letter-spacing: 1px;
+        }
+        .view-toggle-btn:hover { background: var(--accent-main); color: #ffffff; box-shadow: 0 0 20px rgba(254, 0, 0, 0.5); text-shadow: none; }
+
+        table { width: 100%; border-collapse: separate; border-spacing: 0; text-align: left; table-layout: fixed; }
+        th { text-align: center; color: #ffffff; text-shadow: 2px 2px 0px var(--accent-dark), 0 0 15px var(--accent-main); font-weight: 700; font-size: 18px; text-transform: uppercase; padding: 25px 12px 15px; border-bottom: 2px solid rgba(254, 0, 0, 0.3); font-family: var(--font-title); letter-spacing: 2px; }
+        td { padding: 20px 15px; vertical-align: top; border-bottom: 1px solid rgba(254, 0, 0, 0.15); }
+        tr:last-child td { border-bottom: none; }
+        td:nth-child(1), td:nth-child(3), td:nth-child(4), td:nth-child(5) { text-align: center; }
+        tr.movie-row { cursor: pointer; transition: all 0.3s ease; position: relative; }
+        tr.movie-row:hover { background-color: rgba(254, 0, 0, 0.05); } 
+        td:nth-child(2) { text-align: left; position: relative; z-index: 1; overflow: hidden; }
+        td:nth-child(2)::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 25% 50%, rgba(254, 0, 0, 0.08) 0%, transparent 70%); z-index: -1; pointer-events: none; transition: opacity 0.3s ease; opacity: 0; }
+        tr.movie-row:hover td:nth-child(2)::before { opacity: 1; }
+
+        .poster-wrapper { width: 140px; height: 210px; overflow: hidden; margin: 0 auto; box-shadow: 0 10px 25px rgba(0,0,0,0.8); border: 2px solid var(--accent-dark); border-radius: 4px; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); background: var(--bg-deep); }
+        .poster-wrapper img { width: 100%; height: 100%; object-fit: cover; } 
+        tr.movie-row:has(.poster-wrapper:hover) .poster-wrapper { box-shadow: 0 12px 30px rgba(254, 0, 0, 0.4); border-color: var(--accent-main); }
+        
+        .movie-info { display: flex; flex-direction: column; gap: 8px; padding-left: 10px; overflow: hidden; }
+        .movie-header { display: flex; align-items: flex-start; justify-content: flex-start; gap: 12px; width: 100%; margin-bottom: 5px; } 
+        .movie-title { font-size: 28px; font-weight: 700; color: #fff; font-family: var(--font-title); text-shadow: 2px 2px 0 rgba(0,0,0,0.8); flex: 0 1 auto; min-width: 0; line-height: 1.1; letter-spacing: 1px; }
+        .movie-meta-box { display: flex; align-items: center; gap: 10px; flex-shrink: 0; margin-top: 1px; }
+        .movie-year { color: var(--accent-light); font-size: 20px; font-family: var(--font-title); white-space: nowrap; flex-shrink: 0; } 
+        
+        .copy-btn { background: rgba(254, 0, 0, 0.1); border: 1px solid transparent; color: var(--accent-main); cursor: pointer; padding: 4px; border-radius: 2px; display: flex; align-items: center; justify-content: center; transition: all 0.3s; opacity: 0; transform: scale(0.8); position: relative; top: 2px; flex-shrink: 0; }
+        tr.movie-row:hover .copy-btn { opacity: 1; transform: scale(1); }
+        .copy-btn:hover { background: var(--accent-main); color: var(--bg-deep); box-shadow: 0 0 15px rgba(254, 0, 0, 0.5); } 
+
+        .badges-container { display: flex; align-items: center; gap: 8px; margin: 2px 0; flex-wrap: wrap; }
+        .content-type-badge { background: var(--bg-deep); color: #ffffff; padding: 3px 10px; font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; font-family: var(--font-title); border-radius: 2px; box-shadow: 0 2px 8px rgba(254, 0, 0, 0.5); border: 1px solid var(--accent-main); }
+        .outline-badge { border: 1px solid rgba(254, 0, 0, 0.5); color: var(--text-main); padding: 3px 10px; font-size: 11px; font-weight: 700; background: rgba(254, 0, 0, 0.05); border-radius: 2px; font-family: var(--font-title); letter-spacing: 1px; text-transform: uppercase; }
+
+        .movie-genres { font-size: 12px; color: var(--text-main); font-weight: 600; opacity: 0.9; text-transform: uppercase; letter-spacing: 1px; font-family: var(--font-title); }
+        .movie-studios-list { font-size: 14px; color: var(--accent-light); font-weight: 600; letter-spacing: 1px; margin-top: 2px; font-family: var(--font-title); }
+
+        .movie-overview-wrapper { margin-top: 8px; max-height: 48px; overflow: hidden; transition: max-height 0.4s ease; }
+        .movie-overview-text { font-size: 15px; line-height: 1.6; color: var(--text-muted); font-family: var(--font-text); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        tr.movie-row:has(.poster-wrapper:hover) .movie-overview-wrapper { max-height: 250px; }
+        tr.movie-row:has(.poster-wrapper:hover) .movie-overview-text { -webkit-line-clamp: 20; color: var(--text-main); }
+
+        .requester-badge { display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: default; transition: transform 0.3s; margin: 0 auto; }
+        .req-avatar { width: 44px; height: 44px; border-radius: 2px; display: flex; align-items: center; justify-content: center; font-family: var(--font-title); font-size: 22px; color: var(--text-main); font-weight: 700; box-shadow: 0 5px 15px rgba(0,0,0,0.6); object-fit: cover; border: 2px solid var(--accent-main); transition: all 0.3s; background: var(--bg-deep); }
+        .req-name { font-family: var(--font-title); font-size: 16px; font-weight: 700; color: var(--text-main); transition: all 0.3s; letter-spacing: 1px; }
+        
+        .date-badge, .time-box { font-size: 12px; color: var(--accent-light); font-weight: 600; background: rgba(3, 6, 36, 0.9); border: 1px solid rgba(254, 0, 0, 0.3); padding: 4px 10px; border-radius: 2px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); display: inline-flex; justify-content: center; align-items: center; gap: 6px; font-family: var(--font-title); letter-spacing: 1px;}
+        .date-badge { margin-top: 10px; }
+        
+        .badge-status { font-size: 12px; font-weight: 900; text-align: center; display: inline-flex; justify-content: center; align-items: center; text-transform: uppercase; letter-spacing: 2px; font-family: var(--font-title); color: var(--bg-deep); border-radius: 2px; padding: 4px 12px; margin-bottom: 8px; box-shadow: 0 4px 15px rgba(254, 0, 0, 0.5); min-width: 85px; }
+
+        .steam-link-btn { display: flex; align-items: center; justify-content: center; gap: 6px; background: rgba(254, 0, 0, 0.1); color: #ffffff !important; border: 1px solid rgba(254, 0, 0, 0.3); padding: 6px 12px; border-radius: 2px; text-decoration: none; font-family: var(--font-title); font-size: 13px; font-weight: 700; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.5); text-transform: uppercase; letter-spacing: 1px; width: 100%; box-sizing: border-box; margin-bottom: 8px;}
+        .steam-link-btn:last-child { margin-bottom: 0; }
+        .steam-link-btn:hover { background: var(--accent-main); color: #ffffff !important; box-shadow: 0 0 15px rgba(254, 0, 0, 0.6); transform: translateY(-2px); }
+
+        .movies-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 15px; padding: 20px; }
+        
+        .card-view-item {
+            background: var(--bg-velvet); border: 2px solid var(--accent-dark); border-radius: 4px;
+            display: flex; flex-direction: column; position: relative; cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.175, 0.285, 0.12, 0.575); 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.8); overflow: hidden;
+        }
+        .card-view-item:hover {
+            transform: translateY(-8px); border-color: var(--accent-main);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.95), 0 0 35px rgba(254, 0, 0, 0.3);
+        }
+        
+        .card-view-item::before {
+            content: ''; position: absolute; top: 4px; left: 4px; right: 4px; bottom: 4px;
+            border: 1px solid rgba(254, 0, 0, 0.2); border-radius: 2px; pointer-events: none; z-index: 10;
+        }
+
+        .card-top { position: relative; width: 100%; padding-top: 135%; overflow: hidden; border-bottom: 2px solid var(--accent-dark); transition: border-color 0.3s; background: var(--bg-deep); }
+        .card-view-item:hover .card-top { border-color: var(--accent-main); }
+        .card-poster { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;}
+
+        .card-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, rgba(3,6,36,0.1) 40%, rgba(3,6,36,0.45) 100%);
+            display: flex; flex-direction: column; justify-content: space-between; padding: 10px; z-index: 2;
+            box-sizing: border-box;
+        }
+
+        .card-badges-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 4px; width: 100%; box-sizing: border-box; overflow: hidden; white-space: nowrap; }
+        .card-type-badge { background: var(--bg-deep); border: 1px solid var(--accent-main); padding: 2px 4px; border-radius: 2px; font-size: 8px; font-family: var(--font-title); color: #ffffff; letter-spacing: 1px; box-shadow: 0 5px 15px rgba(0,0,0,0.8); max-width: 50%; overflow: hidden; text-overflow: ellipsis; text-transform: uppercase; }
+        .card-status { background: var(--accent-main); color: var(--text-main); padding: 2px 4px; border-radius: 2px; font-size: 8px; font-family: var(--font-title); font-weight: 900; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 5px 15px rgba(0,0,0,0.8); max-width: 50%; overflow: hidden; text-overflow: ellipsis; }
+        
+        .card-content { padding: 15px 10px; display: flex; flex-direction: column; align-items: center; text-align: center; z-index: 11; position: relative; flex-grow: 1; box-sizing: border-box; width: 100%; }
+        .card-title-container { height: 55px; display: flex; align-items: center; justify-content: center; width: 100%; margin-bottom: 6px; overflow: hidden; }
+        .card-title-text { 
+            font-family: var(--font-title); font-size: 20px; font-weight: 700; color: #fff; letter-spacing: 1px;
+            margin: 0; text-shadow: 2px 2px 0px rgba(0,0,0,0.9); line-height: 1.1;
+            width: 100%; text-align: center; flex-shrink: 0;
+            word-break: normal; overflow-wrap: normal;
+        }
+        
+        .card-bottom-info { margin-top: auto; width: 100%; }
+        .card-date-meta { font-family: var(--font-title); font-size: 16px; color: var(--text-main); margin-bottom: 8px; display: flex; align-items: center; justify-content: center; gap: 6px; }
+        
+        .grid-steam-link { 
+            display: inline-flex; align-items: center; justify-content: center; gap: 4px; 
+            background: rgba(254, 0, 0, 0.1); color: #ffffff !important; 
+            border: 1px solid rgba(254, 0, 0, 0.4); padding: 2px 8px; border-radius: 2px; 
+            text-decoration: none; font-family: var(--font-title); font-size: 11px; font-weight: 800; 
+            text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; vertical-align: middle;
+        }
+        .grid-steam-link:hover { 
+            background: var(--accent-main); color: var(--bg-deep); box-shadow: 0 0 15px rgba(254, 0, 0, 0.6); transform: translateY(-1px); 
+        }
+
+        .card-queue-box {
+            background: rgba(3, 6, 36, 0.95); padding: 6px 8px; border-radius: 2px; border: 1px solid rgba(254, 0, 0, 0.3);
+            display: flex; flex-direction: column; align-items: center; width: 100%; box-shadow: inset 0 0 15px rgba(0,0,0,0.8); box-sizing: border-box;
+        }
+        .card-queue-label { font-size: 11px; font-family: var(--font-title); color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; }
+        
+        .card-user-info-row { display: flex; align-items: center; justify-content: center; gap: 6px; width: 100%; }
+        .card-user-avatar { width: 22px; height: 22px; border-radius: 2px; border: 1.5px solid var(--accent-main); object-fit: cover; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 14px; font-family: var(--font-title); font-weight: 700; background: var(--bg-deep); color: var(--text-main); }
+        
+        .card-queue-name { font-family: var(--font-title); font-weight: 700; color: var(--text-main); font-size: 15px; letter-spacing: 1px; white-space: nowrap; display: block; max-width: calc(100% - 28px); overflow: hidden; text-overflow: clip; }
+
+        .card-copy-btn {
+            position: absolute; right: 8px; bottom: 8px; z-index: 16;
+            background: rgba(3, 6, 36, 0.9); border: 1px solid rgba(254, 0, 0, 0.5); color: var(--accent-main);
+            cursor: pointer; padding: 6px; border-radius: 2px; display: flex; align-items: center; justify-content: center;
+            transition: all 0.3s; opacity: 0; transform: scale(0.8);
+        }
+        .card-view-item:hover .card-copy-btn { opacity: 1; transform: scale(1); }
+        .card-copy-btn:hover { background: var(--accent-main); color: var(--bg-deep); box-shadow: 0 0 15px rgba(254, 0, 0, 0.6); }
+
+        
+        .modal-overlay {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at center, rgba(3, 6, 36, 0.95) 0%, rgba(0, 0, 0, 0.98) 100%);
+            backdrop-filter: blur(10px); z-index: 1000; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s ease;
+        }
+        .modal-overlay.active { display: flex; opacity: 1; }
+
+        .modal-girl-col { width: 0; position: relative; z-index: 1001; pointer-events: none; display: flex; align-items: center; }
+        .modal-girl-img { position: absolute; height: 650px; filter: drop-shadow(0 15px 40px rgba(0,0,0,0.9)) contrast(1.1) brightness(0.9); }
+        .modal-left-img { right: -185px; }
+        .modal-right-img { left: -176px; }
+        @media (max-width: 1550px) { .modal-girl-col { display: none; } }
+
+        .modal-content {
+            background: var(--bg-deep); width: 90%; max-width: 1000px; max-height: 85vh; overflow-y: auto; position: relative;
+            box-shadow: 0 0 60px rgba(0, 0, 0, 1), 0 0 40px rgba(254, 0, 0, 0.2); border: 2px solid var(--accent-main); padding: 4px; 
+            border-radius: 4px; transform: scale(0.95) translateY(20px); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); scroll-behavior: smooth; 
+        }
+        .modal-overlay.active .modal-content { transform: scale(1) translateY(0); }
+        .modal-inner { background: transparent; border-radius: 2px; min-height: 100%; overflow: hidden; }
+
+        .close-btn {
+            position: absolute; top: 15px; right: 20px; color: var(--text-main); cursor: pointer; z-index: 10; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; 
+            transition: all 0.3s; background: rgba(3, 6, 36, 0.8); border-radius: 2px; border: 1px solid var(--accent-dark);
+        }
+        .close-btn:hover { color: var(--accent-main); background: rgba(3, 6, 36, 1); transform: rotate(90deg); border-color: var(--accent-main); box-shadow: 0 0 15px rgba(254,0,0,0.5); }
+
+        .modal-hero { 
+            width: 100%; height: 320px; background-color: var(--bg-deep); background-size: cover; background-position: top center; 
+            position: relative; z-index: 1; box-shadow: inset 0 -60px 60px -10px var(--bg-deep); border-bottom: 2px solid var(--accent-main); transition: background-image 0.3s ease;
+        }
+        .modal-hero::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, var(--bg-deep) 0%, transparent 100%); }
+
+        .modal-body { padding: 0 40px 40px 40px; position: relative; margin-top: -120px; z-index: 2; display: flex; gap: 35px; }
+        .modal-poster { width: 200px; border-radius: 4px; box-shadow: 0 20px 45px rgba(0,0,0,0.9); border: 2px solid var(--accent-main); align-self: flex-start; background: var(--bg-deep); }
+        
+        .modal-info-main { flex: 1; background: rgba(12, 30, 91, 0.85); padding: 25px; border-radius: 4px; border: 1px solid rgba(254, 0, 0, 0.3); backdrop-filter: blur(10px); overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.6); }
+        
+        .modal-title-wrapper { 
+            display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; 
+            flex-wrap: nowrap; max-width: 100%; overflow: hidden; 
+        }
+        .modal-title { 
+            font-family: var(--font-title); font-size: 42px; font-weight: 700; margin: 0; color: #ffffff; letter-spacing: 2px;
+            text-shadow: 2px 2px 0 var(--accent-dark), 0 0 15px var(--accent-main);
+            flex-shrink: 1; min-width: 0; line-height: 1.1;
+        }
+        .modal-title-extras { display: flex; align-items: center; gap: 10px; flex-shrink: 0; margin-top: 4px; }
+        .modal-year { color: var(--text-main); font-family: var(--font-title); font-size: 28px; font-weight: 600; opacity: 0.9; } 
+
+        .modal-title-wrapper .copy-btn { opacity: 0.8; transform: scale(1); background: rgba(254, 0, 0, 0.15); border: 1px solid var(--accent-dark); color: var(--accent-main); padding: 6px; display: inline-flex; align-items: center; justify-content: center; transition: all 0.3s; cursor: pointer; border-radius: 2px; }
+        .modal-title-wrapper:hover .copy-btn { opacity: 1; }
+        .modal-title-wrapper .copy-btn:hover { background: var(--accent-main); color: var(--bg-deep); box-shadow: 0 0 20px rgba(254, 0, 0, 0.6); border-color: var(--accent-main); }
+
+        .modal-meta-wrapper { display: flex; align-items: center; gap: 4px; margin-bottom: 12px; border-bottom: 1px solid rgba(254, 0, 0, 0.3); padding-bottom: 15px; flex-wrap: wrap; }
+        
+        .steam-modal-badge { display: inline-flex; align-items: center; gap: 4px; text-decoration: none; cursor: pointer; transition: all 0.3s ease; color: #ffffff !important; }
+        .steam-modal-badge:hover { background: var(--accent-main); color: #ffffff !important; box-shadow: 0 0 15px rgba(254, 0, 0, 0.5); }
+
+        .modal-grid { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            background: rgba(3, 6, 36, 0.8); 
+            border-radius: 2px; 
+            border: 1px solid rgba(254, 0, 0, 0.3); 
+            overflow: hidden; 
+        }
+
+        .modal-grid-box { font-size: 13px; font-family: var(--font-title); color: var(--text-main); font-weight: 900; background: rgba(12, 30, 91, 0.9); border: 1px solid var(--accent-dark); padding: 8px 16px; border-radius: 2px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); display: inline-flex; justify-content: center; align-items: center; gap: 8px; width: fit-content; margin-top: 4px; letter-spacing: 1px; text-transform: uppercase;}
+        
+        .grid-item { font-size: 14px; display: flex; flex-direction: column; gap: 4px; padding: 20px 8px 20px 10px; box-sizing: border-box; }
+        
+        .grid-item.border-right { border-right: 1px solid rgba(254, 0, 0, 0.3); }
+        .grid-item.border-bottom { border-bottom: 1px solid rgba(254, 0, 0, 0.3); }
+        
+        .grid-item.full-width { grid-column: 1 / -1; } 
+        .grid-label { color: var(--accent-light); font-size: 14px; text-transform: uppercase; letter-spacing: 2px; font-family: var(--font-title); font-weight: 900; margin-bottom: 4px; }
+        .grid-value { color: var(--text-main); font-family: var(--font-title); font-weight: 700; font-size: 18px; letter-spacing: 1px; }
+
+        .modal-overview-container { padding: 25px 0 0 0; margin-top: 15px; margin-bottom: 10px; border-top: 1px solid rgba(254, 0, 0, 0.3); }
+        .modal-overview-label { color: var(--accent-light); font-size: 14px; text-transform: uppercase; letter-spacing: 2px; font-family: var(--font-title); font-weight: 900; margin-top: 0; margin-bottom: 10px; }
+        .modal-overview { color: var(--text-main); font-family: var(--font-text); font-size: 16px; line-height: 1.7; margin-top: 0; margin-bottom: 0; }
+        
+        .modal-requester-link { cursor: default; display: inline-flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+        .modal-requester-link span.name-text { font-family: var(--font-title); font-size: 18px; color: var(--text-main); font-weight: 900; letter-spacing: 1px; }
+
+        .footer-badge { display: flex; align-items: center; gap: 10px; justify-content: center; margin: 30px auto 20px auto; padding: 6px 16px 6px 6px; width: fit-content; background: rgba(12, 30, 91, 0.6); border: 1px solid rgba(254, 0, 0, 0.3); cursor: pointer; transition: all 0.3s ease; opacity: 0.9; }
+        .footer-badge:hover { opacity: 1; background: rgba(254, 0, 0, 0.1); border-color: var(--accent-main); box-shadow: 0 0 15px rgba(254, 0, 0, 0.3); }
+        .footer-badge img { width: 35px; height: 35px; object-fit: cover; border: 2px solid var(--accent-main); transition: all 0.3s ease; border-radius: 2px; }
+        .footer-badge:hover img { box-shadow: 0 0 15px rgba(254, 0, 0, 0.5); transform: scale(1.05); }
+        .footer-badge .creator-name { font-size: 20px; font-family: var(--font-title); transition: text-shadow 0.3s ease; letter-spacing: 1px; color: #fff; }
+        .footer-badge:hover .creator-name { text-shadow: 0 0 8px rgba(254, 0, 0, 0.8); color: var(--text-main); }
+        .footer-badge .creator-label { display:block; font-size:12px; font-family: var(--font-title); color: var(--text-main); text-transform: uppercase; letter-spacing: 2px; font-weight: 800; }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-deep); }
+        ::-webkit-scrollbar-thumb { background: var(--accent-dark); border-radius: 0; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent-main); }
+
+        @media (max-width: 1024px) {
+            .movies-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+        @media (max-width: 768px) {
+            #viewToggleBtn { display: none !important; }
+        
+            th:nth-child(4), td:nth-child(4) { display: none; }
+            .movies-grid { grid-template-columns: repeat(2, 1fr); padding: 10px; gap: 10px; }
+            .modal-body { flex-direction: column; margin-top: -60px; padding: 20px; }
+            .modal-poster { width: 140px; margin: 0 auto; }
+            
+            .modal-grid { grid-template-columns: 1fr !important; }
+            .grid-item.border-right { border-right: none !important; }
+            .grid-item { border-bottom: 1px solid rgba(254, 0, 0, 0.3); }
+            .grid-item.full-width { border-bottom: none; }
+
+            .header { display: flex; flex-direction: column; align-items: center; gap: 15px;  padding: 20px 10px; }
+            .back-btn { position: relative; top: 0; left: 0; }
+            .creator-badge { position: relative; top: 0; right: 0; }
+            .header-top h1 { font-size: 28px; margin: 5px 0 10px 0; }
+            .header-top h1::before, .header-top h1::after { display: none; }
+        }
+        
+        .text-3d-effect {
+            color: #ffffff;
+            text-shadow: 2px 2px 0px var(--accent-dark), 0 0 10px rgba(254, 0, 0, 0.8);
+        }
+
+        .icon-3d-effect {
+            filter: drop-shadow(2px 2px 0px var(--accent-dark)) drop-shadow(0 0 10px rgba(254, 0, 0, 0.8));
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-wrapper">
+    <div class="girl-col">
+        <div class="sticky-box">
+            <img src="girl-left.png" class="girl-img left-img" alt="">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <div class="header">
+                <a href="https://sarachuma.github.io/lists/" class="back-btn">
+                    <svg class="icon-3d-effect" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    В Заказы
+                </a>
+
+                <div class="creator-badge" onclick="window.open('https://twitch.tv/sarachuma', '_blank')">
+                    <img src="https://static-cdn.jtvnw.net/user-default-pictures-uv/41780b5a-def8-11e9-94d9-784f43822e80-profile_image-70x70.png" id="sarachumaAvatar" alt="sarachuma">
+                    <div class="creator-info">
+                        <span class="creator-name text-3d-effect">sarachuma</span>
+                    </div>
+                </div>
+                
+                <div class="header-top">
+                    <h1>Вишлист</h1>
+                </div>
+                
+                <div class="controls-panel">
+                    <input type="text" id="searchInput" class="search-box" placeholder="Поиск по вишлисту..." oninput="applyFilters()">
+                    
+                    <select id="sortSelect" class="sort-select" onchange="applyFilters()">
+                        <option value="newest">По дате добавления (Новые)</option>
+                        <option value="oldest">По дате добавления (Старые)</option>
+                    </select>
+
+                    <button class="view-toggle-btn" id="viewToggleBtn" onclick="toggleViewMode()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                        Плиткой
+                    </button>
+                </div>
+            </div>
+            
+            <div id="render-area">
+                <table style="margin-top: 30px;">
+                    <tbody id="table-body">
+                        <tr><td style="text-align: center; padding: 60px; font-size: 24px; color: var(--accent-main); font-family: var(--font-title); font-weight: 700; text-transform: uppercase; border: none;">Загрузка желаемого... ✦</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="footer-badge" onclick="window.open('https://twitch.tv/MadMan1408', '_blank')">
+                <img src="https://static-cdn.jtvnw.net/user-default-pictures-uv/41780b5a-def8-11e9-94d9-784f43822e80-profile_image-70x70.png" id="madmanAvatar" alt="MadMan1408">
+                <div class="creator-info">
+                    <span class="creator-label">Created by</span>
+                    <span class="creator-name text-3d-effect">MadMan1408</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="girl-col">
+        <div class="sticky-box">
+            <img src="girl-right.png" class="girl-img right-img" alt="">
+        </div>
+    </div>
+</div>
+
+<div class="modal-overlay" id="movieModal" onclick="closeModal(event)">
+    <div class="main-wrapper" style="pointer-events: none; height: 100%;">
+        
+        <div class="modal-girl-col">
+            <img src="girl-left.png" class="modal-girl-img modal-left-img" alt="">
+        </div>
+
+        <div class="modal-content" style="pointer-events: auto; align-self: center;" onclick="event.stopPropagation()">
+            <div class="modal-inner">
+                <div class="close-btn" onclick="closeModal(true)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </div>
+                <div class="modal-hero" id="modalHero"></div>
+                <div class="modal-body">
+                    <div><img id="modalPoster" class="modal-poster" src="" alt="Постер"></div>
+                    <div class="modal-info-main">
+                        
+                        <div class="modal-title-wrapper">
+                            <h2 class="modal-title text-3d-effect" id="modalTitle">Название</h2>
+                            <div class="modal-title-extras">
+                                <span class="modal-year text-3d-effect" id="modalYear"></span>
+                                <button class="copy-btn" id="modalCopyBtn" onclick="copyMovieNameFromModal()" title="Скопировать название">
+                                    <svg class="icon-3d-effect" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="modal-meta-wrapper" id="modalBadges"></div>
+                        <div id="modalGenres" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;"></div>
+                        
+                        <div class="modal-grid" id="modalMainGrid" style="gap: 0; padding: 0;">
+                            
+                            <div class="grid-item border-bottom border-right" id="modalRequesterCol">
+                                <div class="grid-label">Заказал(а)</div>
+                                <div class="grid-value" id="modalRequesterBlock" style="display: flex; flex-direction: column; align-items: flex-start;"></div>
+                            </div>
+                            
+                            <div class="grid-item border-bottom" id="modalStatusCol">
+                                <div class="grid-label">Статус</div>
+                                <div id="modalStatusLabel"></div>
+                            </div>
+
+                            <div class="grid-item border-bottom border-right" id="modalDateReqCol">
+                                <div class="grid-label">Добавлено в вишлист</div>
+                                <div id="modalDateReq"></div>
+                            </div>
+                            
+                            <div class="grid-item border-bottom" id="modalDateWatchedCol">
+                                <div class="grid-label" id="modalWatchedLabel">Разработчик / Издатель</div>
+                                <div class="grid-value" id="modalStudios" style="color: var(--text-muted); font-weight: normal; margin-top: 4px;">Архив скрыт</div>
+                            </div>
+
+                            <!-- БЛОК ЦЕН С ДИНАМИЧЕСКИМ ПОКАЗОМ ПОДСКАЗКИ -->
+                            <div class="grid-item full-width" id="modalPriceCol" style="border-bottom: none;">
+                                <div style="display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; width: 100%;">
+                                    <div style="display: flex; flex-direction: column; align-items: center;">
+                                        <div class="grid-label" style="margin-bottom: 6px;">
+                                            Цены <span style="text-transform: none; opacity: 0.6; font-size: 10px; font-weight: 600;">(обновлено <span id="modalDatePrice"></span>)</span>
+                                        </div>
+                                        <div class="grid-value" id="modalPrice" style="color: var(--text-main); font-size: 16px; font-weight: 900; letter-spacing: 0.5px;"></div>
+                                        
+                                        <div id="priceNotice" style="font-size: 11px; color: var(--text-muted); margin-top: 6px; font-weight: 600; display: none;">
+                                            <span style="color: var(--accent-light);">*</span> Знак <span style="color: var(--accent-main); font-weight: 900; font-size: 13px;">~</span> означает, что товара в этом регионе нет (конвертация по курсу)
+                                        </div>
+                                    </div>
+
+                                    <div style="display: flex; align-items: center; justify-content: center; gap: 12px; background: rgba(3, 6, 36, 0.8); border: 1px dashed rgba(254, 0, 0, 0.4); padding: 8px 16px; border-radius: 2px; width: fit-content; max-width: 100%;">
+                                        <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                                            <span style="font-size: 9px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">
+                                                Команда обновления цен <span style="color: var(--warm-star); opacity: 0.9;">(писать в ЧАТ | Только для модераторов)</span>
+                                            </span>
+                                            <code id="modalUpdateCmd" style="font-family: monospace; font-size: 13px; color: var(--accent-main); font-weight: bold;"></code>
+                                        </div>
+                                        <button class="copy-btn" id="modalPriceCopyBtn" onclick="copyUpdateCmdFromModal(this)" style="padding: 8px; margin: 0; position: static; opacity: 1; transform: scale(1); border-radius: 2px;" title="Скопировать команду">
+                                            <svg class="icon-3d-effect" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <div class="modal-overview-container">
+                            <div class="modal-overview-label">Описание</div>
+                            <div class="modal-overview" id="modalOverview">Описание игры...</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal-girl-col">
+            <img src="girl-right.png" class="modal-girl-img modal-right-img" alt="">
+        </div>
+
+    </div>
+</div>
+
+<script>
+    let rawMoviesData = []; 
+    let currentViewData = []; 
+    let currentModalMovie = null; 
+    let viewMode = localStorage.getItem('siteViewModeWishlist2') || 'grid'; 
+
+    const fallbackPosterUrl = "data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='750' viewBox='0 0 500 750'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230C1E5B'/%3E%3Cstop offset='100%25' stop-color='%23030624'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='500' height='750' fill='url(%23bg)'/%3E%3Cg transform='translate(0, -30)'%3E%3Cpath d='M150 400 c0-50 40-90 90-90 h20 c50 0 90 40 90 90 v20 c0 30 15 50 30 70 l10 15 c15 20 0 45-20 45 h-30 c-20 0-30-10-35-30 l-5-20 h-100 l-5 20 c-5 20-15 30-35 30 h-30 c-20 0-35-25-20-45 l10-15 c15-20 30-40 30-70 v-20 z' fill='%23030624' stroke='%23fe0000' stroke-width='6' stroke-linejoin='round'/%3E%3Cpath d='M180 390 h20 v-20 h20 v20 h20 v20 h-20 v20 h-20 v-20 h-20 z' fill='%230C1E5B'/%3E%3Ccircle cx='210' cy='400' r='3' fill='%23fe0000'/%3E%3Ccircle cx='330' cy='380' r='14' fill='%23ff4d4d'/%3E%3Ccircle cx='360' cy='410' r='14' fill='%23fce8a1'/%3E%3Crect x='235' y='395' width='30' height='10' rx='5' fill='%230C1E5B'/%3E%3C/g%3E%3C/svg%3E";
+    const fallbackBackdropUrl = "data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='320' viewBox='0 0 1000 320'%3E%3Cdefs%3E%3ClinearGradient id='bgH' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230C1E5B'/%3E%3Cstop offset='100%25' stop-color='%23030624'/%3E%3C/linearGradient%3E%3Cpattern id='grid' width='60' height='60' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 60 0 L 0 0 0 60' fill='none' stroke='%23fe0000' stroke-width='1' opacity='0.05'/%3E%3C/pattern%3E%3Cpattern id='dots' width='20' height='20' patternUnits='userSpaceOnUse'%3E%3Ccircle cx='2' cy='2' r='1' fill='%23fce8a1' opacity='0.1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='1000' height='320' fill='url(%23bgH)'/%3E%3Crect width='1000' height='320' fill='url(%23grid)'/%3E%3Crect width='1000' height='320' fill='url(%23dots)'/%3E%3Cg transform='translate(500, 160) scale(1.5)'%3E%3Cpath d='M-50,0 C-50,-20 -30,-40 0,-40 C30,-40 50,-20 50,0 C50,20 40,30 25,30 C15,30 10,20 0,20 C-10,20 -15,30 -25,30 C-40,30 -50,20 -50,0 Z' fill='%23741511' stroke='%23fe0000' stroke-width='3' opacity='0.8'/%3E%3Cpath d='M-30,-5 h5 v-5 h5 v5 h5 v5 h-5 v5 h-5 v-5 h-5 z' fill='%230C1E5B' opacity='0.9'/%3E%3Ccircle cx='20' cy='-5' r='3' fill='%23ff4d4d' opacity='0.9'/%3E%3Ccircle cx='30' cy='5' r='3' fill='%23fce8a1' opacity='0.9'/%3E%3C/g%3E%3C/svg%3E";
+
+    window.handlePosterError = function(img) {
+        img.onerror = null;
+        img.src = fallbackPosterUrl;
+    };
+
+    function escapeHTML(str) {
+        if (!str) return '';
+        return String(str).replace(/[&<>'"]/g, tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag]));
+    }
+
+    const savedSortMode = localStorage.getItem('wishlistSortMode2');
+    if (savedSortMode) document.getElementById('sortSelect').value = savedSortMode;
+
+    function updateToggleButton() {
+        const btn = document.getElementById('viewToggleBtn');
+        if (viewMode === 'list') {
+            btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg> Плиткой`;
+        } else {
+            btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg> Списком`;
+        }
+    }
+
+    function toggleViewMode() {
+        viewMode = viewMode === 'list' ? 'grid' : 'list';
+        localStorage.setItem('siteViewModeWishlist2', viewMode);
+        updateToggleButton();
+        renderView();
+    }
+
+    function getSafePoster(url) { return (!url || url.includes('via.placeholder.com')) ? fallbackPosterUrl : url; }
+
+    function copyTextToClipboard(text, btnElement) {
+        navigator.clipboard.writeText(text).then(() => {
+            if (btnElement) {
+                const originalHTML = btnElement.innerHTML;
+                btnElement.innerHTML = `<svg class="icon-3d-effect" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+                btnElement.classList.add('copied');
+                setTimeout(() => { btnElement.innerHTML = originalHTML; btnElement.classList.remove('copied'); }, 500);
+            }
+        });
+    }
+
+    function copyMovieNameFromTable(event, title, year, btnElement) {
+        event.stopPropagation();
+        copyTextToClipboard(`${title} ${year}`, btnElement);
+    }
+    
+    function copyMovieNameFromModal() {
+        if (currentModalMovie) copyTextToClipboard(`${currentModalMovie.title || ''} ${currentModalMovie.year || ''}`, document.getElementById('modalCopyBtn'));
+    }
+    
+    function copyUpdateCmdFromModal(btnElement) {
+        if (currentModalMovie) {
+            const title = (currentModalMovie.title || '').trim();
+            const year = currentModalMovie.year || '';
+            const yearPart = (year && year !== '----' && year !== '????') ? ` ${year}` : '';
+            const cmd = `!gz ${title}${yearPart} (data)`;
+            copyTextToClipboard(cmd, btnElement);
+        }
+    }
+
+    async function loadCreatorAvatars() {
+        try {
+            const res1 = await fetch('https://api.ivr.fi/v2/twitch/user?login=sarachuma');
+            const data1 = await res1.json();
+            if (data1 && data1.length > 0 && data1[0].logo) {
+                const pAv = document.getElementById('sarachumaAvatar');
+                if(pAv) pAv.src = data1[0].logo.replace('300x300', '150x150');
+            }
+            
+            const res2 = await fetch('https://api.ivr.fi/v2/twitch/user?login=madman1408');
+            const data2 = await res2.json();
+            if (data2 && data2.length > 0 && data2[0].logo) {
+                const mAv = document.getElementById('madmanAvatar');
+                if(mAv) mAv.src = data2[0].logo.replace('300x300', '150x150');
+            }
+        } catch (e) { }
+    }
+    loadCreatorAvatars();
+
+    function parseDateObj(dateStr) {
+        if (!dateStr || typeof dateStr !== 'string') return 0;
+        const cleanDate = dateStr.split(' ')[0];
+        const dmy = cleanDate.split('.'); 
+        if (dmy.length !== 3) return 0;
+        return new Date(dmy[2], dmy[1]-1, dmy[0]).getTime();
+    }
+
+    async function loadMovies() {
+        const renderArea = document.getElementById('render-area');
+        try {
+            // 1. Берем правильный файл Wishlist.json
+            const response = await fetch('Wishlist.json?t=' + new Date().getTime());
+            if (!response.ok) throw new Error();
+            const data = await response.json();
+            rawMoviesData = [];
+            
+            // 2. Читаем его напрямую как чистый массив
+            if (Array.isArray(data)) {
+                data.forEach(movie => {
+                    const cleanReq = movie.dateRequested ? movie.dateRequested.split(' ')[0] : '';
+                    rawMoviesData.push({ ...movie, dateRequested: cleanReq, parsedDate: parseDateObj(movie.dateRequested) });
+                });
+            }
+            updateToggleButton();
+            applyFilters();
+        } catch (error) {
+            renderArea.innerHTML = `<div style="text-align: center; padding: 60px; color: var(--cute-pink); font-family: var(--font-text); font-weight: 700; font-size: 20px;">Вишлист пока недоступен (Ошибка)</div>`;
+        }
+    }
+
+    function applyFilters() {
+        const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+        let sortMode = document.getElementById('sortSelect').value;
+        localStorage.setItem('wishlistSortMode2', sortMode);
+        
+        let filtered = [...rawMoviesData];
+        if (searchQuery.trim() !== '') {
+            filtered = filtered.filter(m => m.title && m.title.toLowerCase().includes(searchQuery));
+        }
+        
+        if (sortMode === 'newest') {
+            filtered.sort((a, b) => b.parsedDate - a.parsedDate);
+        } else {
+            filtered.sort((a, b) => a.parsedDate - b.parsedDate);
+        }
+        
+        currentViewData = filtered; 
+        renderView();
+    }
+
+    function renderView() {
+        const renderArea = document.getElementById('render-area');
+        renderArea.innerHTML = '';
+    
+        if (currentViewData.length === 0) {
+            renderArea.innerHTML = '<div style="text-align: center; padding: 60px; font-size: 24px; font-family: var(--font-title); color: var(--text-muted); text-transform: uppercase;">✦ Вишлист пуст ✦</div>';
+            return;
+        }
+
+        if (window.innerWidth <= 768) {
+            renderGridMode(renderArea);
+        } else {
+            if (viewMode === 'list') renderTableMode(renderArea);
+            else renderGridMode(renderArea);
+        }
+    }
+    
+    function renderTableMode(renderArea) {
+        let tableHTML = `
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 160px; min-width: 160px;">Постер</th>
+                        <th style="width: 100%;">Описание</th>
+                        <th style="width: 145px; min-width: 145px;">Заказал</th>
+                        <th style="width: 130px; min-width: 130px;">Ссылки</th>
+                        <th style="width: 135px; min-width: 135px;">Статус</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body"></tbody>
+            </table>`;
+        renderArea.innerHTML = tableHTML;
+        const tbody = document.getElementById('table-body');
+
+        currentViewData.forEach((movie, index) => {
+            const tr = document.createElement('tr');
+            tr.className = 'movie-row';
+            tr.onclick = () => openModal(index); 
+            
+            const posterUrl = getSafePoster(movie.altPoster || movie.poster);
+            
+            const statusText = `<span class="badge-status" style="background: var(--accent-main); color: #ffffff; border: 1px solid var(--accent-main); box-shadow: 0 0 10px rgba(254,0,0,0.3); text-transform: uppercase;">В ВИШЛИСТЕ</span>`;
+            
+            const idBadge = `<span class="outline-badge text-3d-effect">ID №${movie.id || 0}</span>`;
+            const typeLabel = `<span class="content-type-badge text-3d-effect" style="background: var(--bg-deep); color: #ffffff; border: 1px solid var(--accent-main);">${escapeHTML(movie.type || 'Игра')}</span>`;
+            const cleanTitle = escapeHTML(movie.title || 'Безымянный');
+            const cleanOverview = escapeHTML(movie.overview || '');
+            const safeTitle = (movie.title || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+
+            let displayStudios = movie.studios && movie.studios !== "Нет данных" ? movie.studios : "";
+            const studiosHTML = displayStudios ? `<div class="movie-studios-list text-3d-effect">${escapeHTML(displayStudios)}</div>` : '';
+
+            let linksHTML = '<div style="display: flex; flex-direction: column; width: 100%; align-items: center;">';
+            if (movie.steamAppId && !movie.steamAppId.startsWith('IGDB_')) {
+                linksHTML += `<a href="https://store.steampowered.com/app/${movie.steamAppId}/" target="_blank" class="steam-link-btn" onclick="event.stopPropagation();"><svg class="icon-3d-effect steam-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 496 512" fill="currentColor" aria-hidden="true"><path d="M496 256c0 137-111 248-248 248-113.8 0-209.6-76.6-239-180.8l95.2 39.3c6.4 32.1 34.9 56.4 68.9 56.4 39.2 0 71.9-32.4 70.2-73.5l84.5-60.2c52.1 1.3 95.8-40.9 95.8-93.5 0-51.6-42-93.5-93.7-93.5s-93.7 42-93.7 93.5v1.2L176.6 279c-15.5-.9-30.7 3.4-43.5 12.1L0 236.1C10.2 108.4 117.1 8 247.6 8 384.8 8 496 119 496 256zM155.7 384.3l-30.5-12.6a52.79 52.79 0 0 0 27.2 25.8c26.9 11.2 57.8-1.6 69-28.4 5.4-13 5.5-27.3.1-40.3-5.4-13-15.5-23.2-28.5-28.6-12.9-5.4-26.7-5.2-38.9-.6l31.5 13c19.8 8.2 29.2 30.9 20.9 50.7-8.3 19.9-31 29.2-50.8 21zm173.8-129.9c-34.4 0-62.4-28-62.4-62.3s28-62.3 62.4-62.3 62.4 28 62.4 62.3-27.9 62.3-62.4 62.3zm.1-15.6c25.9 0 46.9-21 46.9-46.8 0-25.9-21-46.8-46.9-46.8s-46.9 21-46.9 46.8c.1 25.8 21.1 46.8 46.9 46.8z"/></svg> Steam </a>`;
+            } else { 
+                linksHTML += `<span style="color: var(--text-muted); font-size: 12px; font-weight: 700; font-family: var(--font-title); margin-bottom: 8px; display: block;">Нет в Steam</span>`; 
+            }
+            linksHTML += '</div>';
+
+            let avatarMarkup = `<div class="req-avatar" style="background-color: var(--bg-deep); color: var(--accent-main); border-color: var(--accent-main);"><svg class="icon-3d-effect" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></div>`;
+
+            tr.innerHTML = `
+                <td><div class="poster-wrapper"><img src="${posterUrl}" onerror="handlePosterError(this)" alt=""></div></td>
+                <td>
+                    <div class="movie-info">
+                        <div class="movie-header">
+                            <span class="movie-title">${cleanTitle}</span>
+                            <div class="movie-meta-box">
+                                <span class="movie-year text-3d-effect">${movie.year || '----'}</span>
+                                <button class="copy-btn" onclick="copyMovieNameFromTable(event, '${safeTitle}', '${movie.year || ''}', this)" title="Скопировать">
+                                    <svg class="icon-3d-effect" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="badges-container">${typeLabel} ${idBadge}</div>
+                        <div class="movie-genres">${escapeHTML(movie.genres || '')}</div>
+                        ${studiosHTML}
+                        <div class="movie-overview-wrapper"><div class="movie-overview-text">${cleanOverview}</div></div>
+                    </div>
+                </td>
+                <td style="vertical-align: top;"><div style="display: flex; flex-direction: column; align-items: center;"><div class="requester-badge" style="cursor: default;">${avatarMarkup}<span class="req-name text-3d-effect" style="display: block; max-width: 115px; white-space: nowrap; overflow: hidden; text-overflow: clip;">Вишлист</span></div>${movie.dateRequested ? `<div class="date-badge"><span class="text-3d-effect">${movie.dateRequested}</span></div>` : ''}</div></td>
+                <td style="vertical-align: top;"><div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">${linksHTML}</div></td>
+                <td style="vertical-align: top;"><div style="display: flex; flex-direction: column; align-items: center;">${statusText}</div></td>
+            `;
+            tbody.appendChild(tr);
+        });
+        autoResizeTitles();
+    }
+
+    function renderGridMode(renderArea) {
+        const gridContainer = document.createElement('div');
+        gridContainer.className = 'movies-grid';
+
+        currentViewData.forEach((movie, index) => {
+            const posterUrl = getSafePoster(movie.altPoster || movie.poster);
+            const cleanTitle = escapeHTML(movie.title || 'Безымянный');
+            const safeTitle = (movie.title || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+            
+            let statusMarkup = `<div class="card-status" style="background: var(--accent-main); color: #ffffff; border: 1px solid var(--accent-main); box-shadow: 0 0 10px rgba(254,0,0,0.5);">В вишлисте</div>`;
+            
+            let avatarMarkup = `<div class="card-user-avatar" style="background-color: var(--bg-deep); color: var(--accent-main); border-color: var(--accent-main);"><svg class="icon-3d-effect" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></div>`;
+
+            let gridSteamBtn = '';
+            if (movie.steamAppId && !movie.steamAppId.startsWith('IGDB_')) {
+                gridSteamBtn = `
+                <a href="https://store.steampowered.com/app/${movie.steamAppId}/" target="_blank" class="grid-steam-link" onclick="event.stopPropagation();" title="Открыть в Steam">
+                    <svg class="icon-3d-effect steam-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 496 512" fill="currentColor" aria-hidden="true"><path d="M496 256c0 137-111 248-248 248-113.8 0-209.6-76.6-239-180.8l95.2 39.3c6.4 32.1 34.9 56.4 68.9 56.4 39.2 0 71.9-32.4 70.2-73.5l84.5-60.2c52.1 1.3 95.8-40.9 95.8-93.5 0-51.6-42-93.5-93.7-93.5s-93.7 42-93.7 93.5v1.2L176.6 279c-15.5-.9-30.7 3.4-43.5 12.1L0 236.1C10.2 108.4 117.1 8 247.6 8 384.8 8 496 119 496 256zM155.7 384.3l-30.5-12.6a52.79 52.79 0 0 0 27.2 25.8c26.9 11.2 57.8-1.6 69-28.4 5.4-13 5.5-27.3.1-40.3-5.4-13-15.5-23.2-28.5-28.6-12.9-5.4-26.7-5.2-38.9-.6l31.5 13c19.8 8.2 29.2 30.9 20.9 50.7-8.3 19.9-31 29.2-50.8 21zm173.8-129.9c-34.4 0-62.4-28-62.4-62.3s28-62.3 62.4-62.3 62.4 28 62.4 62.3-27.9 62.3-62.4 62.3zm.1-15.6c25.9 0 46.9-21 46.9-46.8 0-25.9-21-46.8-46.9-46.8s-46.9 21-46.9 46.8c.1 25.8 21.1 46.8 46.9 46.8z"/></svg> Steam
+                </a>`;
+            }
+
+            const card = document.createElement('div');
+            card.className = 'card-view-item';
+            card.onclick = () => openModal(index);
+            
+            card.innerHTML = `
+                <div class="card-top">
+                    <img src="${posterUrl}" class="card-poster" onerror="handlePosterError(this)" alt="">
+                    <button class="card-copy-btn" onclick="copyMovieNameFromTable(event, '${safeTitle}', '${movie.year || ''}', this)" title="Скопировать название">
+                        <svg class="icon-3d-effect" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+                    </button>
+                    <div class="card-overlay">
+                        <div class="card-badges-top">
+                            <div class="card-type-badge">${escapeHTML(movie.type || 'Игра')}</div>
+                            ${statusMarkup}
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-title-container" style="margin-bottom: 4px;">
+                        <h3 class="card-title-text resize-title" style="word-break: normal; overflow-wrap: normal; text-align: center; margin: 0; width: 100%;">${cleanTitle}</h3>
+                    </div>
+                    
+                    <div style="width: 100%; border-bottom: 1px solid rgba(254, 0, 0, 0.25); margin: 3px 0 5px 0;"></div>
+                    <div style="font-family: var(--font-title); font-size: 11px; font-weight: 700; color: var(--text-muted); width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: center; text-transform: capitalize; letter-spacing: 1px;" title="${escapeHTML(movie.genres || 'Нет жанра')}">${escapeHTML(movie.genres || 'Нет жанра')}</div>
+                    <div style="width: 100%; border-bottom: 1px solid rgba(254, 0, 0, 0.25); margin: 5px 0 8px 0;"></div>
+
+                    <div style="margin-top: auto; width: 100%;">
+                        <div class="card-date-meta" style="display: flex; align-items: center; justify-content: center; gap: 6px;">
+                            <span>${movie.year || '----'}</span>
+                            ${gridSteamBtn ? `<span style="color: var(--accent-main);">♦</span> ${gridSteamBtn}` : ''}
+                        </div>
+                        <div class="card-queue-box">
+                            <span class="card-queue-label" style="color: var(--text-muted);">В списках</span>
+                            <div class="card-user-info-row">
+                                ${avatarMarkup}
+                                <span class="card-queue-name resize-username text-3d-effect" style="display: block; max-width: calc(100% - 28px); font-size: 15px; font-family: var(--font-title); font-weight: 700; color: var(--text-main); letter-spacing: 1px; white-space: nowrap; overflow: hidden; text-overflow: clip;">Вишлист</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            gridContainer.appendChild(card);
+        });
+        
+        renderArea.appendChild(gridContainer);
+        autoResizeTitles(); 
+    }
+
+    function autoResizeTitles() {
+        setTimeout(() => {
+            
+            document.querySelectorAll('.movie-row .movie-title').forEach(titleEl => {
+                let currentSize = 28; 
+                titleEl.style.fontSize = currentSize + "px"; 
+                titleEl.style.whiteSpace = 'nowrap'; 
+                let minSize = 16;
+                
+                while (titleEl.scrollWidth > titleEl.clientWidth && currentSize > minSize) { 
+                    currentSize -= 1; 
+                    titleEl.style.fontSize = currentSize + "px"; 
+                }
+
+                if (titleEl.scrollWidth > titleEl.clientWidth) { 
+                    titleEl.style.whiteSpace = 'normal'; 
+                    titleEl.style.display = '-webkit-box'; 
+                    titleEl.style.webkitLineClamp = '2'; 
+                    titleEl.style.webkitBoxOrient = 'vertical'; 
+                    titleEl.style.overflow = 'hidden';
+                } else {
+                    titleEl.style.whiteSpace = 'nowrap';
+                    titleEl.style.textOverflow = 'ellipsis';
+                    titleEl.style.overflow = 'hidden';
+                }
+            });
+
+            
+            document.querySelectorAll('.card-title-container').forEach(container => {
+                let titleEl = container.querySelector('.resize-title');
+                if (!titleEl) return;
+                
+                titleEl.style.display = 'block';
+                titleEl.style.webkitLineClamp = 'unset';
+                titleEl.style.overflow = 'visible';
+                
+                let currentSize = 20;
+                titleEl.style.fontSize = currentSize + "px";
+                
+                while ((titleEl.scrollHeight > container.clientHeight || titleEl.scrollWidth > container.clientWidth) && currentSize > 9) {
+                    currentSize -= 0.5;
+                    titleEl.style.fontSize = currentSize + "px";
+                }
+
+                if (titleEl.scrollHeight > container.clientHeight) {
+                    titleEl.style.display = '-webkit-box';
+                    titleEl.style.webkitLineClamp = '3'; 
+                    titleEl.style.webkitBoxOrient = 'vertical';
+                    titleEl.style.overflow = 'hidden';
+                }
+            });
+
+            
+            document.querySelectorAll('.resize-username').forEach(nameEl => {
+                let currentSize = 15;
+                nameEl.style.fontSize = currentSize + "px";
+                while (nameEl.scrollWidth > nameEl.parentElement.clientWidth - 30 && currentSize > 8) {
+                    currentSize -= 0.5;
+                    nameEl.style.fontSize = currentSize + "px";
+                }
+            });
+            
+            document.querySelectorAll('.resize-list-username').forEach(nameEl => {
+                let currentSize = 16;
+                nameEl.style.fontSize = currentSize + "px";
+                while (nameEl.scrollWidth > 115 && currentSize > 8) {
+                    currentSize -= 0.5;
+                    nameEl.style.fontSize = currentSize + "px";
+                }
+            });
+            
+        }, 10);
+    }
+
+    window.addEventListener('resize', () => {
+        autoResizeTitles();
+        renderView(); 
+    });
+    
+    function openModal(index) {
+        const movie = currentViewData[index]; currentModalMovie = movie; 
+        const modal = document.getElementById('movieModal');
+        
+        const modalContent = modal.querySelector('.modal-content');
+        if(modalContent) { setTimeout(() => { modalContent.scrollTop = 0; }, 10); }
+        
+        const heroEl = document.getElementById('modalHero');
+        heroEl.style.display = 'block'; 
+        
+        if (movie.backdrop && !movie.backdrop.includes('via.placeholder.com')) {
+            const img = new Image();
+            img.src = movie.backdrop;
+            img.onload = () => { heroEl.style.backgroundImage = `url('${movie.backdrop}')`; };
+            img.onerror = () => { heroEl.style.backgroundImage = `url("${fallbackBackdropUrl}")`; };
+            heroEl.style.backgroundImage = `url("${fallbackBackdropUrl}")`;
+        } else {
+            heroEl.style.backgroundImage = `url("${fallbackBackdropUrl}")`;
+        }
+
+        const posterEl = document.getElementById('modalPoster');
+        posterEl.src = getSafePoster(movie.altPoster || movie.poster);
+        posterEl.onerror = function() { handlePosterError(this); };
+        
+        const titleEl = document.getElementById('modalTitle');
+        titleEl.textContent = movie.title || 'Безымянный';
+        document.getElementById('modalYear').textContent = movie.year || '----';
+        
+        titleEl.style.fontSize = "42px"; 
+        titleEl.style.whiteSpace = 'nowrap';
+        titleEl.style.display = 'block';
+
+        setTimeout(() => {
+            let currentSize = 42;
+            while (titleEl.scrollWidth > titleEl.clientWidth && currentSize > 24) {
+                currentSize -= 1;
+                titleEl.style.fontSize = currentSize + "px";
+            }
+            if (titleEl.scrollWidth > titleEl.clientWidth) {
+                titleEl.style.whiteSpace = 'normal';
+                titleEl.style.display = '-webkit-box';
+                titleEl.style.webkitLineClamp = '2';
+                titleEl.style.webkitBoxOrient = 'vertical';
+                titleEl.style.overflow = 'hidden';
+            } else {
+                titleEl.style.whiteSpace = 'nowrap';
+                titleEl.style.textOverflow = 'ellipsis';
+                titleEl.style.overflow = 'hidden';
+            }
+        }, 10);
+        
+        let badgesHtml = '';
+        let displayType = escapeHTML(movie.type || 'Игра');
+        badgesHtml += `<span class="content-type-badge" style="background: var(--bg-deep); color: #ffffff; border: 1px solid var(--accent-main); box-shadow: 0 0 10px rgba(254,0,0,0.5); text-transform: uppercase;">${displayType}</span>`;
+
+        badgesHtml += `<span class="outline-badge">ID №${movie.id || 0}</span>`;
+        
+        if (movie.steamAppId && !movie.steamAppId.startsWith('IGDB_')) {
+            badgesHtml += `
+            <a href="https://store.steampowered.com/app/${movie.steamAppId}/" target="_blank" class="outline-badge steam-modal-badge">
+                <svg class="icon-3d-effect steam-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 496 512" fill="currentColor" aria-hidden="true"><path d="M496 256c0 137-111 248-248 248-113.8 0-209.6-76.6-239-180.8l95.2 39.3c6.4 32.1 34.9 56.4 68.9 56.4 39.2 0 71.9-32.4 70.2-73.5l84.5-60.2c52.1 1.3 95.8-40.9 95.8-93.5 0-51.6-42-93.5-93.7-93.5s-93.7 42-93.7 93.5v1.2L176.6 279c-15.5-.9-30.7 3.4-43.5 12.1L0 236.1C10.2 108.4 117.1 8 247.6 8 384.8 8 496 119 496 256zM155.7 384.3l-30.5-12.6a52.79 52.79 0 0 0 27.2 25.8c26.9 11.2 57.8-1.6 69-28.4 5.4-13 5.5-27.3.1-40.3-5.4-13-15.5-23.2-28.5-28.6-12.9-5.4-26.7-5.2-38.9-.6l31.5 13c19.8 8.2 29.2 30.9 20.9 50.7-8.3 19.9-31 29.2-50.8 21zm173.8-129.9c-34.4 0-62.4-28-62.4-62.3s28-62.3 62.4-62.3 62.4 28 62.4 62.3-27.9 62.3-62.4 62.3zm.1-15.6c25.9 0 46.9-21 46.9-46.8 0-25.9-21-46.8-46.9-46.8s-46.9 21-46.9 46.8c.1 25.8 21.1 46.8 46.9 46.8z"/></svg>
+                Steam
+            </a>`;
+        }
+
+        document.getElementById('modalBadges').innerHTML = badgesHtml;
+        
+        let genresHtml = '';
+        if (movie.genres && movie.genres !== "Нет данных") {
+            const genresList = movie.genres.split(',').map(g => g.trim()).filter(g => g);
+            genresList.forEach(g => {
+                genresHtml += `<span class="outline-badge">${escapeHTML(g)}</span>`;
+            });
+        } else {
+            genresHtml = `<span class="outline-badge">Нет жанра</span>`;
+        }
+        document.getElementById('modalGenres').innerHTML = genresHtml;
+
+        document.getElementById('modalOverview').textContent = movie.overview || 'Данные об игре утеряны...';
+        
+        const dateReqEl = document.getElementById('modalDateReq');
+        if (movie.dateRequested) {
+             dateReqEl.innerHTML = `<div class="modal-grid-box" style="margin-top: 0;">${movie.dateRequested}</div>`;
+        } else {
+             dateReqEl.innerHTML = `<div class="grid-value" style="color: var(--text-muted); font-weight: normal;">Нет данных</div>`;
+        }
+        
+        document.getElementById('modalStatusLabel').innerHTML = `<span class="badge-status" style="margin:0; padding:6px 12px; font-size: 14px; background: var(--accent-main); color: #ffffff; border: 1px solid var(--accent-main); box-shadow: 0 0 10px rgba(254,0,0,0.5); text-transform: uppercase;">В ВИШЛИСТЕ</span>`;
+
+        let avatarMarkup = `<div class="req-avatar" style="width:32px; height:32px; font-size:16px; border-width:2px; background-color: var(--bg-deep); border-color: var(--accent-main); border-radius:2px; display:flex; align-items:center; justify-content:center; margin-right:10px; color:var(--text-main); font-weight:800;"><svg class="icon-3d-effect" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></div>`;
+        document.getElementById('modalRequesterBlock').innerHTML = `<div class="modal-requester-link hover-active" style="display:flex; align-items:center; margin-bottom: 8px; cursor: default;">${avatarMarkup}<span class="name-text text-3d-effect">Вишлист</span></div>`;
+
+        // ЗАПОЛНЯЕМ БЛОК С ЦЕНАМИ И КОМАНДОЙ
+        const datePriceEl = document.getElementById('modalDatePrice');
+        const priceEl = document.getElementById('modalPrice');
+        const updateCmdEl = document.getElementById('modalUpdateCmd');
+        const priceNoticeEl = document.getElementById('priceNotice'); 
+
+        datePriceEl.textContent = movie.datePriceUpdated ? movie.datePriceUpdated.split(' ')[0] : 'неизвестно';
+        
+        const priceText = movie.price && movie.price !== "Неизвестно" ? movie.price : "Цена не найдена / Скрыта";
+        priceEl.textContent = priceText;
+
+        if (priceText.includes('~')) {
+            priceNoticeEl.style.display = 'block';
+        } else {
+            priceNoticeEl.style.display = 'none';
+        }
+        
+        const titleForCmd = (movie.title || 'Безымянный').trim();
+        const yearForCmd = (movie.year && movie.year !== '----' && movie.year !== '????') ? ` ${movie.year}` : '';
+        updateCmdEl.textContent = `!gz ${titleForCmd}${yearForCmd} (data)`;
+
+        document.getElementById('modalStudios').textContent = movie.studios === "Нет данных" || !movie.studios ? "Архив скрыт" : movie.studios;
+
+        modal.classList.add('active'); document.body.style.overflow = 'hidden'; 
+    }
+
+    function closeModal(arg) {
+        if (arg === true || (arg && arg.target && arg.target.id === 'movieModal')) {
+            document.getElementById('movieModal').classList.remove('active'); 
+            document.body.style.overflow = ''; 
+        }
+    }
+    
+    loadMovies();
+</script>
+</body>
+</html>
