@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Игровая</title>
-    
+    <title>WishLIST</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Geologica:wght@400;600;700;900&display=swap" rel="stylesheet">
     
     <style>
-        
         @font-face {
             font-family: 'BOU COLLEGIATE RUS';
             src: url('fonts/Bou_Collegiate.ttf') format('truetype');
@@ -27,11 +25,9 @@
         }
 
         :root {
-            
             --bg-deep: #030624;         
             --bg-velvet: #0C1E5B;       
             --bg-sunset: #002daa;       
-            
             
             --accent-light: #ff4d4d;      
             --accent-main: #fe0000;       
@@ -43,12 +39,10 @@
             --text-main: #f0edf5;       
             --text-muted: #8b9dc3;      
             
-            
             --font-title: 'Geologica Local', 'Geologica', sans-serif;
             --font-text: 'Geologica Local', 'Geologica', sans-serif;
         }
 
-        
         body::before {
             content: "";
             position: fixed;
@@ -102,7 +96,7 @@
             background: radial-gradient(circle at 50% 0%, rgba(254, 0, 0, 0.15) 0%, transparent 80%);
         }
         .header::after {
-            content: '✦'; position: absolute; bottom: -14px; left: 50%; transform: translateX(-50%);
+            content: '♥'; position: absolute; bottom: -14px; left: 50%; transform: translateX(-50%);
             color: var(--accent-main); font-size: 20px; background: var(--bg-deep); padding: 0 15px;
             border: 1px solid rgba(254, 0, 0, 0.4); text-shadow: 0 0 10px var(--accent-main);
         }
@@ -117,7 +111,6 @@
             color: var(--accent-main); filter: drop-shadow(0 0 8px rgba(254, 0, 0, 0.6)); 
         }
 
-        
         .back-btn {
             position: absolute; top: 20px; left: 30px; display: inline-flex; align-items: center; gap: 10px;
             background: rgba(254, 0, 0, 0.1); color: #ffffff; text-shadow: 2px 2px 0px var(--accent-dark), 0 0 15px var(--accent-main);
@@ -127,7 +120,6 @@
         }
         .back-btn:hover { background: var(--accent-main); color: #ffffff; box-shadow: 0 0 20px rgba(254, 0, 0, 0.6); text-shadow: none; }
 
-        
         .creator-badge {
             position: absolute; top: 20px; right: 30px; display: flex; align-items: center; gap: 10px;
             background: rgba(12, 30, 91, 0.6); padding: 6px 16px 6px 6px; cursor: pointer;
@@ -146,7 +138,7 @@
             padding: 0 16px; outline: none; transition: all 0.3s ease; text-align: left; 
             box-sizing: border-box; height: 40px; 
         }
-        .search-box { width: 220px; color: var(--text-main); font-size: 15px; font-family: var(--font-text); }
+        .search-box { width: 260px; color: var(--text-main); font-size: 15px; font-family: var(--font-text); }
         .search-box::placeholder { color: var(--text-muted); font-size: 13px; font-family: var(--font-text); }
         .search-box:focus, .sort-select:focus { border-color: var(--accent-main); color: #fff; box-shadow: 0 0 15px rgba(254, 0, 0, 0.4); }
         
@@ -165,17 +157,6 @@
         }
         .view-toggle-btn:hover { background: var(--accent-main); color: #ffffff; box-shadow: 0 0 20px rgba(254, 0, 0, 0.5); text-shadow: none; }
 
-        .wishlist-link-btn {
-            background: rgba(254, 0, 0, 0.1); border: 1px solid var(--accent-main); border-radius: 2px;
-            padding: 0 20px; color: #ffffff; text-shadow: 2px 2px 0px var(--accent-dark), 0 0 15px var(--accent-main); 
-            font-size: 17px; font-family: var(--font-title); font-weight: 700;
-            cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 8px;
-            box-sizing: border-box; height: 40px; letter-spacing: 1px; text-decoration: none;
-        }
-        .wishlist-link-btn:hover { background: var(--accent-main); color: #ffffff; box-shadow: 0 0 20px rgba(254, 0, 0, 0.5); text-shadow: none; }
-
-
-        
         table { width: 100%; border-collapse: separate; border-spacing: 0; text-align: left; table-layout: fixed; }
         th { text-align: center; color: #ffffff; text-shadow: 2px 2px 0px var(--accent-dark), 0 0 15px var(--accent-main); font-weight: 700; font-size: 18px; text-transform: uppercase; padding: 25px 12px 15px; border-bottom: 2px solid rgba(254, 0, 0, 0.3); font-family: var(--font-title); letter-spacing: 2px; }
         td { padding: 20px 15px; vertical-align: top; border-bottom: 1px solid rgba(254, 0, 0, 0.15); }
@@ -213,10 +194,8 @@
         tr.movie-row:has(.poster-wrapper:hover) .movie-overview-wrapper { max-height: 250px; }
         tr.movie-row:has(.poster-wrapper:hover) .movie-overview-text { -webkit-line-clamp: 20; color: var(--text-main); }
 
-        .requester-badge { display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer; transition: transform 0.3s; margin: 0 auto; }
-        .requester-badge:hover .req-avatar { border-color: var(--text-main); box-shadow: 0 0 20px rgba(254, 0, 0, 0.6); }
-        .requester-badge:hover .req-name { color: #fff; text-shadow: 0 0 10px rgba(254, 0, 0, 0.8); }
-        .req-avatar { width: 44px; height: 44px; border-radius: 2px; display: flex; align-items: center; justify-content: center; font-family: var(--font-title); font-size: 22px; color: var(--bg-deep); font-weight: 700; box-shadow: 0 5px 15px rgba(0,0,0,0.6); object-fit: cover; border: 2px solid var(--accent-main); transition: all 0.3s; background: var(--text-main); }
+        .requester-badge { display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: default; transition: transform 0.3s; margin: 0 auto; }
+        .req-avatar { width: 44px; height: 44px; border-radius: 2px; display: flex; align-items: center; justify-content: center; font-family: var(--font-title); font-size: 22px; color: var(--text-main); font-weight: 700; box-shadow: 0 5px 15px rgba(0,0,0,0.6); object-fit: cover; border: 2px solid var(--accent-main); transition: all 0.3s; background: var(--bg-deep); }
         .req-name { font-family: var(--font-title); font-size: 16px; font-weight: 700; color: var(--text-main); transition: all 0.3s; letter-spacing: 1px; }
         
         .date-badge, .time-box { font-size: 12px; color: var(--accent-light); font-weight: 600; background: rgba(3, 6, 36, 0.9); border: 1px solid rgba(254, 0, 0, 0.3); padding: 4px 10px; border-radius: 2px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); display: inline-flex; justify-content: center; align-items: center; gap: 6px; font-family: var(--font-title); letter-spacing: 1px;}
@@ -224,12 +203,10 @@
         
         .badge-status { font-size: 12px; font-weight: 900; text-align: center; display: inline-flex; justify-content: center; align-items: center; text-transform: uppercase; letter-spacing: 2px; font-family: var(--font-title); color: var(--bg-deep); border-radius: 2px; padding: 4px 12px; margin-bottom: 8px; box-shadow: 0 4px 15px rgba(254, 0, 0, 0.5); min-width: 85px; }
 
-        
         .steam-link-btn { display: flex; align-items: center; justify-content: center; gap: 6px; background: rgba(254, 0, 0, 0.1); color: #ffffff !important; border: 1px solid rgba(254, 0, 0, 0.3); padding: 6px 12px; border-radius: 2px; text-decoration: none; font-family: var(--font-title); font-size: 13px; font-weight: 700; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.5); text-transform: uppercase; letter-spacing: 1px; width: 100%; box-sizing: border-box; margin-bottom: 8px;}
         .steam-link-btn:last-child { margin-bottom: 0; }
         .steam-link-btn:hover { background: var(--accent-main); color: #ffffff !important; box-shadow: 0 0 15px rgba(254, 0, 0, 0.6); transform: translateY(-2px); }
 
-        
         .movies-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 15px; padding: 20px; }
         
         .card-view-item {
@@ -261,15 +238,8 @@
 
         .card-badges-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 4px; width: 100%; box-sizing: border-box; overflow: hidden; white-space: nowrap; }
         .card-type-badge { background: var(--bg-deep); border: 1px solid var(--accent-main); padding: 2px 4px; border-radius: 2px; font-size: 8px; font-family: var(--font-title); color: #ffffff; letter-spacing: 1px; box-shadow: 0 5px 15px rgba(0,0,0,0.8); max-width: 50%; overflow: hidden; text-overflow: ellipsis; text-transform: uppercase; }
-        .card-status { background: var(--accent-main); color: var(--bg-deep); padding: 2px 4px; border-radius: 2px; font-size: 8px; font-family: var(--font-title); font-weight: 900; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 5px 15px rgba(0,0,0,0.8); max-width: 50%; overflow: hidden; text-overflow: ellipsis; }
+        .card-status { background: var(--accent-main); color: var(--text-main); padding: 2px 4px; border-radius: 2px; font-size: 8px; font-family: var(--font-title); font-weight: 900; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 5px 15px rgba(0,0,0,0.8); max-width: 50%; overflow: hidden; text-overflow: ellipsis; }
         
-        .card-bottom-badges { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; position: absolute; bottom: 10px; left: 10px; z-index: 12;}
-        .card-mini-badge { font-size: 8px; font-family: var(--font-title); font-weight: 800; text-transform: uppercase; background: rgba(3, 6, 36, 0.9); border: 1px solid rgba(254, 0, 0, 0.4); padding: 4px 8px; border-radius: 2px; display: flex; align-items: center; gap: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); backdrop-filter: blur(4px); letter-spacing: 1px; }
-        .card-mini-badge.auction { color: var(--warm-star); border-color: var(--warm-star); }
-        .card-mini-badge.cried { color: var(--text-main); border-color: var(--accent-main); }
-        .card-mini-badge.burned { color: var(--accent-light); border-color: var(--accent-light); }
-        .card-mini-badge.rating { color: var(--accent-light); border-color: var(--accent-main); font-size: 12px; }
-
         .card-content { padding: 15px 10px; display: flex; flex-direction: column; align-items: center; text-align: center; z-index: 11; position: relative; flex-grow: 1; box-sizing: border-box; width: 100%; }
         .card-title-container { height: 55px; display: flex; align-items: center; justify-content: center; width: 100%; margin-bottom: 6px; overflow: hidden; }
         .card-title-text { 
@@ -408,8 +378,6 @@
             border: 1px solid rgba(254, 0, 0, 0.3); 
             overflow: hidden; 
         }
-        
-        .modal-grid.has-tags { grid-template-columns: repeat(3, 1fr); }
 
         .modal-grid-box { font-size: 13px; font-family: var(--font-title); color: var(--text-main); font-weight: 900; background: rgba(12, 30, 91, 0.9); border: 1px solid var(--accent-dark); padding: 8px 16px; border-radius: 2px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); display: inline-flex; justify-content: center; align-items: center; gap: 8px; width: fit-content; margin-top: 4px; letter-spacing: 1px; text-transform: uppercase;}
         
@@ -426,10 +394,8 @@
         .modal-overview-label { color: var(--accent-light); font-size: 14px; text-transform: uppercase; letter-spacing: 2px; font-family: var(--font-title); font-weight: 900; margin-top: 0; margin-bottom: 10px; }
         .modal-overview { color: var(--text-main); font-family: var(--font-text); font-size: 16px; line-height: 1.7; margin-top: 0; margin-bottom: 0; }
         
-        .modal-requester-link { cursor: pointer; transition: transform 0.3s; display: inline-flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-        .modal-requester-link:hover { transform: translateX(5px); }
-        .modal-requester-link span.name-text { font-family: var(--font-title); font-size: 18px; color: var(--text-main); transition: color 0.3s; font-weight: 900; letter-spacing: 1px; }
-        .modal-requester-link:hover span.name-text { color: var(--accent-main); text-shadow: 0 0 15px rgba(254, 0, 0, 0.6); }
+        .modal-requester-link { cursor: default; display: inline-flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+        .modal-requester-link span.name-text { font-family: var(--font-title); font-size: 18px; color: var(--text-main); font-weight: 900; letter-spacing: 1px; }
 
         .footer-badge { display: flex; align-items: center; gap: 10px; justify-content: center; margin: 30px auto 20px auto; padding: 6px 16px 6px 6px; width: fit-content; background: rgba(12, 30, 91, 0.6); border: 1px solid rgba(254, 0, 0, 0.3); cursor: pointer; transition: all 0.3s ease; opacity: 0.9; }
         .footer-badge:hover { opacity: 1; background: rgba(254, 0, 0, 0.1); border-color: var(--accent-main); box-shadow: 0 0 15px rgba(254, 0, 0, 0.3); }
@@ -448,8 +414,8 @@
             .movies-grid { grid-template-columns: repeat(4, 1fr); }
         }
         @media (max-width: 768px) {
-			#viewToggleBtn { display: none !important; }
-		
+            #viewToggleBtn { display: none !important; }
+        
             th:nth-child(4), td:nth-child(4) { display: none; }
             .movies-grid { grid-template-columns: repeat(2, 1fr); padding: 10px; gap: 10px; }
             .modal-body { flex-direction: column; margin-top: -60px; padding: 20px; }
@@ -458,51 +424,20 @@
             .modal-grid { grid-template-columns: 1fr !important; }
             .grid-item.border-right { border-right: none !important; }
             .grid-item { border-bottom: 1px solid rgba(254, 0, 0, 0.3); }
-            #modalTagsColumn { grid-row: auto !important; grid-column: 1 / -1 !important; border-bottom: 1px solid rgba(254, 0, 0, 0.3); padding-left: 25px !important;}
             .grid-item.full-width { border-bottom: none; }
 
-            .header {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				gap: 15px; 
-				padding: 20px 10px; 
-			}
-
-			.back-btn {
-				position: relative;
-				top: 0;
-				left: 0;
-			}
-
-			.creator-badge {
-				position: relative;
-				top: 0;
-				right: 0;
-			}
-
-			.header-top h1 { 
-				font-size: 28px; 
-				margin: 5px 0 10px 0;
-			}
-			.header-top h1::before, .header-top h1::after { 
-				display: none; 
-			}
+            .header { display: flex; flex-direction: column; align-items: center; gap: 15px;  padding: 20px 10px; }
+            .back-btn { position: relative; top: 0; left: 0; }
+            .creator-badge { position: relative; top: 0; right: 0; }
+            .header-top h1 { font-size: 28px; margin: 5px 0 10px 0; }
+            .header-top h1::before, .header-top h1::after { display: none; }
         }
-        
-        .legendary-table-badge, .legendary-badge {
-            box-shadow: 0 5px 15px rgba(0,0,0,0.9), inset 0 0 20px #ffd700, 0 0 30px rgba(255, 215, 0, 0.5) !important;
-            border-color: #ffd700 !important; color: #130f1c !important;
-            text-shadow: none !important; font-weight: 900 !important; background: #ffd700 !important;
-        }
-
         
         .text-3d-effect {
             color: #ffffff;
             text-shadow: 2px 2px 0px var(--accent-dark), 0 0 10px rgba(254, 0, 0, 0.8);
         }
 
-        
         .icon-3d-effect {
             filter: drop-shadow(2px 2px 0px var(--accent-dark)) drop-shadow(0 0 10px rgba(254, 0, 0, 0.8));
         }
@@ -520,9 +455,9 @@
     <div class="container">
         <div class="content-wrapper">
             <div class="header">
-                <a href="https://sarachuma.github.io/games/" class="back-btn">
+                <a href="https://sarachuma.github.io/links/" class="back-btn">
                     <svg class="icon-3d-effect" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-                    В Архивы
+                    В Заказы
                 </a>
 
                 <div class="creator-badge" onclick="window.open('https://twitch.tv/sarachuma', '_blank')">
@@ -533,29 +468,15 @@
                 </div>
                 
                 <div class="header-top">
-                    <h1>Игровая</h1>
+                    <h1>WISHLIST</h1>
                 </div>
                 
                 <div class="controls-panel">
-					
-					<a href="wishlist.html" class="wishlist-link-btn">
-                        <svg class="icon-3d-effect" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                        В Вишлист
-                    </a>
-				
-                    <input type="text" id="searchInput" class="search-box" placeholder="Поиск..." oninput="applyFilters()">
-                    <select id="userFilter" class="sort-select" onchange="applyFilters()">
-                        <option value="all">Все заказчики</option>
-                    </select>
+                    <input type="text" id="searchInput" class="search-box" placeholder="Поиск по вишлисту..." oninput="applyFilters()">
                     
                     <select id="sortSelect" class="sort-select" onchange="applyFilters()">
-                        <option value="order">По порядку</option>
-                        <option value="date_asc">По дате заказов (Старые)</option>
-                        <option value="newest">По дате заказов (Новые)</option>
-                        <option value="waiting">В очереди / Играем</option>
-                        <option value="watched">Пройдено</option>
-                        <option value="tried">Попробовала</option>
-                        <option value="auction">Аукцион</option>
+                        <option value="newest">По дате добавления (Новые)</option>
+                        <option value="oldest">По дате добавления (Старые)</option>
                     </select>
 
                     <button class="view-toggle-btn" id="viewToggleBtn" onclick="toggleViewMode()">
@@ -568,7 +489,7 @@
             <div id="render-area">
                 <table style="margin-top: 30px;">
                     <tbody id="table-body">
-                        <tr><td style="text-align: center; padding: 60px; font-size: 24px; color: var(--accent-main); font-family: var(--font-title); font-weight: 700; text-transform: uppercase; border: none;">Раскрываем архивы... ✦</td></tr>
+                        <tr><td style="text-align: center; padding: 60px; font-size: 24px; color: var(--accent-main); font-family: var(--font-title); font-weight: 700; text-transform: uppercase; border: none;">Загрузка желаемого... ✦</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -618,87 +539,66 @@
                         </div>
                         
                         <div class="modal-meta-wrapper" id="modalBadges"></div>
-                        
                         <div id="modalGenres" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;"></div>
                         
                         <div class="modal-grid" id="modalMainGrid" style="gap: 0; padding: 0;">
-                            
                             
                             <div class="grid-item border-bottom border-right" id="modalRequesterCol">
                                 <div class="grid-label">Заказал(а)</div>
                                 <div class="grid-value" id="modalRequesterBlock" style="display: flex; flex-direction: column; align-items: flex-start;"></div>
                             </div>
+                            
                             <div class="grid-item border-bottom" id="modalStatusCol">
                                 <div class="grid-label">Статус</div>
                                 <div id="modalStatusLabel"></div>
                             </div>
-                            
-                           
-                            <div class="grid-item border-bottom" id="modalTagsColumn" style="grid-row: span 2; display: none; padding-left: 25px;">
-                                <div class="grid-label">Отметки</div>
-                                <div id="modalTagsBlock" style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px;"></div>
-                            </div>
 
-                            
                             <div class="grid-item border-bottom border-right" id="modalDateReqCol">
-                                <div class="grid-label">День заказа</div>
+                                <div class="grid-label">Добавлено в вишлист</div>
                                 <div id="modalDateReq"></div>
                             </div>
+                            
                             <div class="grid-item border-bottom" id="modalDateWatchedCol">
-                                <div class="grid-label" id="modalWatchedLabel">День прохождения</div>
-                                <div id="modalDateWatched"></div>
+                                <div class="grid-label" id="modalWatchedLabel">Разработчик / Издатель</div>
+                                <div class="grid-value" id="modalStudios" style="color: var(--text-muted); font-weight: normal; margin-top: 4px;">Архив скрыт</div>
                             </div>
 
-
-
-							<!-- БЛОК ЦЕН С ДИНАМИЧЕСКИМ ПОКАЗОМ ПОДСКАЗКИ -->
-                            <div class="grid-item full-width border-bottom" id="modalPriceCol">
+                            <!-- БЛОК ЦЕН С ДИНАМИЧЕСКИМ ПОКАЗОМ ПОДСКАЗКИ -->
+                            <div class="grid-item full-width" id="modalPriceCol" style="border-bottom: none;">
                                 <div style="display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; width: 100%;">
-                                    
-                                    <!-- Верхняя часть: Цены и динамическая подсказка -->
                                     <div style="display: flex; flex-direction: column; align-items: center;">
                                         <div class="grid-label" style="margin-bottom: 6px;">
                                             Цены <span style="text-transform: none; opacity: 0.6; font-size: 10px; font-weight: 600;">(обновлено <span id="modalDatePrice"></span>)</span>
                                         </div>
-                                        <div class="grid-value" id="modalPrice" style="color: var(--mint-light); font-size: 16px; font-weight: 900; letter-spacing: 0.5px;"></div>
+                                        <div class="grid-value" id="modalPrice" style="color: var(--text-main); font-size: 16px; font-weight: 900; letter-spacing: 0.5px;"></div>
                                         
                                         <!-- Подсказка видна только если есть знак ~ -->
                                         <div id="priceNotice" style="font-size: 11px; color: var(--text-muted); margin-top: 6px; font-weight: 600; display: none;">
-                                            <span style="color: var(--cute-pink);">*</span> Знак <span style="color: var(--accent-main); font-weight: 900; font-size: 13px;">~</span> означает, что товара в этом регионе нет (конвертация по курсу)
+                                            <span style="color: var(--accent-light);">*</span> Знак <span style="color: var(--accent-main); font-weight: 900; font-size: 13px;">~</span> означает, что товара в этом регионе нет (конвертация по курсу)
                                         </div>
                                     </div>
 
-                                    <!-- Нижняя часть: Блок копирования команды -->
-                                    <div style="display: flex; align-items: center; justify-content: center; gap: 12px; background: rgba(19, 15, 28, 0.6); border: 1px dashed rgba(92, 242, 138, 0.3); padding: 8px 16px; border-radius: 12px; width: fit-content; max-width: 100%;">
+                                    <div style="display: flex; align-items: center; justify-content: center; gap: 12px; background: rgba(3, 6, 36, 0.8); border: 1px dashed rgba(254, 0, 0, 0.4); padding: 8px 16px; border-radius: 2px; width: fit-content; max-width: 100%;">
                                         <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
                                             <span style="font-size: 9px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">
                                                 Команда обновления цен <span style="color: var(--warm-star); opacity: 0.9;">(писать в ЧАТ | Только для модераторов)</span>
                                             </span>
-                                            <code id="modalUpdateCmd" style="font-family: monospace; font-size: 13px; color: var(--mint-main); font-weight: bold;"></code>
+                                            <code id="modalUpdateCmd" style="font-family: monospace; font-size: 13px; color: var(--accent-main); font-weight: bold;"></code>
                                         </div>
-                                        <button class="copy-btn" id="modalPriceCopyBtn" onclick="copyUpdateCmdFromModal(this)" style="padding: 8px; margin: 0; position: static; opacity: 1; transform: scale(1); border-radius: 8px;" title="Скопировать команду">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                                        <button class="copy-btn" id="modalPriceCopyBtn" onclick="copyUpdateCmdFromModal(this)" style="padding: 8px; margin: 0; position: static; opacity: 1; transform: scale(1); border-radius: 2px;" title="Скопировать команду">
+                                            <svg class="icon-3d-effect" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                                         </button>
                                     </div>
                                 </div>
                             </div>
-
-
-
                             
-                            <div class="grid-item full-width" style="border-bottom: none;">
-                                <div class="grid-label">Разработчик / Издатель</div>
-                                <div class="grid-value" id="modalStudios" style="color: var(--text-muted); font-weight: normal; margin-top: 4px;">Архив скрыт</div>
-                            </div>
-
                         </div>
 
-                        
                         <div class="modal-overview-container">
                             <div class="modal-overview-label">Описание</div>
                             <div class="modal-overview" id="modalOverview">Описание игры...</div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -715,9 +615,8 @@
     let rawMoviesData = []; 
     let currentViewData = []; 
     let currentModalMovie = null; 
-    let viewMode = localStorage.getItem('siteViewModeGames') || 'grid'; 
+    let viewMode = localStorage.getItem('siteViewModeWishlist2') || 'grid'; 
 
-    
     const fallbackPosterUrl = "data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='750' viewBox='0 0 500 750'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230C1E5B'/%3E%3Cstop offset='100%25' stop-color='%23030624'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='500' height='750' fill='url(%23bg)'/%3E%3Cg transform='translate(0, -30)'%3E%3Cpath d='M150 400 c0-50 40-90 90-90 h20 c50 0 90 40 90 90 v20 c0 30 15 50 30 70 l10 15 c15 20 0 45-20 45 h-30 c-20 0-30-10-35-30 l-5-20 h-100 l-5 20 c-5 20-15 30-35 30 h-30 c-20 0-35-25-20-45 l10-15 c15-20 30-40 30-70 v-20 z' fill='%23030624' stroke='%23fe0000' stroke-width='6' stroke-linejoin='round'/%3E%3Cpath d='M180 390 h20 v-20 h20 v20 h20 v20 h-20 v20 h-20 v-20 h-20 z' fill='%230C1E5B'/%3E%3Ccircle cx='210' cy='400' r='3' fill='%23fe0000'/%3E%3Ccircle cx='330' cy='380' r='14' fill='%23ff4d4d'/%3E%3Ccircle cx='360' cy='410' r='14' fill='%23fce8a1'/%3E%3Crect x='235' y='395' width='30' height='10' rx='5' fill='%230C1E5B'/%3E%3C/g%3E%3C/svg%3E";
     const fallbackBackdropUrl = "data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='320' viewBox='0 0 1000 320'%3E%3Cdefs%3E%3ClinearGradient id='bgH' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230C1E5B'/%3E%3Cstop offset='100%25' stop-color='%23030624'/%3E%3C/linearGradient%3E%3Cpattern id='grid' width='60' height='60' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 60 0 L 0 0 0 60' fill='none' stroke='%23fe0000' stroke-width='1' opacity='0.05'/%3E%3C/pattern%3E%3Cpattern id='dots' width='20' height='20' patternUnits='userSpaceOnUse'%3E%3Ccircle cx='2' cy='2' r='1' fill='%23fce8a1' opacity='0.1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='1000' height='320' fill='url(%23bgH)'/%3E%3Crect width='1000' height='320' fill='url(%23grid)'/%3E%3Crect width='1000' height='320' fill='url(%23dots)'/%3E%3Cg transform='translate(500, 160) scale(1.5)'%3E%3Cpath d='M-50,0 C-50,-20 -30,-40 0,-40 C30,-40 50,-20 50,0 C50,20 40,30 25,30 C15,30 10,20 0,20 C-10,20 -15,30 -25,30 C-40,30 -50,20 -50,0 Z' fill='%23741511' stroke='%23fe0000' stroke-width='3' opacity='0.8'/%3E%3Cpath d='M-30,-5 h5 v-5 h5 v5 h5 v5 h-5 v5 h-5 v-5 h-5 z' fill='%230C1E5B' opacity='0.9'/%3E%3Ccircle cx='20' cy='-5' r='3' fill='%23ff4d4d' opacity='0.9'/%3E%3Ccircle cx='30' cy='5' r='3' fill='%23fce8a1' opacity='0.9'/%3E%3C/g%3E%3C/svg%3E";
 
@@ -731,15 +630,7 @@
         return String(str).replace(/[&<>'"]/g, tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag]));
     }
 
-    function formatDifficulty(diff) {
-        if (!diff) return '';
-        if (diff === 'Легкая') return 'На лёгком';
-        if (diff === 'Средняя') return 'На среднем';
-        if (diff === 'Сложная') return 'На сложном';
-        return escapeHTML(diff);
-    }
-
-    const savedSortMode = localStorage.getItem('gameSortMode');
+    const savedSortMode = localStorage.getItem('wishlistSortMode2');
     if (savedSortMode) document.getElementById('sortSelect').value = savedSortMode;
 
     function updateToggleButton() {
@@ -753,7 +644,7 @@
 
     function toggleViewMode() {
         viewMode = viewMode === 'list' ? 'grid' : 'list';
-        localStorage.setItem('siteViewModeGames', viewMode);
+        localStorage.setItem('siteViewModeWishlist2', viewMode);
         updateToggleButton();
         renderView();
     }
@@ -775,13 +666,11 @@
         event.stopPropagation();
         copyTextToClipboard(`${title} ${year}`, btnElement);
     }
-	
+    
     function copyMovieNameFromModal() {
         if (currentModalMovie) copyTextToClipboard(`${currentModalMovie.title || ''} ${currentModalMovie.year || ''}`, document.getElementById('modalCopyBtn'));
     }
-	
-
-    // НОВАЯ ФУНКЦИЯ ДЛЯ КОПИРОВАНИЯ КОМАНДЫ ДАННЫХ
+    
     function copyUpdateCmdFromModal(btnElement) {
         if (currentModalMovie) {
             const title = (currentModalMovie.title || '').trim();
@@ -791,8 +680,6 @@
             copyTextToClipboard(cmd, btnElement);
         }
     }
-	
-	
 
     async function loadCreatorAvatars() {
         try {
@@ -813,37 +700,6 @@
     }
     loadCreatorAvatars();
 
-    function stringToColor(str) {
-        let hash = 0;
-        for (let i = 0; i < str.length; i++) hash = str.charCodeAt(i) + ((hash << 5) - hash);
-        return `hsl(${Math.abs(hash) % 360}, 70%, 75%)`;
-    }
-    
-    function getRatingColor(rating) {
-        if (!rating) return 'var(--accent-main)';
-        const r = parseFloat(rating);
-        if (isNaN(r)) return 'var(--accent-main)';
-        
-        
-        const rounded = Math.round(r);
-
-        
-        if (rounded >= 10) return '#00d708'; 
-        if (rounded === 9) return '#32cd32'; 
-        if (rounded === 8) return '#80ff00'; 
-        if (rounded === 7) return '#ccff00'; 
-        if (rounded === 6) return '#ffff00'; 
-        if (rounded === 5) return '#ffcc00'; 
-        if (rounded === 4) return '#ffa500'; 
-        if (rounded === 3) return '#ff7300'; 
-        if (rounded === 2) return '#ff4500'; 
-        if (rounded <= 1)  return '#ff1f1f'; 
-        
-        return 'var(--accent-main)';
-    }
-
-    function getInitials(name) { return (name || '??').replace('@', '').trim().substring(0, 1).toUpperCase(); }
-
     function parseDateObj(dateStr) {
         if (!dateStr || typeof dateStr !== 'string') return 0;
         const cleanDate = dateStr.split(' ')[0];
@@ -855,144 +711,62 @@
     async function loadMovies() {
         const renderArea = document.getElementById('render-area');
         try {
-            const response = await fetch('RequestedGames.json?t=' + new Date().getTime());
+            // 1. Берем правильный файл Wishlist.json
+            const response = await fetch('Wishlist.json?t=' + new Date().getTime());
             if (!response.ok) throw new Error();
             const data = await response.json();
             rawMoviesData = [];
             
+            // 2. Читаем его напрямую как чистый массив
             if (Array.isArray(data)) {
                 data.forEach(movie => {
                     const cleanReq = movie.dateRequested ? movie.dateRequested.split(' ')[0] : '';
-                    const cleanWatch = movie.dateWatched ? movie.dateWatched.split(' ')[0] : '';
-                    rawMoviesData.push({ ...movie, requestedBy: movie.requestedBy || 'Аноним', dateRequested: cleanReq, dateWatched: cleanWatch, parsedDate: parseDateObj(movie.dateRequested) });
+                    rawMoviesData.push({ ...movie, dateRequested: cleanReq, parsedDate: parseDateObj(movie.dateRequested) });
                 });
-            } else if (typeof data === 'object' && data !== null) {
-                for (const user in data) {
-                    if (user === "_metadata_" || user === "_wishlist_") continue; 
-                    if (Array.isArray(data[user])) {
-                        data[user].forEach(movie => {
-                            const cleanReq = movie.dateRequested ? movie.dateRequested.split(' ')[0] : '';
-                            const cleanWatch = movie.dateWatched ? movie.dateWatched.split(' ')[0] : '';
-                            rawMoviesData.push({ ...movie, requestedBy: user, dateRequested: cleanReq, dateWatched: cleanWatch, parsedDate: parseDateObj(movie.dateRequested) });
-                        });
-                    }
-                }
             }
-            populateUserFilter(); 
             updateToggleButton();
             applyFilters();
         } catch (error) {
-            renderArea.innerHTML = `<div style="text-align: center; padding: 60px; color: var(--accent-main); font-family: var(--font-title); font-weight: 700; font-size: 24px; text-transform: uppercase;">Игровые архивы пока недоступны (Ошибка)</div>`;
+            renderArea.innerHTML = `<div style="text-align: center; padding: 60px; color: var(--cute-pink); font-family: var(--font-text); font-weight: 700; font-size: 20px;">Вишлист пока недоступен (Ошибка)</div>`;
         }
-    }
-
-    function populateUserFilter() {
-        const filterEl = document.getElementById('userFilter');
-        if (!filterEl) return;
-        filterEl.innerHTML = '<option value="all">Все заказчики</option>';
-        const uniqueUsers = [...new Set(rawMoviesData.map(m => m.requestedBy))].sort((a, b) => a.localeCompare(b, undefined, {sensitivity: 'base'}));
-        uniqueUsers.forEach(u => {
-            const opt = document.createElement('option'); opt.value = u.toLowerCase(); opt.textContent = `✦ ${u.replace('@', '').trim()}`; filterEl.appendChild(opt);
-        });
     }
 
     function applyFilters() {
         const searchQuery = document.getElementById('searchInput').value.toLowerCase();
         let sortMode = document.getElementById('sortSelect').value;
-        const userFilterVal = document.getElementById('userFilter').value;
-        localStorage.setItem('gameSortMode', sortMode);
+        localStorage.setItem('wishlistSortMode2', sortMode);
         
-        if (sortMode === 'oldest') sortMode = 'order';
-
         let filtered = [...rawMoviesData];
-        if (userFilterVal !== 'all') filtered = filtered.filter(m => m.requestedBy.toLowerCase() === userFilterVal);
-        if (searchQuery.trim() !== '') filtered = filtered.filter(m => (m.title && m.title.toLowerCase().includes(searchQuery)) || (m.requestedBy && m.requestedBy.toLowerCase().includes(searchQuery)));
-
-        const orderSortFn = (a, b) => {
-            const getPriority = (status) => {
-                if (status === 'Играем') return 1;
-                if (status === 'В очереди') return 2;
-                return 3; 
-            };
-            const priorityA = getPriority(a.status);
-            const priorityB = getPriority(b.status);
-            
-            if (priorityA !== priorityB) return priorityA - priorityB;
-            
-            if (priorityA === 1 || priorityA === 2) {
-                return a.parsedDate - b.parsedDate;
-            }
-            
-            if (priorityA === 3) {
-                const parsedWatchA = parseDateObj(a.dateWatched);
-                const parsedWatchB = parseDateObj(b.dateWatched);
-                if (parsedWatchA !== parsedWatchB) return parsedWatchB - parsedWatchA;
-                return b.parsedDate - a.parsedDate; 
-            }
-            return 0;
-        };
-
-        const watchedDescSortFn = (a, b) => {
-            const watchA = parseDateObj(a.dateWatched);
-            const watchB = parseDateObj(b.dateWatched);
-            if (watchA !== watchB) return watchB - watchA;
-            return b.parsedDate - a.parsedDate;
-        };
-
-        if (sortMode === 'waiting') { 
-            filtered = filtered.filter(m => m.status === 'В очереди' || m.status === 'Играем').sort(orderSortFn); 
-        } 
-        else if (sortMode === 'watched') { 
-            filtered = filtered.filter(m => m.status === 'Пройдено' || m.status === 'Брошено' || m.status === 'Бросила').sort(watchedDescSortFn); 
+        if (searchQuery.trim() !== '') {
+            filtered = filtered.filter(m => m.title && m.title.toLowerCase().includes(searchQuery));
         }
-        else if (sortMode === 'tried') { 
-            filtered = filtered.filter(m => m.status === 'Попробовала').sort(watchedDescSortFn); 
-        }
-        else if (sortMode === 'auction') { 
-            filtered = filtered.filter(m => m.isAuction === true).sort(orderSortFn); 
-        }
-        else if (sortMode === 'cried') { 
-            filtered = filtered.filter(m => m.cried === true).sort(watchedDescSortFn); 
-        }
-        else if (sortMode === 'burned') { 
-            filtered = filtered.filter(m => m.burned === true).sort(watchedDescSortFn); 
-        }
-        else if (sortMode === 'newest') { 
-            filtered.sort((a, b) => b.parsedDate - a.parsedDate); 
-        }
-        else if (sortMode === 'date_asc') { 
-            filtered.sort((a, b) => a.parsedDate - b.parsedDate); 
-        }
-        else { 
-            filtered.sort(orderSortFn);
+        
+        if (sortMode === 'newest') {
+            filtered.sort((a, b) => b.parsedDate - a.parsedDate);
+        } else {
+            filtered.sort((a, b) => a.parsedDate - b.parsedDate);
         }
         
         currentViewData = filtered; 
         renderView();
     }
 
-    	
-	function renderView() {
-		const renderArea = document.getElementById('render-area');
-		renderArea.innerHTML = '';
+    function renderView() {
+        const renderArea = document.getElementById('render-area');
+        renderArea.innerHTML = '';
     
-		if (currentViewData.length === 0) {
-			renderArea.innerHTML = '<div style="text-align: center; padding: 60px; font-size: 24px; font-family: var(--font-title); color: var(--text-muted); text-transform: uppercase;">✦ Архив пуст ✦</div>';
-			return;
-		}
+        if (currentViewData.length === 0) {
+            renderArea.innerHTML = '<div style="text-align: center; padding: 60px; font-size: 24px; font-family: var(--font-title); color: var(--text-muted); text-transform: uppercase;">✦ Вишлист пуст ✦</div>';
+            return;
+        }
 
-		
-		if (window.innerWidth <= 768) {
-			renderGridMode(renderArea);
-		} else {
-			
-			if (viewMode === 'list') renderTableMode(renderArea);
-			else renderGridMode(renderArea);
-		}
-	}
-	
-	
-
+        if (window.innerWidth <= 768) {
+            renderGridMode(renderArea);
+        } else {
+            if (viewMode === 'list') renderTableMode(renderArea);
+            else renderGridMode(renderArea);
+        }
+    }
     
     function renderTableMode(renderArea) {
         let tableHTML = `
@@ -1010,70 +784,19 @@
             </table>`;
         renderArea.innerHTML = tableHTML;
         const tbody = document.getElementById('table-body');
-        const sortMode = document.getElementById('sortSelect').value;
 
         currentViewData.forEach((movie, index) => {
-            
-            if (sortMode === 'order' && index > 0) {
-                const prevStatus = currentViewData[index - 1].status;
-                const currStatus = movie.status;
-                const getGroup = (s) => (s === 'Играем' || s === 'В очереди' ? 1 : 2);
-                
-                if (getGroup(prevStatus) !== getGroup(currStatus)) {
-                    const dividerTr = document.createElement('tr');
-                    dividerTr.innerHTML = `
-                        <td colspan="5" style="padding: 30px 15px; cursor: default; border-bottom: 1px solid rgba(254, 0, 0, 0.3);">
-                            <div style="display: flex; align-items: center; justify-content: center;">
-                                <div style="flex-grow: 1; height: 2px; background: linear-gradient(to right, transparent, var(--accent-main)); opacity: 0.5;"></div>
-                                <span style="padding: 0 20px; font-family: var(--font-title); font-size: 24px; font-weight: 700; color: #ffffff; text-shadow: 0 0 15px rgba(254, 0, 0, 0.8); text-transform: uppercase; letter-spacing: 2px;">✦ Пройдено / Брошено ✦</span>
-                                <div style="flex-grow: 1; height: 2px; background: linear-gradient(to left, transparent, var(--accent-main)); opacity: 0.5;"></div>
-                            </div>
-                        </td>`;
-                    tbody.appendChild(dividerTr);
-                }
-            }
-
-            const cleanNick = movie.requestedBy.replace('@', '').trim();
             const tr = document.createElement('tr');
             tr.className = 'movie-row';
             tr.onclick = () => openModal(index); 
             
             const validAltPoster = (movie.altPoster && typeof movie.altPoster === 'string' && movie.altPoster.trim() !== '') ? movie.altPoster : null;
             const posterUrl = getSafePoster(validAltPoster || movie.poster);
-			
-			
-            const isWatched = movie.status === "Пройдено";
-            const isDropped = movie.status === "Бросила" || movie.status === "Брошено";
-            const isPlaying = movie.status === "Играем";
-            const isTried = movie.status === "Попробовала";
-
-            let statusText = '';
-            if (isWatched) statusText = `<span class="badge-status" style="background: var(--accent-main); color: #ffffff; border: 1px solid var(--accent-main); box-shadow: 0 0 10px rgba(254,0,0,0.3); text-transform: uppercase;">ПРОЙДЕНО</span>`;
-            else if (isDropped) statusText = `<span class="badge-status" style="background: var(--accent-dark); color: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.6);">БРОСИЛА</span>`;
-            else if (isTried) statusText = `<span class="badge-status" style="background: rgba(156, 39, 176, 0.9); color: #ffffff; border: 1px solid rgba(156, 39, 176, 0.5); box-shadow: 0 4px 15px rgba(0,0,0,0.6);">ПОПРОБОВАЛА</span>`;
-            else if (isPlaying) statusText = `<span class="badge-status" style="background: #ffd700; color: #130f1c; box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);">ИГРАЕМ</span>`;
-            else statusText = `<span class="badge-status" style="background: rgba(41, 128, 185, 0.9); color: #ffffff; border: 1px solid rgba(254, 0, 0, 0.5); box-shadow: 0 4px 15px rgba(0,0,0,0.6);">В ОЧЕРЕДИ</span>`;
             
-            let watchedDetails = '';
-            if ((isWatched || isDropped || isTried) && movie.dateWatched) {
-                watchedDetails += `<div class="date-badge" style="margin-top: 0; width: fit-content;"><span class="text-3d-effect">${movie.dateWatched.split(' ')[0]}</span></div>`;
-                if (movie.ourRating && movie.ourRating !== "Без оценки") {
-                    const parsedRating = parseFloat(movie.ourRating);
-                    if (parsedRating === 1000) watchedDetails += `<div class="date-badge legendary-table-badge" style="margin-top: 0; width: fit-content; flex-direction: column; gap: 2px; padding: 4px 14px; line-height: 1.1;"><span style="font-size: 9px; text-transform: uppercase; opacity: 0.9;">Наша Оценка:</span><span style="font-size: 14px; font-family: var(--font-title);">1000</span></div>`;
-                    else { const rColor = getRatingColor(movie.ourRating); watchedDetails += `<div class="date-badge" style="margin-top: 0; width: fit-content; color: ${rColor}; border-color: ${rColor}; box-shadow: 0 0 10px rgba(0,0,0,0.5);">Наша Оценка: ${movie.ourRating}</div>`; }
-                }
-            }
+            const statusText = `<span class="badge-status" style="background: var(--accent-main); color: #ffffff; border: 1px solid var(--accent-main); box-shadow: 0 0 10px rgba(254,0,0,0.3); text-transform: uppercase;">В ВИШЛИСТЕ</span>`;
             
-            let tagsDetails = '';
-            if (movie.cried) tagsDetails += `<div class="date-badge" style="margin-top: 0; width: fit-content; font-family: var(--font-text); font-size: 11px; color: var(--text-main); border-color: var(--accent-main);"><svg class="icon-3d-effect" width="18" height="18" viewBox="0 0 24 24" fill="var(--text-main)" stroke="var(--text-main)" stroke-width="1"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg> <span class="text-3d-effect">Слёзы</span></div>`;
-            if (movie.burned) tagsDetails += `<div class="date-badge" style="margin-top: 0; width: fit-content; font-family: var(--font-text); font-size: 11px; color: var(--accent-light); border-color: var(--accent-light); box-shadow: 0 0 10px rgba(255,77,77,0.4);"><svg class="icon-3d-effect" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg> <span class="text-3d-effect">Сгорела</span></div>`;
-            if (movie.difficulty) tagsDetails += `<div class="date-badge" style="margin-top: 0; width: fit-content; font-family: var(--font-text); font-size: 11px; color: var(--text-main); border-color: var(--text-muted);"><span class="text-3d-effect">🟡 ${formatDifficulty(movie.difficulty)}</span></div>`;
-            
-            if (tagsDetails) watchedDetails += `<div style="display:flex; gap:6px; margin-top:4px; flex-wrap: wrap; justify-content: center;">${tagsDetails}</div>`;
-            const watchedDateHTML = watchedDetails ? `<div style="display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 8px;">${watchedDetails}</div>` : '';
-
             const idBadge = `<span class="outline-badge text-3d-effect">ID №${movie.id || 0}</span>`;
-            const typeLabel = `<span class="content-type-badge text-3d-effect" style="background: var(--accent-main); color: #ffffff; border: 1px solid var(--accent-main);">${escapeHTML(movie.type || 'Игра')}</span>`;
+            const typeLabel = `<span class="content-type-badge text-3d-effect" style="background: var(--bg-deep); color: #ffffff; border: 1px solid var(--accent-main);">${escapeHTML(movie.type || 'Игра')}</span>`;
             const cleanTitle = escapeHTML(movie.title || 'Безымянный');
             const cleanOverview = escapeHTML(movie.overview || '');
             const safeTitle = (movie.title || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
@@ -1094,12 +817,7 @@
             }
             linksHTML += '</div>';
 
-            const userColor = stringToColor(cleanNick);
-            let avatarMarkup = movie.userAvatar && movie.userAvatar.startsWith('http') 
-                ? `<img src="${movie.userAvatar}" class="req-avatar" alt="">` 
-                : `<div class="req-avatar" style="background-color: var(--bg-deep); border-color: var(--accent-main); color: var(--text-main);">${getInitials(cleanNick)}</div>`;
-
-            const auctionHTML = movie.isAuction ? `<div class="date-badge" style="margin-top: 8px; color: var(--warm-star); border-color: var(--warm-star); background: rgba(3, 6, 36, 0.9); font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 900;">✦ Аукцион ✦</div>` : '';
+            let avatarMarkup = `<div class="req-avatar" style="background-color: var(--bg-deep); color: var(--accent-main); border-color: var(--accent-main);"><svg class="icon-3d-effect" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></div>`;
 
             tr.innerHTML = `
                 <td><div class="poster-wrapper"><img src="${posterUrl}" onerror="handlePosterError(this)" alt=""></div></td>
@@ -1120,81 +838,29 @@
                         <div class="movie-overview-wrapper"><div class="movie-overview-text">${cleanOverview}</div></div>
                     </div>
                 </td>
-                <td style="vertical-align: top;"><div style="display: flex; flex-direction: column; align-items: center;"><div class="requester-badge" onclick="window.open('https://twitch.tv/${cleanNick}', '_blank'); event.stopPropagation();">${avatarMarkup}<span class="req-name resize-list-username text-3d-effect" style="display: block; max-width: 115px; white-space: nowrap; overflow: hidden; text-overflow: clip;">${cleanNick}</span></div>${movie.dateRequested ? `<div class="date-badge"><span class="text-3d-effect">${movie.dateRequested.split(' ')[0]}</span></div>` : ''}${auctionHTML}</div></td>
+                <td style="vertical-align: top;"><div style="display: flex; flex-direction: column; align-items: center;"><div class="requester-badge" style="cursor: default;">${avatarMarkup}<span class="req-name text-3d-effect" style="display: block; max-width: 115px; white-space: nowrap; overflow: hidden; text-overflow: clip;">Вишлист</span></div>${movie.dateRequested ? `<div class="date-badge"><span class="text-3d-effect">${movie.dateRequested}</span></div>` : ''}</div></td>
                 <td style="vertical-align: top;"><div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">${linksHTML}</div></td>
-                <td style="vertical-align: top;"><div style="display: flex; flex-direction: column; align-items: center;">${statusText}${watchedDateHTML}</div></td>
+                <td style="vertical-align: top;"><div style="display: flex; flex-direction: column; align-items: center;">${statusText}</div></td>
             `;
             tbody.appendChild(tr);
         });
         autoResizeTitles();
     }
 
-    
     function renderGridMode(renderArea) {
         const gridContainer = document.createElement('div');
         gridContainer.className = 'movies-grid';
-        const sortMode = document.getElementById('sortSelect').value;
-        
-        const activeCount = currentViewData.filter(m => m.status === 'Играем' || m.status === 'В очереди').length;
-        const showDivider = activeCount >= 4;
 
         currentViewData.forEach((movie, index) => {
-            
-            if (sortMode === 'order' && index > 0 && showDivider) {
-                const prevStatus = currentViewData[index - 1].status;
-                const currStatus = movie.status;
-                
-                const getGroup = (s) => (s === 'Играем' || s === 'В очереди' ? 1 : 2);
-                
-                if (getGroup(prevStatus) !== getGroup(currStatus)) {
-                    const dividerDiv = document.createElement('div');
-                    dividerDiv.style.gridColumn = '1 / -1';
-                    dividerDiv.innerHTML = `
-                        <div style="width: 100%; border-top: 2px solid rgba(254, 0, 0, 0.4); margin: 15px 0;"></div>
-                        <div style="display: flex; align-items: center; justify-content: center; margin: 10px 0;">
-                            <div style="flex-grow: 1; height: 2px; background: linear-gradient(to right, transparent, var(--accent-main)); opacity: 0.6;"></div>
-                            <span style="padding: 0 20px; font-family: var(--font-title); font-size: 24px; font-weight: 700; color: #ffffff; text-shadow: 0 0 20px rgba(254, 0, 0, 0.8); text-transform: uppercase; letter-spacing: 2px;">✦ Пройдено / Брошено ✦</span>
-                            <div style="flex-grow: 1; height: 2px; background: linear-gradient(to left, transparent, var(--accent-main)); opacity: 0.6;"></div>
-                        </div>
-                        <div style="width: 100%; border-bottom: 2px solid rgba(254, 0, 0, 0.4); margin: 15px 0 25px 0;"></div>`;
-                    gridContainer.appendChild(dividerDiv);
-                }
-            }
-
-            const cleanNick = movie.requestedBy.replace('@', '').trim();
             const validAltPoster = (movie.altPoster && typeof movie.altPoster === 'string' && movie.altPoster.trim() !== '') ? movie.altPoster : null;
             const posterUrl = getSafePoster(validAltPoster || movie.poster);
             
-            const isWatched = movie.status === "Пройдено";
-            const isDropped = movie.status === "Бросила" || movie.status === "Брошено";
-            const isPlaying = movie.status === "Играем";
-            const isTried = movie.status === "Попробовала";
-            
             const cleanTitle = escapeHTML(movie.title || 'Безымянный');
             const safeTitle = (movie.title || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
-            const userColor = stringToColor(cleanNick);
             
-            let statusMarkup = '';
-            if (isWatched) statusMarkup = `<div class="card-status" style="background: var(--accent-main); color: #ffffff; border: 1px solid rgb(189 195 255 / 95%); box-shadow: 0 0 10px rgba(254,0,0,0.3); text-transform: uppercase;">Пройдено</div>`;
-            else if (isDropped) statusMarkup = `<div class="card-status" style="background: var(--accent-dark); color: #fff; text-transform: uppercase;">Бросила</div>`;
-            else if (isTried) statusMarkup = `<div class="card-status" style="background: rgba(156, 39, 176, 0.9); color: #ffffff; border: 1px solid rgb(189 195 255 / 95%); text-transform: uppercase; box-shadow: 0 5px 15px rgba(0,0,0,0.8); max-width: 55%;">Попробовала</div>`;
-            else if (isPlaying) statusMarkup = `<div class="card-status" style="background: #ffd700; color: #130f1c; text-transform: uppercase;">Играем</div>`;
-            else statusMarkup = `<div class="card-status" style="background: rgba(41, 128, 185, 0.9); color: #ffffff; border: 1px solid rgb(189 195 255 / 95%); text-transform: uppercase;">В очереди</div>`;
+            let statusMarkup = `<div class="card-status" style="background: var(--accent-main); color: #ffffff; border: 1px solid var(--accent-main); box-shadow: 0 0 10px rgba(254,0,0,0.5);">В вишлисте</div>`;
             
-            let bottomBadges = '';
-            if (movie.isAuction) bottomBadges += `<div class="card-mini-badge auction">✦ Аук ✦</div>`;
-            if (movie.cried) bottomBadges += `<div class="card-mini-badge cried"><svg class="icon-3d-effect" width="12" height="12" viewBox="0 0 24 24" fill="var(--text-main)" stroke="var(--text-main)" stroke-width="1"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg> Слёзы</div>`;
-            if (movie.burned) bottomBadges += `<div class="card-mini-badge burned"><svg class="icon-3d-effect" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg> Сгорела</div>`;
-            if (movie.difficulty) bottomBadges += `<div class="card-mini-badge" style="color: var(--text-main); border-color: rgba(255,255,255,0.3); font-size: 8px;">🟡 ${formatDifficulty(movie.difficulty)}</div>`;
-            
-            if ((isWatched || isDropped || isTried) && movie.ourRating && movie.ourRating !== "Без оценки") {
-                const rColor = getRatingColor(movie.ourRating);
-                bottomBadges += parseFloat(movie.ourRating) === 1000 
-                    ? `<div class="card-mini-badge rating legendary-badge">Оценка: 1000</div>` 
-                    : `<div class="card-mini-badge rating" style="color: ${rColor}; border-color: ${rColor}; font-size: 10px;">Оценка: ${movie.ourRating}</div>`;
-            }
-
-            let avatarMarkup = movie.userAvatar && movie.userAvatar.startsWith('http') ? `<img src="${movie.userAvatar}" class="card-user-avatar" alt="">` : `<div class="card-user-avatar" style="background-color: var(--bg-deep); color: var(--text-main);">${getInitials(cleanNick)}</div>`;
+            let avatarMarkup = `<div class="card-user-avatar" style="background-color: var(--bg-deep); color: var(--accent-main); border-color: var(--accent-main);"><svg class="icon-3d-effect" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></div>`;
 
             // === ФЛЕКС СТЕК ДЛЯ ИКОНОК СПРАВА ВНИЗУ ===
             let rightStackHTML = '<div class="card-action-stack">';
@@ -1239,7 +905,6 @@
                             <div class="card-type-badge">${escapeHTML(movie.type || 'Игра')}</div>
                             ${statusMarkup}
                         </div>
-                        <div class="card-bottom-badges">${bottomBadges}</div>
                     </div>
                 </div>
                 <div class="card-content">
@@ -1257,10 +922,10 @@
                             ${gridSteamBtn ? `<span style="color: var(--accent-main);">♦</span> ${gridSteamBtn}` : ''}
                         </div>
                         <div class="card-queue-box">
-                            <span class="card-queue-label">Заказ от</span>
+                            <span class="card-queue-label" style="color: var(--text-muted);">В списках</span>
                             <div class="card-user-info-row">
                                 ${avatarMarkup}
-                                <span class="card-queue-name resize-username text-3d-effect" style="display: block; max-width: calc(100% - 28px); font-size: 15px; font-family: var(--font-title); font-weight: 700; color: var(--text-main); letter-spacing: 1px; white-space: nowrap; overflow: hidden; text-overflow: clip;">${cleanNick}</span>
+                                <span class="card-queue-name resize-username text-3d-effect" style="display: block; max-width: calc(100% - 28px); font-size: 15px; font-family: var(--font-title); font-weight: 700; color: var(--text-main); letter-spacing: 1px; white-space: nowrap; overflow: hidden; text-overflow: clip;">Вишлист</span>
                             </div>
                         </div>
                     </div>
@@ -1273,7 +938,6 @@
         autoResizeTitles(); 
     }
 
-    
     function autoResizeTitles() {
         setTimeout(() => {
             
@@ -1348,13 +1012,10 @@
         }, 10);
     }
 
-    
-    
     window.addEventListener('resize', () => {
         autoResizeTitles();
         renderView(); 
     });
-
     
     function openModal(index) {
         const movie = currentViewData[index]; currentModalMovie = movie; 
@@ -1376,7 +1037,6 @@
             heroEl.style.backgroundImage = `url("${fallbackBackdropUrl}")`;
         }
 
-        
         const posterEl = document.getElementById('modalPoster');
         const validAltPoster = (movie.altPoster && typeof movie.altPoster === 'string' && movie.altPoster.trim() !== '') ? movie.altPoster : null;
         posterEl.src = getSafePoster(validAltPoster || movie.poster);
@@ -1411,10 +1071,9 @@
             }
         }, 10);
         
-        
         let badgesHtml = '';
         let displayType = escapeHTML(movie.type || 'Игра');
-        badgesHtml += `<span class="content-type-badge" style="background: var(--accent-main); color: #ffffff; border: none; box-shadow: 0 0 10px rgba(254,0,0,0.5); text-transform: uppercase;">${displayType}</span>`;
+        badgesHtml += `<span class="content-type-badge" style="background: var(--bg-deep); color: #ffffff; border: 1px solid var(--accent-main); box-shadow: 0 0 10px rgba(254,0,0,0.5); text-transform: uppercase;">${displayType}</span>`;
 
         badgesHtml += `<span class="outline-badge">ID №${movie.id || 0}</span>`;
         
@@ -1436,7 +1095,6 @@
         }
 
         document.getElementById('modalBadges').innerHTML = badgesHtml;
-        
         
         let genresHtml = '';
         if (movie.genres && movie.genres !== "Нет данных") {
@@ -1460,97 +1118,11 @@
         
         const dateWatchedEl = document.getElementById('modalDateWatched');
         
-        const isWatched = movie.status === "Пройдено";
-        const isDropped = movie.status === "Бросила" || movie.status === "Брошено";
-        const isPlaying = movie.status === "Играем";
-        const isTried = movie.status === "Попробовала";
-        
-        if (isDropped) {
-            document.getElementById('modalWatchedLabel').innerText = 'День когда бросила';
-        } else if (isTried) {
-            document.getElementById('modalWatchedLabel').innerText = 'День когда попробовала';
-        } else {
-            document.getElementById('modalWatchedLabel').innerText = 'День прохождения';
-        }
-        
-        let statusTextHTML = '';
-        if (isWatched) {
-            statusTextHTML = `<span class="badge-status" style="margin:0; padding:6px 12px; font-size: 14px; background: var(--accent-main); color: #ffffff; border: 1px solid var(--accent-main); box-shadow: 0 0 10px rgba(254,0,0,0.5); text-transform: uppercase;">ПРОЙДЕНО</span>`;
-        } else if (isDropped) {
-            statusTextHTML = `<span class="badge-status" style="background: var(--accent-dark); color: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.6); margin:0; padding:6px 12px; font-size: 14px; border: 1px solid var(--accent-dark);">БРОСИЛА</span>`;
-        } else if (isTried) {
-            statusTextHTML = `<span class="badge-status" style="background: rgba(156, 39, 176, 0.9); color: #ffffff; border: 1px solid rgba(156, 39, 176, 0.5); box-shadow: 0 4px 15px rgba(0,0,0,0.6); margin:0; padding:6px 12px; font-size: 14px; text-transform: uppercase;">ПОПРОБОВАЛА</span>`;
-        } else if (isPlaying) {
-            statusTextHTML = `<span class="badge-status" style="background: #ffd700; color: #130f1c; box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4); margin:0; padding:6px 12px; font-size: 14px; text-transform: uppercase;">ИГРАЕМ</span>`;
-        } else {
-            statusTextHTML = `<span class="badge-status" style="background: rgba(12, 30, 91, 0.9); color: #ffffff; border: 1px solid rgba(254, 0, 0, 0.5); box-shadow: 0 4px 15px rgba(0,0,0,0.6); margin:0; padding:6px 12px; font-size: 14px; text-transform: uppercase;">В ОЧЕРЕДИ</span>`;
-        }
-        document.getElementById('modalStatusLabel').innerHTML = statusTextHTML;
-        
-        let watchedHtml = '';
-        if (isPlaying) {
-            watchedHtml = `<div class="modal-grid-box" style="margin-top: 0; background: rgba(3, 6, 36, 0.9); border-color: rgba(254, 0, 0, 0.3); color: #ffd700;">В процессе...</div>`;
-        } else if ((isWatched || isDropped || isTried) && movie.dateWatched) {
-            watchedHtml = `<div class="modal-grid-box" style="margin-top: 0;">${movie.dateWatched.split(' ')[0]}</div>`;
-        } else {
-            watchedHtml = `<div class="modal-grid-box" style="background: rgba(254,0,0,0.1); border-color: transparent; margin-top: 0;">Еще в очереди</div>`;
-        }
-        dateWatchedEl.innerHTML = `<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px;">${watchedHtml}</div>`;
-        
-        
-        const tagsBlock = document.getElementById('modalTagsBlock');
-        const modalMainGrid = document.getElementById('modalMainGrid');
-        const statusCol = document.getElementById('modalStatusCol');
-        const dateWatchedCol = document.getElementById('modalDateWatchedCol');
-        let tagsHtml = '';
+        document.getElementById('modalStatusLabel').innerHTML = `<span class="badge-status" style="margin:0; padding:6px 12px; font-size: 14px; background: var(--accent-main); color: #ffffff; border: 1px solid var(--accent-main); box-shadow: 0 0 10px rgba(254,0,0,0.5); text-transform: uppercase;">В ВИШЛИСТЕ</span>`;
 
-        if ((isWatched || isDropped || isTried) && movie.ourRating && movie.ourRating !== "Без оценки") {
-             const parsedRating = parseFloat(movie.ourRating);
-             if (parsedRating === 1000) {
-                 tagsHtml += `<div class="modal-grid-box legendary-badge" style="margin-top: 0; flex-direction: column; gap: 2px; padding: 4px 16px; line-height: 1.1;"><span style="font-size: 10px; text-transform: uppercase; opacity: 0.9;">Наша Оценка:</span><span style="font-size: 16px; font-family: var(--font-title);">1000</span></div>`;
-             } else {
-                 const rColor = getRatingColor(movie.ourRating);
-                 tagsHtml += `<div class="modal-grid-box" style="margin-top: 0; color: ${rColor}; border-color: ${rColor}; padding: 6px 8px; ">Наша Оценка: ${movie.ourRating}</div>`;
-             }
-        }
-        if (movie.cried) {
-            tagsHtml += `<div class="modal-grid-box" style="margin-top: 0; color: var(--text-main); border-color: var(--accent-main); padding: 5px 11px;"><svg class="icon-3d-effect" width="16" height="16" viewBox="0 0 24 24" fill="var(--text-main)" stroke="var(--text-main)" stroke-width="1" style="margin-right: 4px;"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg> СЛЁЗЫ</div>`;
-        }
-        if (movie.burned) {
-            tagsHtml += `<div class="modal-grid-box" style="margin-top: 0; color: var(--accent-light); border-color: var(--accent-light); padding: 5px 11px;"><svg class="icon-3d-effect" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" style="margin-right:4px;"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg> СГОРЕЛА</div>`;
-        }
-        if (movie.difficulty) {
-            tagsHtml += `<div class="modal-grid-box" style="margin-top: 0; color: var(--text-main); border-color: rgba(255,255,255,0.3); padding: 5px 11px;"><span class="text-3d-effect">🟡 ${formatDifficulty(movie.difficulty)}</span></div>`;
-        }
-        
-        const tagsCol = document.getElementById('modalTagsColumn');
-        if (tagsHtml === '') {
-            tagsCol.style.display = 'none';
-            modalMainGrid.classList.remove('has-tags');
-            statusCol.classList.remove('border-right');
-            dateWatchedCol.classList.remove('border-right');
-        } else {
-            tagsCol.style.display = 'flex';
-            tagsBlock.innerHTML = tagsHtml;
-            modalMainGrid.classList.add('has-tags');
-            statusCol.classList.add('border-right');
-            dateWatchedCol.classList.add('border-right');
-        }
+        let avatarMarkup = `<div class="req-avatar" style="width:32px; height:32px; font-size:16px; border-width:2px; background-color: var(--bg-deep); border-color: var(--accent-main); border-radius:2px; display:flex; align-items:center; justify-content:center; margin-right:10px; color:var(--text-main); font-weight:800;"><svg class="icon-3d-effect" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></div>`;
+        document.getElementById('modalRequesterBlock').innerHTML = `<div class="modal-requester-link hover-active" style="display:flex; align-items:center; margin-bottom: 8px; cursor: default;">${avatarMarkup}<span class="name-text text-3d-effect">Вишлист</span></div>`;
 
-        const cleanNick = movie.requestedBy.replace('@', '').trim();
-        const userColor = stringToColor(cleanNick);
-        let avatarMarkup = movie.userAvatar && movie.userAvatar.startsWith('http') 
-            ? `<img src="${movie.userAvatar}" class="req-avatar" style="width:32px; height:32px; border-width:2px; border-radius:2px; object-fit:cover; margin-right:10px;" alt="">` 
-            : `<div class="req-avatar" style="width:32px; height:32px; font-size:16px; font-family: var(--font-title); border-width:2px; background-color: var(--bg-deep); border-color: var(--accent-main); border-radius:2px; display:flex; align-items:center; justify-content:center; margin-right:10px; color:var(--text-main); font-weight:800;">${getInitials(cleanNick)}</div>`;
-            
-        let reqInner = `<div class="modal-requester-link hover-active" onclick="window.open('https://twitch.tv/${cleanNick}', '_blank')" style="display:flex; align-items:center; margin-bottom: 8px;">${avatarMarkup}<span class="name-text">${cleanNick}</span></div>`;
-        if (movie.isAuction) {
-            reqInner += `<div class="modal-grid-box" style="margin-top: 0; margin-bottom: 6px; color: var(--warm-star); border-color: var(--warm-star); background: rgba(3, 6, 36, 0.9); font-size: 13px; text-transform: uppercase; letter-spacing: 2px; font-weight: 900;">✦ Аукцион ✦</div>`;
-        }
-        
-        document.getElementById('modalRequesterBlock').innerHTML = reqInner;
-        
-        
         // ЗАПОЛНЯЕМ БЛОК С ЦЕНАМИ И КОМАНДОЙ
         const datePriceEl = document.getElementById('modalDatePrice');
         const priceEl = document.getElementById('modalPrice');
@@ -1562,7 +1134,6 @@
         const priceText = movie.price && movie.price !== "Неизвестно" ? movie.price : "Цена не найдена / Скрыта";
         priceEl.textContent = priceText;
 
-        // ПРОВЕРКА НА ЗНАК ~ (если есть, показываем подсказку, если нет — скрываем)
         if (priceText.includes('~')) {
             priceNoticeEl.style.display = 'block';
         } else {
