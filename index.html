@@ -1055,18 +1055,18 @@
 					
 					<div style="width: 100%; border-bottom: 1px solid rgba(254, 0, 0, 0.25); margin: 5px 0 8px 0;"></div>
 
-                    <!-- Год и Стим теперь прижаты наверх (мы убрали обертку margin-top: auto) -->
+                    
                     <div class="card-date-meta" style="display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 6px;">
                         <span class="text-3d-effect">${movie.year || '----'}</span>
                         ${gridSteamBtn ? `<span style="color: var(--accent-main);">♦</span> ${gridSteamBtn}` : ''}
                     </div>
                     
-                    <!-- Блок с ценами теперь забирает всё пустое место (добавили flex-grow: 1; align-items: stretch;) -->
+                    
                     <div class="card-price-box" style="flex-grow: 1; align-items: stretch; margin: 4px 0 12px 0;">
                         ${priceBadgesMarkup}
                     </div>
                     
-                    <!-- Кнопки донатов -->
+                    
                     <div class="donate-buttons-grid">
                         <a href="https://www.donationalerts.com/r/sarachuma" target="_blank" class="don-btn da-btn" onclick="event.stopPropagation();" title="Донат через DonationAlerts">
                             <svg width="20" height="20" viewBox="0 0 69 80" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
