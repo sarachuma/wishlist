@@ -19,7 +19,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "http://www.thelongdark.com",
-    "dlcCount": "5"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 1215940,
@@ -41,7 +42,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "https://forever-ago.com/",
-    "dlcCount": "0"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 1808680,
@@ -50,7 +52,7 @@
     "status": "В вишлисте",
     "steamAppId": "1808680",
     "poster": "https://cdn.cloudflare.steamstatic.com/steam/apps/1808680/library_600x900_2x.jpg",
-    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1808680/page_bg_raw.jpg?t=1787132437",
+    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1808680/page_bg_raw.jpg?t=1787569783",
     "dateRequested": "09.01.2026",
     "year": "2024",
     "price": "$10,49 / 710 ₽ / 415 ₴ / 5 200 ₸",
@@ -63,7 +65,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "https://snufkin.game/",
-    "dlcCount": "4"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 1846700,
@@ -72,7 +75,7 @@
     "status": "В вишлисте",
     "steamAppId": "1846700",
     "poster": "https://cdn.cloudflare.steamstatic.com/steam/apps/1846700/library_600x900_2x.jpg",
-    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1846700/ead93eea28f293d2ef4e652cf4b79a31edbe9cae/page_bg_raw.jpg?t=1786550629",
+    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1846700/ead93eea28f293d2ef4e652cf4b79a31edbe9cae/page_bg_raw.jpg?t=1787800420",
     "dateRequested": "05.01.2026",
     "year": "2026",
     "price": "Неизвестно",
@@ -85,7 +88,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "https://witchbrook.com",
-    "dlcCount": "0"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 2057760,
@@ -97,7 +101,7 @@
     "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2057760/692a919105a5fcce2ee1f2b5dc795ab48f097946/page_bg_raw.jpg?t=1786087309",
     "dateRequested": "03.04.2026",
     "year": "2026",
-    "price": "$9,99 / 704 ₽ / 412 ₴ / 5 120 ₸",
+    "price": "$12,49 / 880 ₽ / 515 ₴ / 6 400 ₸",
     "isFree": "false",
     "studios": "Christoffer Bodegård (Изд: Raw Fury)",
     "genres": "Инди, Ролевые игры",
@@ -107,7 +111,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "https://esotericebb.com/",
-    "dlcCount": "2"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 2071280,
@@ -119,7 +124,7 @@
     "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2071280/page_bg_raw.jpg?t=1782466354",
     "dateRequested": "22.12.2025",
     "year": "2024",
-    "price": "$19,99 / 999 ₽ / 460 ₴ / 7 600 ₸",
+    "price": "$9,99 / 499 ₽ / 230 ₴ / 3 800 ₸",
     "isFree": "false",
     "studios": "Passtech Games (Изд: Nacon)",
     "genres": "Экшены, Приключенческие игры",
@@ -129,7 +134,8 @@
     "metacriticScore": "84",
     "metacriticUrl": "https://www.metacritic.com/game/pc/ravenswatch?ftag=MCD-06-10aaa1f",
     "website": "",
-    "dlcCount": "11"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 2100020,
@@ -138,10 +144,10 @@
     "status": "В вишлисте",
     "steamAppId": "2100020",
     "poster": "https://cdn.cloudflare.steamstatic.com/steam/apps/2100020/library_600x900_2x.jpg",
-    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2100020/b61c0632ee215e3e38be9c06b75872341c7b6be3/page_bg_raw.jpg?t=1787218507",
+    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2100020/b61c0632ee215e3e38be9c06b75872341c7b6be3/page_bg_raw.jpg?t=1787839211",
     "dateRequested": "16.06.2026",
     "year": "2026",
-    "price": "Неизвестно",
+    "price": "$14,84 / 1 305 ₽ / 648 ₴ / 7 191 ₸",
     "isFree": "false",
     "studios": "Tiny Roar (Изд: Megabit Publishing, rokaplay)",
     "genres": "Приключенческие игры, Симуляторы",
@@ -151,7 +157,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "https://megabit-publishing.com/games/lous-lagoon",
-    "dlcCount": "1"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 2174380,
@@ -163,7 +170,7 @@
     "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2174380/15fe1fdb02474933a8b59b49470270df2522c90e/page_bg_raw.jpg?t=1781251770",
     "dateRequested": "01.06.2026",
     "year": "2026",
-    "price": "$12,49 / 880 ₽ / 415 ₴ / 6 400 ₸",
+    "price": "$8,74 / 616 ₽ / 290 ₴ / 4 480 ₸",
     "isFree": "false",
     "studios": "Out of the Blue Games (Изд: Kwalee)",
     "genres": "Приключенческие игры, Инди",
@@ -173,7 +180,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "",
-    "dlcCount": "2"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 2211170,
@@ -182,7 +190,7 @@
     "status": "В вишлисте",
     "steamAppId": "2211170",
     "poster": "https://cdn.cloudflare.steamstatic.com/steam/apps/2211170/library_600x900_2x.jpg",
-    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2211170/page_bg_raw.jpg?t=1787231926",
+    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2211170/page_bg_raw.jpg?t=1787652856",
     "dateRequested": "05.03.2026",
     "year": "2026",
     "price": "$10,99 / 1 100 ₽ / 455 ₴ / 5 400 ₸",
@@ -195,7 +203,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "https://unrailed-game.com/",
-    "dlcCount": "2"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 2240620,
@@ -217,7 +226,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "https://www.unbeatablegame.com/",
-    "dlcCount": "2"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 2251010,
@@ -239,7 +249,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "",
-    "dlcCount": "2"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 2408820,
@@ -261,7 +272,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "https://www.lumaisland.com",
-    "dlcCount": "1"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 2489330,
@@ -270,7 +282,7 @@
     "status": "В вишлисте",
     "steamAppId": "2489330",
     "poster": "https://cdn.cloudflare.steamstatic.com/steam/apps/2489330/library_600x900_2x.jpg",
-    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2489330/a8917948fa47aa068e23734c99775110df9341b0/page_bg_raw.jpg?t=1786635152",
+    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2489330/a8917948fa47aa068e23734c99775110df9341b0/page_bg_raw.jpg?t=1787915147",
     "dateRequested": "18.11.2025",
     "year": "2025",
     "price": "$11,99 / 999 ₽ / 399 ₴ / 5 900 ₸",
@@ -283,7 +295,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "",
-    "dlcCount": "0"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 2567870,
@@ -292,10 +305,10 @@
     "status": "В вишлисте",
     "steamAppId": "2567870",
     "poster": "https://cdn.cloudflare.steamstatic.com/steam/apps/2567870/library_600x900_2x.jpg",
-    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2567870/page_bg_raw.jpg?t=1787158284",
+    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2567870/page_bg_raw.jpg?t=1787564004",
     "dateRequested": "08.06.2026",
     "year": "2024",
-    "price": "$3,29 / 200 ₽ / 124 ₴ / 1 500 ₸",
+    "price": "$2,63 / 160 ₽ / 99 ₴ / 1 200 ₸",
     "isFree": "false",
     "studios": "Anegar Games (Изд: Secret Mode)",
     "genres": "Приключенческие игры, Казуальные игры, Инди, Симуляторы",
@@ -305,7 +318,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "https://linktr.ee/AnegarGames",
-    "dlcCount": "0"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 2595260,
@@ -314,12 +328,12 @@
     "status": "В вишлисте",
     "steamAppId": "2595260",
     "poster": "https://cdn.cloudflare.steamstatic.com/steam/apps/2595260/library_600x900_2x.jpg",
-    "backdrop": "https://store.akamai.steamstatic.com/images/storepagebackground/app/2595260?t=1780966266",
+    "backdrop": "https://store.akamai.steamstatic.com/images/storepagebackground/app/2595260?t=1787857259",
     "dateRequested": "14.09.2025",
     "year": "????",
     "price": "Неизвестно",
     "isFree": "false",
-    "studios": "kaleidoscube (Изд: Astra Logical, Klei Publishing)",
+    "studios": "kaleidoscube (Изд: Klei Publishing)",
     "genres": "Приключенческие игры, Инди",
     "platforms": "Windows",
     "overview": "Отправьтесь в путешествие во времени на край света и обратно. Бегайте, прыгайте и управляйте временем, чтобы разгадывать головоломки на пороге апокалипсиса. Получится ли у вас остановить предстоящую катастрофу?",
@@ -327,7 +341,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "http://recur-game.com/",
-    "dlcCount": "0"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 2681030,
@@ -336,7 +351,7 @@
     "status": "В вишлисте",
     "steamAppId": "2681030",
     "poster": "https://cdn.cloudflare.steamstatic.com/steam/apps/2681030/library_600x900_2x.jpg",
-    "backdrop": "https://store.akamai.steamstatic.com/images/storepagebackground/app/2681030?t=1786113598",
+    "backdrop": "https://store.akamai.steamstatic.com/images/storepagebackground/app/2681030?t=1787324635",
     "dateRequested": "04.01.2026",
     "year": "2026",
     "price": "$12,49 / 1 170 ₽ / 519 ₴ / 6 400 ₸",
@@ -349,7 +364,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "https://www.squareglade.games",
-    "dlcCount": "2"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 2683150,
@@ -358,10 +374,10 @@
     "status": "В вишлисте",
     "steamAppId": "2683150",
     "poster": "https://cdn.cloudflare.steamstatic.com/steam/apps/2683150/library_600x900_2x.jpg",
-    "backdrop": "https://store.akamai.steamstatic.com/images/storepagebackground/app/2683150?t=1786724914",
+    "backdrop": "https://store.akamai.steamstatic.com/images/storepagebackground/app/2683150?t=1787310432",
     "dateRequested": "10.03.2025",
     "year": "2024",
-    "price": "$7,49 / 450 ₽ / 285 ₴ / 4 100 ₸",
+    "price": "$2,99 / 180 ₽ / 114 ₴ / 1 640 ₸",
     "isFree": "false",
     "studios": "Scienart Games (Изд: GrabTheGames, UpgradePoint)",
     "genres": "Экшены, Приключенческие игры, Казуальные игры, Инди, Симуляторы",
@@ -371,7 +387,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "",
-    "dlcCount": "1"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 2686630,
@@ -380,7 +397,7 @@
     "status": "В вишлисте",
     "steamAppId": "2686630",
     "poster": "https://cdn.cloudflare.steamstatic.com/steam/apps/2686630/library_600x900_2x.jpg",
-    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2686630/page_bg_raw.jpg?t=1785192884",
+    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2686630/page_bg_raw.jpg?t=1787841447",
     "dateRequested": "18.06.2026",
     "year": "2025",
     "price": "$14,99 / 1 400 ₽ / 599 ₴ / 7 600 ₸",
@@ -393,7 +410,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "https://www.voyagersofnera.com",
-    "dlcCount": "2"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 2723430,
@@ -415,7 +433,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "https://www.inkonbini.com",
-    "dlcCount": "3"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 2727210,
@@ -437,7 +456,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "https://1cccp.com",
-    "dlcCount": "2"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 2769570,
@@ -446,20 +466,21 @@
     "status": "В вишлисте",
     "steamAppId": "2769570",
     "poster": "https://cdn.cloudflare.steamstatic.com/steam/apps/2769570/library_600x900_2x.jpg",
-    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2769570/1f2699edd4bbb52b29eb30c869c286c0d33bd088/page_bg_raw.jpg?t=1786470456",
+    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2769570/1f2699edd4bbb52b29eb30c869c286c0d33bd088/page_bg_raw.jpg?t=1787859126",
     "dateRequested": "18.04.2026",
     "year": "2027",
-    "price": "$48,99 / ~4 165 ₽ / 2 299 ₴ / 30 000 ₸",
+    "price": "$48,99 / ~4 209 ₽ / 2 299 ₴ / 30 000 ₸",
     "isFree": "false",
     "studios": "Playground Games (Изд: Xbox Game Studios)",
     "genres": "Экшены, Приключенческие игры, Ролевые игры",
     "platforms": "Windows",
     "overview": "Выберите свой сорт героизма в этой атмосферной ролевой игре с открытым миром, где каждое решение влияет на ваш путь, репутация стоит во главе угла, а сказочный конец не гарантирован.",
-    "detailedDesc": "Premium EditionОб игреВыберите свой сорт героизма в этой атмосферной ролевой игре с открытым миром, где каждое решение влияет на ваш путь, репутация стоит во главе угла, а сказочный конец не гарантирован.ПЕРЕРОЖДЕНИЕ ЛЕГЕНДАРНОЙ СЕРИИЗнаменитая серия игр Fable начинается заново. Ваша страна не знала героев много лет, теперь же эту нишу занимаете вы. Отправьтесь в путешествие по кипящему жизнью Альбиону, познакомьтесь со множеством эксцентричных личностей, проникнитесь чёрным юмором и повстречайтесь с местными курицами... в количестве. Это не только дань памяти прошлому, но и новая история, которая разворачивается в прекрасном открытом мире.ВЫБЕРИТЕ СВОЙ СОРТ ГЕРОИЗМАСоздайте собственного персонажа и возьмите в руки могущественное оружие для ближнего боя, стрельбы или сотворения заклинаний. Сражайтесь с разбойниками, зверями и чудовищами, среди которых будут как новые, так и уже знакомые противники, в том числе хоббы, оборотни и тролли. Становитесь сильнее и известнее.ПРОЖИВИТЕ НЕВЕРОЯТНУЮ ЖИЗНЬВам предстоит выбрать не только бойцовские навыки, но и свой путь в этом изменчивом мире. Сколотите состояние, сдавая в наём недвижимость или работая в кузне, закрутите роман с кем-нибудь из деревни, нарожайте детей — и слухи не заставят себя ждать. Быть героем в Альбионе — всё равно что быть знаменитостью... с тем отличием, что герои носят мечи и периодически сражаются с огромными огнедышащими курицами.ИЗМЕНИТЕ МИРРепутация в Альбионе ценится дороже всего. Ваши благородные деяния и спорные решения влияют на мнение окружающих и порой даже на происходящие события. Кто прав, а кто виноват, решать только вам — как и разбираться с последствиями. Вы сами определяете свой путь.Сказочный конец не гарантирован.",
+    "detailedDesc": "Premium EditionPC Hardware RequirementsОб игреВыберите свой сорт героизма в этой атмосферной ролевой игре с открытым миром, где каждое решение влияет на ваш путь, репутация стоит во главе угла, а сказочный конец не гарантирован.ПЕРЕРОЖДЕНИЕ ЛЕГЕНДАРНОЙ СЕРИИЗнаменитая серия игр Fable начинается заново. Ваша страна не знала героев много лет, теперь же эту нишу занимаете вы. Отправьтесь в путешествие по кипящему жизнью Альбиону, познакомьтесь со множеством эксцентричных личностей, проникнитесь чёрным юмором и повстречайтесь с местными курицами... в количестве. Это не только дань памяти прошлому, но и новая история, которая разворачивается в прекрасном открытом мире.ВЫБЕРИТЕ СВОЙ СОРТ ГЕРОИЗМАСоздайте собственного персонажа и возьмите в руки могущественное оружие для ближнего боя, стрельбы или сотворения заклинаний. Сражайтесь с разбойниками, зверями и чудовищами, среди которых будут как новые, так и уже знакомые противники, в том числе хоббы, оборотни и тролли. Становитесь сильнее и известнее.ПРОЖИВИТЕ НЕВЕРОЯТНУЮ ЖИЗНЬВам предстоит выбрать не только бойцовские навыки, но и свой путь в этом изменчивом мире. Сколотите состояние, сдавая в наём недвижимость или работая в кузне, закрутите роман с кем-нибудь из деревни, нарожайте детей — и слухи не заставят себя ждать. Быть героем в Альбионе — всё равно что быть знаменитостью... с тем отличием, что герои носят мечи и периодически сражаются с огромными огнедышащими курицами.ИЗМЕНИТЕ МИРРепутация в Альбионе ценится дороже всего. Ваши благородные деяния и спорные решения влияют на мнение окружающих и порой даже на происходящие события. Кто прав, а кто виноват, решать только вам — как и разбираться с последствиями. Вы сами определяете свой путь.Сказочный конец не гарантирован.",
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "",
-    "dlcCount": "0"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 2788520,
@@ -481,7 +502,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "",
-    "dlcCount": "0"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 2825880,
@@ -503,7 +525,8 @@
     "metacriticScore": "82",
     "metacriticUrl": "https://www.metacritic.com/game/pc/death-howl?ftag=MCD-06-10aaa1f",
     "website": "",
-    "dlcCount": "2"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 2868840,
@@ -525,7 +548,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "https://megacrit.com",
-    "dlcCount": "0"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 2879840,
@@ -537,7 +561,7 @@
     "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2879840/42e473731206c44ddc5c81f3185d08c4269c8014/page_bg_raw.jpg?t=1784731700",
     "dateRequested": "29.12.2025",
     "year": "2025",
-    "price": "$10,99 / 799 ₽ / 399 ₴ / 4 500 ₸",
+    "price": "~$9,30 / 799 ₽ / 399 ₴ / 4 500 ₸",
     "isFree": "false",
     "studios": "Pine Studio (Изд: Pine Studio)",
     "genres": "Приключенческие игры, Казуальные игры, Инди, Симуляторы",
@@ -547,7 +571,8 @@
     "metacriticScore": "80",
     "metacriticUrl": "https://www.metacritic.com/game/pc/escape-simulator-2?ftag=MCD-06-10aaa1f",
     "website": "https://pinestudio.com/games/",
-    "dlcCount": "2"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 2949910,
@@ -556,7 +581,7 @@
     "status": "В вишлисте",
     "steamAppId": "2949910",
     "poster": "https://cdn.cloudflare.steamstatic.com/steam/apps/2949910/library_600x900_2x.jpg",
-    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2949910/page_bg_raw.jpg?t=1767971723",
+    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2949910/page_bg_raw.jpg?t=1787927286",
     "dateRequested": "07.12.2025",
     "year": "2025",
     "price": "$4,99 / 320 ₽ / 190 ₴ / 2 300 ₸",
@@ -569,7 +594,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "",
-    "dlcCount": "0"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 3170490,
@@ -578,7 +604,7 @@
     "status": "В вишлисте",
     "steamAppId": "3170490",
     "poster": "https://cdn.cloudflare.steamstatic.com/steam/apps/3170490/library_600x900_2x.jpg",
-    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3170490/page_bg_raw.jpg?t=1786713515",
+    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3170490/863aff4b828789bbd043dbcb0578f90bce378e77/page_bg_raw.jpg?t=1787572911",
     "dateRequested": "19.06.2026",
     "year": "2026",
     "price": "Неизвестно",
@@ -591,7 +617,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "",
-    "dlcCount": "0"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 3265070,
@@ -613,7 +640,8 @@
     "metacriticScore": "77",
     "metacriticUrl": "https://www.metacritic.com/game/pc/city-tales---medieval-era?ftag=MCD-06-10aaa1f",
     "website": "https://firesquid.games/games/city-tales-medieval-era",
-    "dlcCount": "2"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 3308560,
@@ -635,7 +663,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "",
-    "dlcCount": "0"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 3311670,
@@ -647,7 +676,7 @@
     "backdrop": "https://store.akamai.steamstatic.com/images/storepagebackground/app/3311670?t=1777871570",
     "dateRequested": "13.09.2025",
     "year": "2026",
-    "price": "$7,99 / 499 ₽ / 249 ₴ / 2 999 ₸",
+    "price": "$5,99 / 374 ₽ / 186 ₴ / 2 249 ₸",
     "isFree": "false",
     "studios": "SOMETIMES LIMITED (Изд: SOMETIMES LIMITED)",
     "genres": "Казуальные игры, Инди",
@@ -657,29 +686,31 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "https://sometimes.ltd/",
-    "dlcCount": "0"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 3321460,
-    "title": "Crimson Desert",
+    "title": "Crimson Desert Enhanced",
     "type": "Игра",
     "status": "В вишлисте",
     "steamAppId": "3321460",
     "poster": "https://cdn.cloudflare.steamstatic.com/steam/apps/3321460/library_600x900_2x.jpg",
-    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3321460/3eb4fa25db870d727842f0d0a3399597b6c2d22f/page_bg_raw.jpg?t=1781661893",
+    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3321460/3eb4fa25db870d727842f0d0a3399597b6c2d22f/page_bg_raw.jpg?t=1787909144",
     "dateRequested": "10.04.2026",
     "year": "2026",
-    "price": "$69,99 / 4 299 ₽ / 2 449 ₴ / 27 999 ₸",
+    "price": "$55,99 / 3 439 ₽ / 1 959 ₴ / 22 399 ₸",
     "isFree": "false",
     "studios": "Pearl Abyss (Изд: Pearl Abyss)",
     "genres": "Экшены, Приключенческие игры",
     "platforms": "Windows, Mac",
     "overview": "Crimson Desert – это action adventure игра с открытым миром, действие которой разворачивается на континенте Пайвел. Присоединяйтесь к Клиффу, чтобы вернуть потерянное и спасти мир от надвигающейся угрозы. Исследуйте бескрайние просторы и тайны Бездны, прокладывая свой путь через сражения и открытия.",
-    "detailedDesc": "Издание Digital Deluxe EditionХотите, чтобы путешествие по Пайвелу стало ещё ярче?С Deluxe-изданием Crimson Desert вы получите не только игру, но и эксклюзивные предметы, доступные в этом наборе.■ Латный набор Кайрос· Латный шлем Кайрос· Латные перчатки Кайрос· Латные ботинки Кайрос· Мантия Кайрос· Латные доспехи Кайрос■ Щит Варгрин■ Набор сбруи Диклэр· Шлем скакуна Диклэр· Доспехи скакуна Диклэр· Седло Диклэр· Стремя ДиклэрОб игреКонтинент Пайвел находится в хрупком равновесии из-за соперничества между фракциями Пайлуна. Здесь жил Серогривый Клифф вместе со своими товарищами. Но однажды тёмной, холодной ночью Чёрные медведи, злейшие враги Серогривых, устроили масштабную засаду. В ожесточённой борьбе часть Серогривых погибла, а другие были разбросаны по всему континенту. Потеряв спутников, которые были ему как семья, Клифф твёрдо решает снова собрать выживших и восстановить свою силу. На этом пути ему предстоит встретить новых союзников, столкнуться с новыми опасностями и загадочными врагами, а также выполнить невиданные ранее задания, чтобы дать отпор тем, кто стремится разрушить порядок на континенте.Приглашаем вас начать приключения на континенте Пайвел.Здесь вас ждут просторы первозданной природы и диких земель: от изумрудных бескрайних равнин и густых лесов до раскаленной пустыни и суровых гор. В своих странствиях вы наткнетесь на древние руины, таинственные сокровища, и в конце концов окажетесь в таинственном измерении Бездны. Именно здесь вам предстоит восстановить пошатнувшийся баланс ради спасения мира. Отправляйтесь на поиски скрытых троп и погрузитесь в настоящие приключения, исследуя мир так, как вам хочется. Мчите по равнинам верхом на лошади, летайте на драконе и управляйте роботом, открывая для себя этот мир. Начните свою историю через выполнение заданий, встречи с новыми людьми, испытания и сражения.Отправляйтесь на поиски скрытых троп и погрузитесь в настоящие приключения, исследуя мир так, как вам хочется.Мчите по равнинам верхом на лошади, летайте на драконе и управляйте роботом, открывая для себя этот мир. Карабкайтесь по крутым скалам или прыгайте с высоты, чтобы парить над землей. Начните свою историю через выполнение заданий, встречи с новыми людьми, испытания и сражения.В центре сюжета Crimson Desert находится Клифф. Со временем к нему присоединяются два новых персонажа – Унка и Дамиана. После того, как они станут доступны, вы сможете играть за них и свободно путешествовать по Пайвелу, выполняя различные дополнительные задания. У каждого персонажа есть свой стиль боя, уникальное оружие и навыки, что позволит взглянуть на сражения и исследования под другим углом.В беспощадных сражениях Crimson Desert не существует единственного пути к победе.Все зависит от вашего выбора: вам решать, как комбинировать различные навыки и снаряжение. Сочетайте атаки мощным оружием с ударами кулаками или ногами, а также с различными захватами для непрерывных комбо-ударов. Получите меч, копье, двуручный меч, топор, парные клинки и различное дальнобойное оружие. Используйте мощные серии атак, чтобы раскрыть силу навыков и усиления элементов. Также используйте скольжение, уклонение и контратаку, чтобы непрерывно перемещаться по полю боя. В стремительных и напряжённых боях, где судьба решается одним ударом или движением, каждый должен решить свой путь.В каждом уголке Пайвела найдется тот, кто захочет вас уничтожить: от безжалостных воинов до свирепых монстров. Вас ждут напряжённые дуэли 1 на 1, небольшие схватки и крупномасштабные сражения. Побеждайте любую угрозу на своём пути!Пайвел – это не просто континент битв и исследований. Здесь множество небольших событий складываются в вашу уникальную историю и наполняют каждый день особыми моментами.Путешествие ради возвращения утраченного дома Пайлуна начинается с лагеря Серогривых. Со временем, расширяя лагерь, вы превратите его во что-то гораздо большее, чем просто место для отдыха. Исследуйте огромные просторы Пайвела, собирайте ресурсы, занимайтесь кулинарией, рыбалкой и охотой – разнообразные занятия позволят пополнять запасы и улучшать снаряжение. В перерывах между странствиями можно немного отдохнуть за мини-играми с местными жителями.Также не забывайте про кастомизацию! Вы можете настроить прическу и татуировки по настроению, а с помощью красителей, найденных в путешествиях или сделанных самостоятельно, меняйте цвет костюма!",
+    "detailedDesc": "Издание Digital Deluxe EditionХотите, чтобы путешествие по Пайвелу стало ещё ярче?С Deluxe-изданием Crimson Desert вы получите не только игру, но и эксклюзивные предметы, доступные в этом наборе.■ Латный набор Кайрос· Латный шлем Кайрос· Латные перчатки Кайрос· Латные ботинки Кайрос· Мантия Кайрос· Латные доспехи Кайрос■ Щит Варгрин■ Набор сбруи Диклэр· Шлем скакуна Диклэр· Доспехи скакуна Диклэр· Седло Диклэр· Стремя ДиклэрОб игреОткройте для себя улучшенную версию Crimson Desert с новыми сюжетными сценами и эпизодами, расширенной озвучкой и поддержкой дополнительных языков.Отправляйтесь в приключение, полюбившееся миллионам игроков и значительно преобразившееся с момента выхода благодаря множеству обновлений: новому контенту, ездовым животным, питомцам, дополнительным возможностям персонализации, различным улучшениям игрового процесса и многому другому.Континент Пайвел находится в хрупком равновесии из-за соперничества между фракциями Пайлуна. Здесь жил Серогривый Клифф вместе со своими товарищами. Но однажды тёмной, холодной ночью Чёрные медведи, злейшие враги Серогривых, устроили масштабную засаду. В ожесточённой борьбе часть Серогривых погибла, а другие были разбросаны по всему континенту. Потеряв спутников, которые были ему как семья, Клифф твёрдо решает снова собрать выживших и восстановить свою силу. На этом пути ему предстоит встретить новых союзников, столкнуться с новыми опасностями и загадочными врагами, а также выполнить невиданные ранее задания, чтобы дать отпор тем, кто стремится разрушить порядок на континенте.Приглашаем вас начать приключения на континенте Пайвел.Здесь вас ждут просторы первозданной природы и диких земель: от изумрудных бескрайних равнин и густых лесов до раскаленной пустыни и суровых гор. В своих странствиях вы наткнетесь на древние руины, таинственные сокровища, и в конце концов окажетесь в таинственном измерении Бездны. Именно здесь вам предстоит восстановить пошатнувшийся баланс ради спасения мира. Отправляйтесь на поиски скрытых троп и погрузитесь в настоящие приключения, исследуя мир так, как вам хочется. Мчите по равнинам верхом на лошади, летайте на драконе и управляйте роботом, открывая для себя этот мир. Начните свою историю через выполнение заданий, встречи с новыми людьми, испытания и сражения.Отправляйтесь на поиски скрытых троп и погрузитесь в настоящие приключения, исследуя мир так, как вам хочется.Мчите по равнинам верхом на лошади, летайте на драконе и управляйте роботом, открывая для себя этот мир. Карабкайтесь по крутым скалам или прыгайте с высоты, чтобы парить над землей. Начните свою историю через выполнение заданий, встречи с новыми людьми, испытания и сражения.В центре сюжета Crimson Desert находится Клифф. Со временем к нему присоединяются два новых персонажа – Унка и Дамиана. После того, как они станут доступны, вы сможете играть за них и свободно путешествовать по Пайвелу, выполняя различные дополнительные задания. У каждого персонажа есть свой стиль боя, уникальное оружие и навыки, что позволит взглянуть на сражения и исследования под другим углом.В беспощадных сражениях Crimson Desert не существует единственного пути к победе.Все зависит от вашего выбора: вам решать, как комбинировать различные навыки и снаряжение. Сочетайте атаки мощным оружием с ударами кулаками или ногами, а также с различными захватами для непрерывных комбо-ударов. Получите меч, копье, двуручный меч, топор, парные клинки и различное дальнобойное оружие. Используйте мощные серии атак, чтобы раскрыть силу навыков и усиления элементов. Также используйте скольжение, уклонение и контратаку, чтобы непрерывно перемещаться по полю боя. В стремительных и напряжённых боях, где судьба решается одним ударом или движением, каждый должен решить свой путь.В каждом уголке Пайвела найдется тот, кто захочет вас уничтожить: от безжалостных воинов до свирепых монстров. Вас ждут напряжённые дуэли 1 на 1, небольшие схватки и крупномасштабные сражения. Побеждайте любую угрозу на своём пути!Пайвел – это не просто континент битв и исследований. Здесь множество небольших событий складываются в вашу уникальную историю и наполняют каждый день особыми моментами.Путешествие ради возвращения утраченного дома Пайлуна начинается с лагеря Серогривых. Со временем, расширяя лагерь, вы превратите его во что-то гораздо большее, чем просто место для отдыха. Исследуйте огромные просторы Пайвела, собирайте ресурсы, занимайтесь кулинарией, рыбалкой и охотой – разнообразные занятия позволят пополнять запасы и улучшать снаряжение. В перерывах между странствиями можно немного отдохнуть за мини-играми с местными жителями.Также не забывайте про кастомизацию! Вы можете настроить прическу и татуировки по настроению, а с помощью красителей, найденных в путешествиях или сделанных самостоятельно, меняйте цвет костюма!",
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "https://crimsondesert.pearlabyss.com",
-    "dlcCount": "2"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 3326230,
@@ -701,7 +732,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "",
-    "dlcCount": "1"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 3357960,
@@ -723,7 +755,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "https://gambirstudio.com/presskitkuloniku/",
-    "dlcCount": "2"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 3400930,
@@ -745,7 +778,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "",
-    "dlcCount": "0"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 3423280,
@@ -754,7 +788,7 @@
     "status": "В вишлисте",
     "steamAppId": "3423280",
     "poster": "https://cdn.cloudflare.steamstatic.com/steam/apps/3423280/library_600x900_2x.jpg",
-    "backdrop": "https://store.akamai.steamstatic.com/images/storepagebackground/app/3423280?t=1786692252",
+    "backdrop": "https://store.akamai.steamstatic.com/images/storepagebackground/app/3423280?t=1787931667",
     "dateRequested": "14.09.2025",
     "year": "????",
     "price": "Неизвестно",
@@ -767,7 +801,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "",
-    "dlcCount": "0"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 3467040,
@@ -789,7 +824,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "https://www.bookshopsimulator.com/",
-    "dlcCount": "0"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 477160,
@@ -811,7 +847,8 @@
     "metacriticScore": "70",
     "metacriticUrl": "https://www.metacritic.com/game/pc/human-fall-flat?ftag=MCD-06-10aaa1f",
     "website": "http://www.nobrakesgames.com/",
-    "dlcCount": "1"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 631570,
@@ -833,7 +870,8 @@
     "metacriticScore": "77",
     "metacriticUrl": "https://www.metacritic.com/game/pc/whispers-of-a-machine?ftag=MCD-06-10aaa1f",
     "website": "http://whispersofamachine.com",
-    "dlcCount": "1"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 481510,
@@ -855,7 +893,8 @@
     "metacriticScore": "88",
     "metacriticUrl": "https://www.metacritic.com/game/pc/night-in-the-woods?ftag=MCD-06-10aaa1f",
     "website": "http://nightinthewoods.com",
-    "dlcCount": "3"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 646570,
@@ -877,7 +916,8 @@
     "metacriticScore": "89",
     "metacriticUrl": "https://www.metacritic.com/game/pc/slay-the-spire?ftag=MCD-06-10aaa1f",
     "website": "https://www.megacrit.com/",
-    "dlcCount": "1"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 1283190,
@@ -889,7 +929,7 @@
     "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1283190/77064cff40d655a7d7f629200658dc38f13820d0/page_bg_raw.jpg?t=1786370670",
     "dateRequested": "21.04.2026",
     "year": "2020",
-    "price": "$2,63 / 268 ₽ / 123 ₴ / 1 485 ₸",
+    "price": "$7,99 / 815 ₽ / 375 ₴ / 4 500 ₸",
     "isFree": "false",
     "studios": "Farbworks (Изд: HandyGames, THQ Nordic Mobile)",
     "genres": "Приключенческие игры, Казуальные игры, Стратегии",
@@ -899,7 +939,8 @@
     "metacriticScore": "69",
     "metacriticUrl": "https://www.metacritic.com/game/pc/neighbours-back-from-hell?ftag=MCD-06-10aaa1f",
     "website": "https://www.thqnordicmobile.com/games/neighbours-back-from-hell/",
-    "dlcCount": "0"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 386940,
@@ -921,7 +962,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "http://www.ultimatechickenhorse.com",
-    "dlcCount": "1"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 1649950,
@@ -943,7 +985,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "https://sparrownight.com/",
-    "dlcCount": "1"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 1658040,
@@ -965,7 +1008,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "https://iamfuture.fun/",
-    "dlcCount": "2"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 1594940,
@@ -987,7 +1031,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "",
-    "dlcCount": "0"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 1080010,
@@ -999,7 +1044,7 @@
     "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1080010/page_bg_raw.jpg?t=1743696840",
     "dateRequested": "05.04.2025",
     "year": "2021",
-    "price": "$9,89 / 399 ₽ / 259 ₴ / 2 600 ₸",
+    "price": "$6,42 / 259 ₽ / 168 ₴ / 1 690 ₸",
     "isFree": "false",
     "studios": "Red Fur Games (Изд: Application Systems Heidelberg)",
     "genres": "Экшены, Казуальные игры, Инди, Симуляторы",
@@ -1009,7 +1054,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "https://witchtastic-game.com/",
-    "dlcCount": "0"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 1395520,
@@ -1018,10 +1064,10 @@
     "status": "В вишлисте",
     "steamAppId": "1395520",
     "poster": "https://cdn.cloudflare.steamstatic.com/steam/apps/1395520/library_600x900_2x.jpg",
-    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1395520/852143f3a85c5178a92d60f3d067d7f2021907da/page_bg_raw.jpg?t=1783605147",
+    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1395520/852143f3a85c5178a92d60f3d067d7f2021907da/page_bg_raw.jpg?t=1787904369",
     "dateRequested": "08.12.2025",
     "year": "2025",
-    "price": "$10,49 / 710 ₽ / 415 ₴ / 5 200 ₸",
+    "price": "$6,29 / 426 ₽ / 249 ₴ / 3 120 ₸",
     "isFree": "false",
     "studios": "Spooky Doorway (Изд: Raw Fury)",
     "genres": "Приключенческие игры",
@@ -1031,7 +1077,8 @@
     "metacriticScore": "89",
     "metacriticUrl": "https://www.metacritic.com/game/pc/the-seance-of-blake-manor?ftag=MCD-06-10aaa1f",
     "website": "http://www.spookydoorway.com/",
-    "dlcCount": "2"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 1451940,
@@ -1053,7 +1100,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "https://whysoserious.jp/needy/",
-    "dlcCount": "3"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 1706510,
@@ -1075,7 +1123,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "https://eastshade.com/songs-of-glimmerwick/",
-    "dlcCount": "0"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 1696770,
@@ -1087,7 +1136,7 @@
     "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1696770/5f87c76ddccda65eea917981c3cb9ae2953ef80e/page_bg_raw.jpg?t=1784233084",
     "dateRequested": "12.07.2026",
     "year": "2026",
-    "price": "$10,99 / 855 ₽ / 430 ₴ / 5 720 ₸",
+    "price": "$9,89 / 769 ₽ / 387 ₴ / 5 148 ₸",
     "isFree": "false",
     "studios": "SFB Games (Изд: SFB Games)",
     "genres": "Приключенческие игры, Казуальные игры, Инди",
@@ -1097,7 +1146,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "",
-    "dlcCount": "0"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 1190970,
@@ -1106,7 +1156,7 @@
     "status": "В вишлисте",
     "steamAppId": "1190970",
     "poster": "https://cdn.cloudflare.steamstatic.com/steam/apps/1190970/library_600x900_2x.jpg",
-    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1190970/435c8b4c26a9205a4839a09bef3346f293c17584/page_bg_raw.jpg?t=1786633588",
+    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1190970/435c8b4c26a9205a4839a09bef3346f293c17584/page_bg_raw.jpg?t=1787647996",
     "dateRequested": "05.04.2026",
     "year": "2023",
     "price": "$18,49 / 1 350 ₽ / 577 ₴ / 9 265 ₸",
@@ -1119,7 +1169,8 @@
     "metacriticScore": "79",
     "metacriticUrl": "https://www.metacritic.com/game/pc/house-flipper-2?ftag=MCD-06-10aaa1f",
     "website": "https://houseflipper2.com/",
-    "dlcCount": "5"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 1118520,
@@ -1141,7 +1192,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "https://paralives.com",
-    "dlcCount": "0"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 617290,
@@ -1163,7 +1215,8 @@
     "metacriticScore": "78",
     "metacriticUrl": "https://www.metacritic.com/game/pc/remnant-from-the-ashes?ftag=MCD-06-10aaa1f",
     "website": "https://www.remnantgame.com",
-    "dlcCount": "2"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 1296830,
@@ -1185,7 +1238,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "https://game.bilibili.com/warmsnow",
-    "dlcCount": "4"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 1509960,
@@ -1207,7 +1261,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "http://picoparkgame.com/en/",
-    "dlcCount": "1"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 1297900,
@@ -1216,7 +1271,7 @@
     "status": "В вишлисте",
     "steamAppId": "1297900",
     "poster": "https://cdn.cloudflare.steamstatic.com/steam/apps/1297900/library_600x900_2x.jpg",
-    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1297900/a5ca58f701ed4cb617c45dd692080bd93021b523/page_bg_raw.jpg?t=1786954334",
+    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1297900/a5ca58f701ed4cb617c45dd692080bd93021b523/page_bg_raw.jpg?t=1787564876",
     "dateRequested": "09.04.2026",
     "year": "2026",
     "price": "$33,99 / 2 699 ₽ / 1 505 ₴ / 16 700 ₸",
@@ -1229,7 +1284,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "http://www.gothic-game.com",
-    "dlcCount": "1"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 362680,
@@ -1251,7 +1307,8 @@
     "metacriticScore": "70",
     "metacriticUrl": "https://www.metacritic.com/game/pc/fran-bow?ftag=MCD-06-10aaa1f",
     "website": "http://www.franbow.com",
-    "dlcCount": "2"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 1615290,
@@ -1263,7 +1320,7 @@
     "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1615290/page_bg_raw.jpg?t=1778135029",
     "dateRequested": "15.01.2026",
     "year": "2022",
-    "price": "$3,29 / 133 ₽ / 99 ₴ / 1 050 ₸",
+    "price": "$2,36 / 95 ₽ / 71 ₴ / 756 ₸",
     "isFree": "false",
     "studios": "Bad Vices Games (Изд: Bad Vices Games)",
     "genres": "Казуальные игры, Инди, Симуляторы",
@@ -1273,7 +1330,8 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "https://badvicesgames.wixsite.com/my-site",
-    "dlcCount": "0"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 3951340,
@@ -1285,7 +1343,7 @@
     "backdrop": "https://store.akamai.steamstatic.com/images/storepagebackground/app/3951340?t=1787231346",
     "dateRequested": "11.08.2026",
     "year": "2026",
-    "price": "$6,29 / 465 ₽ / 230 ₴ / 3 190 ₸",
+    "price": "$5,66 / 418 ₽ / 207 ₴ / 2 871 ₸",
     "isFree": "false",
     "studios": "Bubbly Games (Изд: Bubbly Games)",
     "genres": "Казуальные игры, Инди, Симуляторы, Ранний доступ",
@@ -1296,7 +1354,8 @@
     "metacriticUrl": "",
     "website": "https://shrouded-somersault-379.notion.site/Tiny-Bakery-Press-Creator-Kit-28fdbabb916780cd8080e7775acc1101",
     "dlcCount": "0",
-    "altPoster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlcYvh7jFeJ6fvAyTPxqE-Payd9UuKK2MBt_dOegXzXwJiwsJLMEA4U0E&s=10"
+    "altPoster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlcYvh7jFeJ6fvAyTPxqE-Payd9UuKK2MBt_dOegXzXwJiwsJLMEA4U0E&s=10",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 4700560,
@@ -1319,7 +1378,8 @@
     "metacriticUrl": "",
     "website": "",
     "dlcCount": "0",
-    "altPoster": "https://kotaku.com/igdb/image/upload/t_cover_big/co6f9j.jpg"
+    "altPoster": "https://kotaku.com/igdb/image/upload/t_cover_big/co6f9j.jpg",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 4981570,
@@ -1328,7 +1388,7 @@
     "status": "В вишлисте",
     "steamAppId": "4981570",
     "poster": "https://cdn.cloudflare.steamstatic.com/steam/apps/4981570/library_600x900_2x.jpg",
-    "backdrop": "https://store.akamai.steamstatic.com/images/storepagebackground/app/4981570?t=1787213156",
+    "backdrop": "https://store.akamai.steamstatic.com/images/storepagebackground/app/4981570?t=1787902262",
     "dateRequested": "11.08.2026",
     "year": "2026",
     "price": "Неизвестно",
@@ -1342,7 +1402,8 @@
     "metacriticUrl": "",
     "website": "",
     "dlcCount": "0",
-    "altPoster": "https://image.api.playstation.com/vulcan/ap/rnd/202608/0512/008316fd6fc5fef38cdc41648a4c56a37701092e2814a53f.png"
+    "altPoster": "https://image.api.playstation.com/vulcan/ap/rnd/202608/0512/008316fd6fc5fef38cdc41648a4c56a37701092e2814a53f.png",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 4950470,
@@ -1354,7 +1415,7 @@
     "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4950470/da06fba1024cf6996caabc2f4f8c6cf3c29c128e/page_bg_raw.jpg?t=1786698522",
     "dateRequested": "10.08.2026",
     "year": "2026",
-    "price": "$3,59 / 261 ₽ / 139 ₴ / 1 737 ₸",
+    "price": "$3,99 / 290 ₽ / 155 ₴ / 1 930 ₸",
     "isFree": "false",
     "studios": "Malum Games (Изд: Malum Games)",
     "genres": "Казуальные игры, Инди, Симуляторы",
@@ -1365,7 +1426,8 @@
     "metacriticUrl": "",
     "website": "",
     "dlcCount": "0",
-    "altPoster": "https://images.igdb.com/igdb/image/upload/t_1080p/cocmg4.jpg"
+    "altPoster": "https://images.igdb.com/igdb/image/upload/t_1080p/cocmg4.jpg",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 3552140,
@@ -1387,8 +1449,9 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "",
-    "dlcCount": "1",
-    "altPoster": "https://s.pacn.ws/1/p/1f5/920859.13.jpg?v=tbzj49"
+    "dlcCount": "0",
+    "altPoster": "https://s.pacn.ws/1/p/1f5/920859.13.jpg?v=tbzj49",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 3558600,
@@ -1397,7 +1460,7 @@
     "status": "В вишлисте",
     "steamAppId": "3558600",
     "poster": "https://cdn.cloudflare.steamstatic.com/steam/apps/3558600/library_600x900_2x.jpg",
-    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3558600/fb3cae65a60d6fa8511f769317e0e2722f50b6e7/page_bg_raw.jpg?t=1786970299",
+    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3558600/fb3cae65a60d6fa8511f769317e0e2722f50b6e7/page_bg_raw.jpg?t=1787257150",
     "dateRequested": "02.08.2026",
     "year": "2026",
     "price": "$6,19 / 349 ₽ / 199 ₴ / 2 700 ₸",
@@ -1410,8 +1473,9 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "https://leafycorner.carrd.co/",
-    "dlcCount": "1",
-    "altPoster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ6mzcMmSZqfV60k3k6DTgPcSTi5D-1rEX6eq7ZkHXPbwTgxFMbBRE91Y&s=10"
+    "dlcCount": "0",
+    "altPoster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ6mzcMmSZqfV60k3k6DTgPcSTi5D-1rEX6eq7ZkHXPbwTgxFMbBRE91Y&s=10",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 4120790,
@@ -1420,10 +1484,10 @@
     "status": "В вишлисте",
     "steamAppId": "4120790",
     "poster": "https://cdn.cloudflare.steamstatic.com/steam/apps/4120790/library_600x900_2x.jpg",
-    "backdrop": "https://store.akamai.steamstatic.com/images/storepagebackground/app/4120790?t=1787247169",
+    "backdrop": "https://store.akamai.steamstatic.com/images/storepagebackground/app/4120790?t=1787508704",
     "dateRequested": "30.07.2026",
     "year": "2026",
-    "price": "Неизвестно",
+    "price": "$3,36 / 199 ₽ / 133 ₴ / 1 680 ₸",
     "isFree": "false",
     "studios": "Apelsinka Games (Изд: Apelsinka Games)",
     "genres": "Казуальные игры, Инди, Симуляторы",
@@ -1434,7 +1498,8 @@
     "metacriticUrl": "",
     "website": "",
     "dlcCount": "0",
-    "altPoster": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4120790/9579cef9abb055056b68c1216b5ec30022599763/header_russian.jpg?t=1787297941"
+    "altPoster": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4120790/9579cef9abb055056b68c1216b5ec30022599763/header_russian.jpg?t=1787297941",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 4935510,
@@ -1457,7 +1522,8 @@
     "metacriticUrl": "",
     "website": "",
     "dlcCount": "0",
-    "altPoster": "https://s.pacn.ws/1/p/1gm/947329.7.jpg?v=tje9vk"
+    "altPoster": "https://s.pacn.ws/1/p/1gm/947329.7.jpg?v=tje9vk",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 3846580,
@@ -1480,7 +1546,8 @@
     "metacriticUrl": "",
     "website": "",
     "dlcCount": "0",
-    "altPoster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbX3ucwlDB2uQYGXLzQjOR3VLy3jbGlkMDutRLi0Z75QO26rkiB9gbEQk&s=10"
+    "altPoster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbX3ucwlDB2uQYGXLzQjOR3VLy3jbGlkMDutRLi0Z75QO26rkiB9gbEQk&s=10",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 4876650,
@@ -1489,7 +1556,7 @@
     "status": "В вишлисте",
     "steamAppId": "4876650",
     "poster": "https://cdn.cloudflare.steamstatic.com/steam/apps/4876650/library_600x900_2x.jpg",
-    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4876650/2192e4f60718f6764d55753e827a3ea6b8d6d326/page_bg_raw.jpg?t=1786536913",
+    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4876650/e581d6ab889c9cd24b811f18d4f7b4fe000fd19b/page_bg_raw.jpg?t=1787976277",
     "dateRequested": "18.07.2026",
     "year": "2026",
     "price": "Неизвестно",
@@ -1498,12 +1565,13 @@
     "genres": "Казуальные игры, Инди, Симуляторы",
     "platforms": "Windows, Linux",
     "overview": "Где-то под этой горой деталей - ваш пол. Сортируйте невозможную Кучу от первого лица: крюк-кошка, сита, зрение, выслеживающее детали. Наполняйте ящики, доставайте детали, смотрите, как MOC-модели собираются деталь за деталью. Одно правило: никогда не сортируйте по цвету.",
-    "detailedDesc": "В сортировке деталей есть одно правило. И каждый усваивает его на горьком опыте.Вам достались мастерская и Куча, которая поглотила её целиком. Никогда не сортируй по цвету - это дзен-симулятор наведения порядка от первого лица, в котором предстоит всё исправить: рассортировать неправдоподобно огромную гору пластиковых деталей в идеально подписанную мастерскую, по одной приятной пригоршне за раз.Укротите КучуКуча не выглядит покоримой. В этом-то всё и дело. Начните с того, что будете доставать детали по одной, и вырастите из себя неудержимую сортировочную машину:Крюк-кошка - прицельтесь в деталь, и каждая свободная копия вырвется из Кучи и потечёт вам в ладонь.Глаз сортировщика - отметьте тип детали и смотрите, как каждый экземпляр светится сквозь хаос.Лоток-сито - зачерпните, встряхните и дайте гравитации рассортировать целую партию по размеру одним движением.Быстрая сортировка - привяжите контейнеры к горячим клавишам и швыряйте детали вслепую через плечо, на чистой мышечной памяти.Локаторы - поднимите любую деталь, и её родной ящик засветится в другом конце комнаты.Покупайте контейнеры, лотки и стеллажные стенки. Складывайте их в башни. Подписывайте всё. Смотрите, как проступает пол.Доставайте детали. Смотрите, как оно собирается.По всей мастерской разбросаны книжки с инструкциями, и каждая - это MOC в ожидании деталей. Раскройте одну, соберите её спецификацию из своих идеальных ящиков и смотрите, как модель собирается сама, деталь за деталью - таймлапс из деталей, которые взлетают и защёлкиваются на месте, шип за шипом.Вот тут ваша сортировка либо окупается, либо кусается. Честные ящики - и полный набор соберётся за секунды. Загрязнённый ящик - и лоток выплюнет вашу неправильную деталь прямо у вас на глазах.Готовые модели никуда не отправляются - они заполняют вашу мастерскую. Пожарная машина на подоконнике. Космический корабль под потолком. Возьмите одну и погоняйте её по комнате. Мы никому не скажем.Хаос на входе. Порядок на выходе.Одна мастерская, одна огромная Куча, один глубоко приятный цикл.Ни таймеров, ни проигрыша - только вы, детали и тихий щелчок вещей, встающих на свои места.Каждая рассортированная деталь заметно уменьшает гору. Всё «до и после» - и есть игра.ПравилоСортировать по цвету кажется правильным. Это выглядит красиво. И любой коллекционер деталей на свете скажет вам одно и то же: вы больше никогда ничего не найдёте.Сортируйте по детали. Всегда по детали.Никогда. Не сортируй. По. Цвету.",
+    "detailedDesc": "В сортировке деталей есть одно правило. И каждый усваивает его на горьком опыте.Вам достались мастерская и Куча, которая поглотила её целиком. Никогда не сортируй по цвету - это дзен-симулятор наведения порядка от первого лица, в котором предстоит всё исправить: рассортировать неправдоподобно огромную гору пластиковых деталей в идеально подписанную мастерскую, по одной приятной пригоршне за раз.Укротите КучуКуча не выглядит покоримой. В этом-то всё и дело. Начните с того, что будете доставать детали по одной, и вырастите из себя неудержимую сортировочную машину:Крюк-кошка - прицельтесь в деталь, и каждая свободная копия вырвется из Кучи и потечёт вам в ладонь.Глаз сортировщика - отметьте тип детали и смотрите, как каждый экземпляр светится сквозь хаос.Лоток-сито - зачерпните, встряхните и дайте гравитации рассортировать целую партию по размеру одним движением.Быстрая сортировка - привяжите контейнеры к горячим клавишам и швыряйте детали вслепую через плечо, на чистой мышечной памяти.Локаторы - поднимите любую деталь, и её родной ящик засветится в другом конце комнаты.Покупайте контейнеры, лотки и стеллажные стенки. Складывайте их в башни. Подписывайте всё. Смотрите, как проступает пол.Доставайте детали. Смотрите, как оно собирается.По всей мастерской разбросаны книжки с инструкциями, и каждая - это MOC в ожидании деталей. Раскройте одну, соберите её спецификацию из своих идеальных ящиков и смотрите, как модель собирается сама, деталь за деталью - таймлапс из деталей, которые взлетают и защёлкиваются на месте, шип за шипом.Вот тут ваша сортировка либо окупается, либо кусается. Честные ящики - и полный набор соберётся за секунды. Загрязнённый ящик - и лоток выплюнет вашу неправильную деталь прямо у вас на глазах.Готовые модели никуда не отправляются - они заполняют вашу мастерскую. Пожарная машина на подоконнике. Космический корабль под потолком. Возьмите одну и погоняйте её по комнате. Я никому не скажу.Хаос на входе. Порядок на выходе.Одна мастерская, одна огромная Куча, один глубоко приятный цикл.Ни таймеров, ни проигрыша - только вы, детали и тихий щелчок вещей, встающих на свои места.Каждая рассортированная деталь заметно уменьшает гору. Всё «до и после» - и есть игра.ПравилоСортировать по цвету кажется правильным. Это выглядит красиво. И любой коллекционер деталей на свете скажет вам одно и то же: вы больше никогда ничего не найдёте.Сортируйте по детали. Всегда по детали.Никогда. Не сортируй. По. Цвету.",
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "",
     "dlcCount": "0",
-    "altPoster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGV2PRMbmr5yNFf2GFt_s-kxrN2N5jSYF6rCTE40tUYUFFOMVLM3VgR8k&s=10"
+    "altPoster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGV2PRMbmr5yNFf2GFt_s-kxrN2N5jSYF6rCTE40tUYUFFOMVLM3VgR8k&s=10",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 4369620,
@@ -1526,7 +1594,8 @@
     "metacriticUrl": "",
     "website": "https://www.lastharborgame.com/",
     "dlcCount": "0",
-    "altPoster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhuZExn1qufN5Yp4qct5C24HFJGdUdqQu6nQyzyivHy4c2Be8NYUuBP8U&s=10"
+    "altPoster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhuZExn1qufN5Yp4qct5C24HFJGdUdqQu6nQyzyivHy4c2Be8NYUuBP8U&s=10",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 4745810,
@@ -1549,7 +1618,8 @@
     "metacriticUrl": "",
     "website": "",
     "dlcCount": "0",
-    "altPoster": "https://images.stopgame.ru/games/logos/65631/c280x280/5Bk9IOtj10vvUrny7J_kCQ/when_wolf_fades-square.jpg"
+    "altPoster": "https://images.stopgame.ru/games/logos/65631/c280x280/5Bk9IOtj10vvUrny7J_kCQ/when_wolf_fades-square.jpg",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 1843400,
@@ -1558,21 +1628,22 @@
     "status": "В вишлисте",
     "steamAppId": "1843400",
     "poster": "https://cdn.cloudflare.steamstatic.com/steam/apps/1843400/library_600x900_2x.jpg",
-    "backdrop": "https://store.akamai.steamstatic.com/images/storepagebackground/app/1843400?t=1786508201",
+    "backdrop": "https://store.akamai.steamstatic.com/images/storepagebackground/app/1843400?t=1787989027",
     "dateRequested": "16.06.2026",
     "year": "2026",
-    "price": "Неизвестно",
+    "price": "$4,34 / 315 ₽ / 157 ₴ / 2 145 ₸",
     "isFree": "false",
     "studios": "Bublig (Изд: Bublig)",
     "genres": "Экшены, Приключенческие игры, Инди, Ранний доступ",
     "platforms": "Windows, Mac, Linux",
-    "overview": "The Last Disease Z - кооперативное выживание в мире, где всё против тебя. Заброшенные города, зомби и бандиты, борьба за ресурсы и место под солнцем. Строй, объединяйся и выживай.",
-    "detailedDesc": "ОбзорThe Last Disease Z - это суровое выживание в открытом мире, где каждый шаг может стать последним. Заброшенный остров скрывает не только следы цивилизации, но и угрозы, которые охотятся в тени. Сражайся, строй и исследуй, чтобы выжить среди хаоса, где живые опасны не меньше мёртвых. Остров выглядит спокойным лишь на первый взгляд. Заброшенный город, опустевшие деревни, разрушенная военная база - всё это напоминает о времени, когда люди ещё контролировали происходящее. Теперь здесь правит хаос: зомби бродят по улицам, мутанты скрываются в лесах, а вооружённые бандиты устраивают засады на самых ценных точках.Тебе предстоит начать путь с нуля: собирать ресурсы, крафтить инструменты, строить убежище и защищать его от рейдов других игроков и враждебных фракций. Каждый выход за пределы базы - испытание. Каждый найденный предмет - шанс продержаться ещё немного.Развивай навыки персонажа, исследуй остров, охоться и сражайся - здесь выживут только самые устойчивые.Ключевые особенностиОткрытый островной мир с городом, деревнями, базой и разнообразными точками интересаИсследуй разнообразные локации - от заброшенных улиц города до тихих деревень и брошенной военной базы, каждая из которых хранит уникальный лут и скрытые угрозы.Песочница без сюжетных ограниченийИграй как хочешь: выживай в одиночку, вступай в группировки, строй крепости или охоться за лутом - никаких сценарных рамок.Крафт оружия, инструментов, медикаментов и ресурсовСоздавай всё необходимое для выживания - от простых инструментов до огнестрельного оружия и медицинских препаратов.Строительство и создание собственной базыСтрой дом или укреплённую базу с многоуровневой защитой - стены, ловушки, баррикады и продуманные планировки помогут выжить.",
+    "overview": "The Last Disease Z - суровое многопользовательское выживание в мире, где всё против тебя. Заброшенные города, зомби и бандиты, борьба за ресурсы и место под солнцем. Строй, объединяйся и выживай.",
+    "detailedDesc": "ОбзорThe Last Disease Z - это суровое выживание в открытом мире, где каждый шаг может стать последним. Заброшенный остров скрывает не только следы цивилизации, но и угрозы, которые охотятся в тени. Сражайся, строй и исследуй, чтобы выжить среди хаоса, где живые опасны не меньше мёртвых.Остров выглядит спокойным лишь на первый взгляд. Заброшенный город, опустевшие деревни, разрушенная военная база - всё это напоминает о времени, когда люди ещё контролировали происходящее. Теперь здесь правит хаос: зомби бродят по улицам, мутанты скрываются в лесах, а вооружённые бандиты устраивают засады на самых ценных точках.Тебе предстоит начать путь с нуля: собирать ресурсы, крафтить инструменты, строить убежище и защищать его от рейдов других игроков и враждебных фракций. Каждый выход за пределы базы - испытание. Каждый найденный предмет - шанс продержаться ещё немного.Развивай навыки персонажа, исследуй остров, охоться и сражайся - здесь выживут только самые устойчивые.Ключевые особенностиОткрытый островной мир с городом, деревнями, базой и разнообразными точками интересаИсследуй разнообразные локации - от заброшенных улиц города до тихих деревень и брошенной военной базы, каждая из которых хранит уникальный лут и скрытые угрозы.Песочница без сюжетных ограниченийИграй как хочешь: выживай в одиночку, вступай в группировки, строй крепости или охоться за лутом - никаких сценарных рамок.Крафт оружия, инструментов, медикаментов и ресурсовСоздавай всё необходимое для выживания - от простых инструментов до огнестрельного оружия и медицинских препаратов.Строительство и создание собственной базыСтрой дом или укреплённую базу с многоуровневой защитой - стены, ловушки, баррикады и продуманные планировки помогут выжить.",
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "",
-    "dlcCount": "1",
-    "altPoster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWptoVzxl1T9wbsaxj24DxCU0DHrdDrukmfIaFZv9S2Gzhsh24oSzFkgiO&s=10"
+    "dlcCount": "0",
+    "altPoster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWptoVzxl1T9wbsaxj24DxCU0DHrdDrukmfIaFZv9S2Gzhsh24oSzFkgiO&s=10",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 4259360,
@@ -1581,7 +1652,7 @@
     "status": "В вишлисте",
     "steamAppId": "4259360",
     "poster": "https://cdn.cloudflare.steamstatic.com/steam/apps/4259360/library_600x900_2x.jpg",
-    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4259360/e6bbb77a1eca5e851b2375c654fd08b8f073057e/page_bg_raw.jpg?t=1786611901",
+    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4259360/e6bbb77a1eca5e851b2375c654fd08b8f073057e/page_bg_raw.jpg?t=1787322245",
     "dateRequested": "16.06.2026",
     "year": "2026",
     "price": "Неизвестно",
@@ -1589,13 +1660,14 @@
     "studios": "Blibloop, Doot (Изд: Doot Tiny Games, Wholesome Games Presents)",
     "genres": "Приключенческие игры, Казуальные игры, Инди, Симуляторы",
     "platforms": "Windows, Mac, Linux",
-    "overview": "Rebuild a community one bottle at a time in this tiny delivery adventure with your pet cow Milki. Gather resources and upgrade your barn, then bike along dirt paths, breezy meadows, and seaside cliffs to bring fresh milk back to the sleepy countryside.",
-    "detailedDesc": "Explore a charming countryside as a young bike courier named Neha. In this short but satisfying adventure, you'll deliver milk bottles, gather food for your pet cow Milki, meet friendly and intriguing characters, and help the community by completing a variety of small quests.Deliver Milk 🐮You and Milki are starting a dairy delivery service! Earn money, collect resources, upgrade your barn, and slowly grow your business.Explore the countryside 🌻Lush meadows, green forests, a glittering ocean: this land has so much beauty to discover! To see it all and meet everyone, you'll need to upgrade your bike and choose your path wisely.Reconnect the Community 💌Once known for its booming milk industry, this region has slowly been deserted after a mysterious event that affected all of the cows. Delivery after delivery, the residents will tell you more about their past as you build a future together!Features✅ What Milki Delivery offers:A short adventure: 2-3h of beautiful landscapes, light management, gentle decisions, and concise dialogue.A fully mouse-driven experience: click to control Neha throughout her journey and to interact with the world.Simple game mechanics: Choose your path, sell milk, gather ingredients, and complete little quests.A cozy mood: Summer vibes, hand-drawn side-scrolling landscapes, cute characters, and lovely music!Everything is kept simple with no possibility of failure: play at your own pace!❌ What Milki Delivery does NOT offer:No big odyssey with hours-long quests or a branching narrative.No arcade cycling gameplay with direct bicycle controls.No multiplayer of any kind.Dev teamHey, this is Blibloop and Doot talking! After making Minami Lane together, we wanted to explore something entirely different with a game less centered on management and more on discovery of both a world and its people.For this game, we’re collaborating once again with Zakku, our composer, whose music and sounds continue to shape the heart of our games.This is new to us and we still consider ourselves beginners, so please be kind with your expectations, and know that we will do our best! We really hope you'll enjoy our little game, Milki Delivery 💖",
+    "overview": "Rebuild a community one bottle at a time in this tiny delivery adventure with your pet cow Milki. Gather resources and upgrade your barn, then bike along dirt paths, breezy meadows, and seaside docks to bring fresh milk back to the sleepy countryside.",
+    "detailedDesc": "Explore a charming countryside as a young bike courier named Neha. In this short but satisfying adventure, playable entirely with your mouse, you'll deliver milk bottles, gather food for your pet cow Milki, meet friendly and intriguing characters, and help the community by completing a variety of small quests.Deliver Milk 🐮You and Milki are starting a dairy delivery service! Earn money, collect resources, upgrade your barn, and slowly grow your business.Explore the countryside 🌻Lush meadows, green forests, a glittering ocean: this land has so much beauty to discover! To find every little secret and meet everyone, you'll need to upgrade your bike and choose your path wisely.Reconnect the Community 💌Once known as &quot;the land of cows&quot;, this region has slowly been deserted after a mysterious event that affected all of the cattle. Delivery after delivery, the residents will tell you more about their past as you build a future together!Features✅ What Milki Delivery offers:A short adventure: 2-4h of beautiful landscapes, light resource management, gentle decisions, and short dialogues.A fully mouse-driven experience: Click to control Neha throughout her journey and to interact with the world.Simple game mechanics: Choose your path, sell milk, gather ingredients, and complete little quests.A cozy mood: Summer vibes, hand-drawn side-scrolling landscapes, cute characters, and lovely music!Everything is kept simple with no possibility of failure: play at your own pace!❌ What Milki Delivery does NOT offer:No big odyssey with hours-long quests or a branching narrative.No arcade cycling gameplay with direct bicycle controls.No multiplayer of any kind.Dev teamHey, this is Blibloop and Doot talking! After making Minami Lane together, we wanted to explore something entirely different with a game less centered on management and more on discovery of both a world and its people.For this game, we’re collaborating once again with Zakku, our composer, whose music and sounds continue to shape the heart of our games.This is new to us and we still consider ourselves beginners, so please be kind with your expectations, and know that we will do our best! We really hope you'll enjoy our little game, Milki Delivery 💖",
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "https://milkidelivery.carrd.co/",
     "dlcCount": "0",
-    "altPoster": "https://images.igdb.com/igdb/image/upload/t_cover_big/coblsh.jpg"
+    "altPoster": "https://images.igdb.com/igdb/image/upload/t_cover_big/coblsh.jpg",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 4268460,
@@ -1604,7 +1676,7 @@
     "status": "В вишлисте",
     "steamAppId": "4268460",
     "poster": "https://cdn.cloudflare.steamstatic.com/steam/apps/4268460/library_600x900_2x.jpg",
-    "backdrop": "https://store.akamai.steamstatic.com/images/storepagebackground/app/4268460?t=1787220962",
+    "backdrop": "https://store.akamai.steamstatic.com/images/storepagebackground/app/4268460?t=1787729784",
     "dateRequested": "16.06.2026",
     "year": "2026",
     "price": "Неизвестно",
@@ -1618,7 +1690,8 @@
     "metacriticUrl": "",
     "website": "",
     "dlcCount": "0",
-    "altPoster": "https://assets-prd.ignimgs.com/2026/04/24/shoretiles-button-1777039783210.jpg?crop=1%3A1%2Csmart&format=jpg&auto=webp&quality=80"
+    "altPoster": "https://assets-prd.ignimgs.com/2026/04/24/shoretiles-button-1777039783210.jpg?crop=1%3A1%2Csmart&format=jpg&auto=webp&quality=80",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 4677100,
@@ -1627,7 +1700,7 @@
     "status": "В вишлисте",
     "steamAppId": "4677100",
     "poster": "https://cdn.cloudflare.steamstatic.com/steam/apps/4677100/library_600x900_2x.jpg",
-    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4677100/991f9686a83ebc11ada27aa6a859fca1f6766245/page_bg_raw.jpg?t=1783596686",
+    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4677100/991f9686a83ebc11ada27aa6a859fca1f6766245/page_bg_raw.jpg?t=1787533800",
     "dateRequested": "16.06.2026",
     "year": "????",
     "price": "Бесплатно",
@@ -1640,8 +1713,9 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "",
-    "dlcCount": "1",
-    "altPoster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7KBkHitHUbsc38sX_YJ9b1SLybh3sZYN0efBxuRJ07H7GfFX_2a7J3vQ&s=10"
+    "dlcCount": "0",
+    "altPoster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7KBkHitHUbsc38sX_YJ9b1SLybh3sZYN0efBxuRJ07H7GfFX_2a7J3vQ&s=10",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 4680470,
@@ -1650,7 +1724,7 @@
     "status": "В вишлисте",
     "steamAppId": "4680470",
     "poster": "https://cdn.cloudflare.steamstatic.com/steam/apps/4680470/library_600x900_2x.jpg",
-    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4680470/cec7442a5557fcd0c51c2788974a3a6de7b555df/page_bg_raw.jpg?t=1787217260",
+    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4680470/cec7442a5557fcd0c51c2788974a3a6de7b555df/page_bg_raw.jpg?t=1787931956",
     "dateRequested": "16.06.2026",
     "year": "????",
     "price": "Неизвестно",
@@ -1658,13 +1732,14 @@
     "studios": "Oxygen Chick (Изд: Oxygen Chick)",
     "genres": "Приключенческие игры, Инди, Симуляторы",
     "platforms": "Windows",
-    "overview": "Сибирь начала 20-го века. Вы оказываетесь в странной гостинице в лесу, которая становится для вас тюрьмой. Теперь вам предстоит из нее выбраться.",
-    "detailedDesc": "Об игре«Отель Котёл» — сюжетно ориентированный сказочный психологический хоррор с поиском аномалий. Вы оказываетесь запертыми в гостинице начала XX века. Чтобы выбраться из нее, вы должны искать отличия в окружающей вас действительности.ВведениеСпасаясь от чего-то неизвестного, но точно зловещего, вы прячетесь в таинственной гостинице в лесу. Однако временное спасение оказывается ловушкой, и теперь вам предстоит выбраться из неё.Проживите в гостинице 8 часов, чтобы спастись.Ищите наваждения, чтобы выбратьсяНаваждение — это галлюцинация или аномалия, порожденная гостиницей, которая не хочет вас выпускать. Боритесь с ними. Ищите изменения вокруг вас. Если вы заметили их, то позвоните в колокольчик в вашем номере, чтобы их развеять. Если всё по-прежнему, то вздремните. Каждое верное решение двигает время вперед.Что это за место? Как вы в нем оказались?Верните украденные у вас воспоминания и вернитесь к прежней жизни. Кто-то снаружи помогает вам в этом. Собирайте артефакты, которые он посылает вам.",
+    "overview": "Окажитесь в роли пленника мрачной сказочной гостиницы. Ищите наваждения или аномалии, чтобы выбраться. Собирайте соломенные куклы, которые кто-то вам посылает, и выигрывайте у демона в его пазл-играх.",
+    "detailedDesc": "Об игре«Отель Котёл» — сюжетно ориентированный сказочный психологический хоррор с поиском аномалий и мини-пазл-играми. Вы оказываетесь запертыми в гостинице начала XX века. Чтобы выбраться из нее, вы должны искать отличия в окружающей вас действительности.ВведениеСпасаясь от чего-то вам неизвестного, но несомненно зловещего, вы прячетесь в мрачной, внезапно возникшей, гостинице в лесу. Однако временное спасение оказывается ловушкой, и теперь вам предстоит понять как выбраться из неё.Ищите наваждения, чтобы выбратьсяНаваждение — это галлюцинация или аномалия, порожденная гостиницей, которая не хочет вас выпускать. Боритесь с ними. Ищите изменения вокруг вас. Если вы заметили их, то позвоните в колокольчик в вашем номере, чтобы их развеять. Если всё по-прежнему, то вздремните. Каждое верное решение двигает время вперед.Проживите в гостинице 8 часов, чтобы спастись.Что это за место? Как вы в нем оказались?Возвращайте украденные у вас воспоминания и раскройте сюжет полностью. Кто-то снаружи помогает вам в этом. Ищите и собирайте артефакты, которые он посылает вам.",
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "",
-    "dlcCount": "1",
-    "altPoster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHYlyKB8y8dfcaTznmnIerrzNenJBcB00T1mSdiZMBjEcmlBl2CIJ-Jclu&s=10"
+    "dlcCount": "0",
+    "altPoster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHYlyKB8y8dfcaTznmnIerrzNenJBcB00T1mSdiZMBjEcmlBl2CIJ-Jclu&s=10",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 4661070,
@@ -1686,8 +1761,9 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "https://games.artdock.studio",
-    "dlcCount": "1",
-    "altPoster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjIe9MsHmHPr3r0PopFIwo6sKDoXfu4rZAyOIMj3hgoW85nX47eyVuAMo&s=10"
+    "dlcCount": "0",
+    "altPoster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjIe9MsHmHPr3r0PopFIwo6sKDoXfu4rZAyOIMj3hgoW85nX47eyVuAMo&s=10",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 2997230,
@@ -1709,8 +1785,9 @@
     "metacriticScore": "79",
     "metacriticUrl": "https://www.metacritic.com/game/pc/planet-of-lana-ii?ftag=MCD-06-10aaa1f",
     "website": "https://planetoflana.com/",
-    "dlcCount": "1",
-    "altPoster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQmP7VBX954AlrAkx0kIldgY5W1FZ5EWwDjrWH4lB3iNTPNV_Szt4gMZLr&s=10"
+    "dlcCount": "0",
+    "altPoster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQmP7VBX954AlrAkx0kIldgY5W1FZ5EWwDjrWH4lB3iNTPNV_Szt4gMZLr&s=10",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 4182190,
@@ -1733,7 +1810,8 @@
     "metacriticUrl": "",
     "website": "",
     "dlcCount": "0",
-    "altPoster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB_AQrap5iQKGTLscCGfg-Ly5-RBE63v9XFh3HJ0tzzKl9W__pxPgK2UQ&s=10"
+    "altPoster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB_AQrap5iQKGTLscCGfg-Ly5-RBE63v9XFh3HJ0tzzKl9W__pxPgK2UQ&s=10",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 2794590,
@@ -1756,7 +1834,8 @@
     "metacriticUrl": "",
     "website": "",
     "dlcCount": "0",
-    "altPoster": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cob6y7.jpg"
+    "altPoster": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cob6y7.jpg",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 1538550,
@@ -1768,7 +1847,7 @@
     "backdrop": "https://store.akamai.steamstatic.com/images/storepagebackground/app/1538550?t=1765323947",
     "dateRequested": "15.03.2026",
     "year": "2025",
-    "price": "$12,49 / 1 059 ₽ / 489 ₴ / 6 900 ₸",
+    "price": "$7,49 / 635 ₽ / 293 ₴ / 4 140 ₸",
     "isFree": "false",
     "studios": "Light Brick Studio (Изд: Annapurna Interactive)",
     "genres": "Приключенческие игры, Казуальные игры",
@@ -1778,8 +1857,9 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "http://legovoyagers.com",
-    "dlcCount": "1",
-    "altPoster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0_zXdWByDkGBcsY9CzV2xr0q56QytvIrkJr_sjJ0vzX3m-Clb0qgK15s&s=10"
+    "dlcCount": "0",
+    "altPoster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0_zXdWByDkGBcsY9CzV2xr0q56QytvIrkJr_sjJ0vzX3m-Clb0qgK15s&s=10",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 3295000,
@@ -1802,7 +1882,8 @@
     "metacriticUrl": "",
     "website": "https://store.steampowered.com/publisher/digitalsun",
     "dlcCount": "0",
-    "altPoster": "https://newcdn.igromania.ru/games/384710/08f7f685-c6a0-4796-9367-8b666785c232.jpg"
+    "altPoster": "https://newcdn.igromania.ru/games/384710/08f7f685-c6a0-4796-9367-8b666785c232.jpg",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 4005900,
@@ -1825,7 +1906,8 @@
     "metacriticUrl": "",
     "website": "",
     "dlcCount": "0",
-    "altPoster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuh_LsM50qteJzrqvas7pb38oEUPMDEZQ46x7ouo23Kw&s"
+    "altPoster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuh_LsM50qteJzrqvas7pb38oEUPMDEZQ46x7ouo23Kw&s",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 3602270,
@@ -1848,7 +1930,8 @@
     "metacriticUrl": "",
     "website": "https://doubledusk.com",
     "dlcCount": "0",
-    "altPoster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh5JNCqrobJDBblRsbAtvDB4uf1GnRVP7IdXGchNUAfrQkA-th0IIMFd0&s=10"
+    "altPoster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh5JNCqrobJDBblRsbAtvDB4uf1GnRVP7IdXGchNUAfrQkA-th0IIMFd0&s=10",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 3581890,
@@ -1871,7 +1954,8 @@
     "metacriticUrl": "",
     "website": "",
     "dlcCount": "0",
-    "altPoster": "https://images.igdb.com/igdb/image/upload/t_cover_big/coblrd.webp"
+    "altPoster": "https://images.igdb.com/igdb/image/upload/t_cover_big/coblrd.webp",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 4019970,
@@ -1894,7 +1978,8 @@
     "metacriticUrl": "",
     "website": "",
     "dlcCount": "0",
-    "altPoster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4019970/393ae0d2a4e9b9b992729176c6fb24b4bfc48717/header.jpg?t=1768555731"
+    "altPoster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4019970/393ae0d2a4e9b9b992729176c6fb24b4bfc48717/header.jpg?t=1768555731",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 3734290,
@@ -1916,8 +2001,9 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "https://oldcakefactory.games/",
-    "dlcCount": "1",
-    "altPoster": "https://i.playground.ru/e/_DBZYbcqbDEXI-T83h_bmg.jpeg"
+    "dlcCount": "0",
+    "altPoster": "https://i.playground.ru/e/_DBZYbcqbDEXI-T83h_bmg.jpeg",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 3621690,
@@ -1926,9 +2012,9 @@
     "status": "В вишлисте",
     "steamAppId": "3621690",
     "poster": "https://cdn.cloudflare.steamstatic.com/steam/apps/3621690/library_600x900_2x.jpg",
-    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3621690/8c738f4fa6e50ec7a9345c913bf169dc9454c1aa/page_bg_raw.jpg?t=1779174103",
+    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3621690/8c738f4fa6e50ec7a9345c913bf169dc9454c1aa/page_bg_raw.jpg?t=1787643101",
     "dateRequested": "15.01.2026",
-    "year": "2026",
+    "year": "2027",
     "price": "Неизвестно",
     "isFree": "false",
     "studios": "Bad Vices Games (Изд: Bad Vices Games)",
@@ -1940,7 +2026,8 @@
     "metacriticUrl": "",
     "website": "",
     "dlcCount": "0",
-    "altPoster": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cobrzp.jpg"
+    "altPoster": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cobrzp.jpg",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 3041680,
@@ -1963,7 +2050,8 @@
     "metacriticUrl": "",
     "website": "https://wildflowergames.com/",
     "dlcCount": "0",
-    "altPoster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPA7eyH26dWi2iD0UQA6UPZSXyPIsq4eWSezl4hnGyj2dzmPC6rBjqhg9t&s=10"
+    "altPoster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPA7eyH26dWi2iD0UQA6UPZSXyPIsq4eWSezl4hnGyj2dzmPC6rBjqhg9t&s=10",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 3805150,
@@ -1986,7 +2074,8 @@
     "metacriticUrl": "",
     "website": "",
     "dlcCount": "0",
-    "altPoster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWHqIqBRAyCpAWe3l0AeC0xatWM3kdIsTBGnG-zj_IeCd2AOwViqoWeFI&s=10"
+    "altPoster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWHqIqBRAyCpAWe3l0AeC0xatWM3kdIsTBGnG-zj_IeCd2AOwViqoWeFI&s=10",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 2640090,
@@ -2009,29 +2098,8 @@
     "metacriticUrl": "",
     "website": "https://www.wonderbellygames.com/",
     "dlcCount": "0",
-    "altPoster": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9y0s.jpg"
-  },
-  {
-    "id": 2713000,
-    "title": "Resonance: A Plague Tale Legacy",
-    "type": "Игра",
-    "status": "В вишлисте",
-    "steamAppId": "2713000",
-    "poster": "https://cdn.cloudflare.steamstatic.com/steam/apps/2713000/library_600x900_2x.jpg",
-    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2713000/66e41e5b2710926c4e333cbb291f4c8bbc3b01f9/page_bg_raw.jpg?t=1787682174",
-    "dateRequested": "24.08.2026",
-    "year": "2026",
-    "price": "$39,99 / 2 399 ₽ / 1 199 ₴ / 14 590 ₸",
-    "isFree": "false",
-    "studios": "Asobo Studio (Изд: Focus Entertainment)",
-    "genres": "Экшены, Приключенческие игры",
-    "platforms": "Windows",
-    "overview": "Приквел A Plague Tale – история Софии. Отправляйтесь на остров Минотавра, где вам придется обманывать врагов, раскрывать древние тайны и встретиться с мифическим созданием, которое сокрыто в сердце сокрушительного проклятия.",
-    "detailedDesc": "Специальное предложение при предзаказеОб игре Действие происходит за 15 лет до событий A Plague Tale: Requiem. Свирепая молодая разбойница София в бегах, но она твердо намерена раскрыть тайны своего прошлого. Погрузитесь в оригинальную историю, где в водовороте сражений, мифов и воли судьбы вселенная A Plague Tale предстанет перед вами с новой стороны. Путешествие Софии приводит ее на остров Минотавра, где ей придется преодолевать смертельные испытания, отыскивать путь по неверным следам и решать головоломки, постоянно сражаясь и на шаг опережая идущую по пятам армию. Но впереди ее ждет настоящее бедствие – пугающее создание, чья истинная сущность скрыта пеленой мифов и которое скоро обнаружит свою связь с девушкой...     София – искусная, ловкая и волевая воительница, она прекрасно показывает себя в ближнем бою. За ней охотится много разных врагов, которых манит на остров загадочное сокровище, и спасаясь от них, ей придется преодолеть коварный лабиринт. Полагайтесь на свое проворство, хитрые приемы и отточенные рефлексы, обманывайте врагов, совершенствуйте контратаки и решайте исход смертельных поединков мощными ударами.    Переключайтесь между средневековым миром Софии и античными временами Минойской цивилизации, где эхо прошлого звучит в битвах настоящего. Перед вами развернется новая история во вселенной A Plague Tale, где жизни двух героев сплетает судьба и непостижимое наследие Макулы.   Следуя подсказкам в вашем журнале, идите по следам вашего экипажа и исследуйте богатый деталями мир, раскрывайте его тайны и проходите смертельные испытания. С помощью украденной минойской сферы решайте хитроумные загадки, управляя светом, силой которого Дедал напитал самое сердце острова.   Говорят, немногим удалось вернуться с острова. В тенях таится нечто беспокойное. Оно охотится в недрах острова и неотступно следует за вами, будто предугадывая каждый ваш следующий ход. Каждый шаг – риск. Каждое промедление грозит гибелью. Останавливаться нельзя, остается только прятаться, побеждать врага смекалкой и идти дальше. Сможете ли вы пережить все испытания или станете одной из тех, кто так и не вернулся с острова?",
-    "metacriticScore": "Нет оценок",
-    "metacriticUrl": "",
-    "website": "https://www.focus-entmt.com/en/games/resonance-a-plague-tale-legacy",
-    "dlcCount": "0"
+    "altPoster": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9y0s.jpg",
+    "datePriceUpdated": "30.08.2026"
   },
   {
     "id": 3393280,
@@ -2040,7 +2108,7 @@
     "status": "В вишлисте",
     "steamAppId": "3393280",
     "poster": "https://cdn.cloudflare.steamstatic.com/steam/apps/3393280/library_600x900_2x.jpg",
-    "backdrop": "https://store.akamai.steamstatic.com/images/storepagebackground/app/3393280?t=1787748234",
+    "backdrop": "https://store.akamai.steamstatic.com/images/storepagebackground/app/3393280?t=1787979437",
     "dateRequested": "24.08.2026",
     "year": "2026",
     "price": "Неизвестно",
@@ -2053,6 +2121,31 @@
     "metacriticScore": "Нет оценок",
     "metacriticUrl": "",
     "website": "",
-    "dlcCount": "0"
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026"
+  },
+  {
+    "id": 2713000,
+    "title": "Resonance: A Plague Tale Legacy",
+    "type": "Игра",
+    "status": "В вишлисте",
+    "steamAppId": "2713000",
+    "poster": "https://cdn.cloudflare.steamstatic.com/steam/apps/2713000/library_600x900_2x.jpg",
+    "backdrop": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2713000/66e41e5b2710926c4e333cbb291f4c8bbc3b01f9/page_bg_raw.jpg?t=1787925122",
+    "dateRequested": "24.08.2026",
+    "year": "2026",
+    "price": "$39,99 / 2 399 ₽ / 1 199 ₴ / 14 590 ₸",
+    "isFree": "false",
+    "studios": "Asobo Studio (Изд: Focus Entertainment)",
+    "genres": "Экшены, Приключенческие игры",
+    "platforms": "Windows",
+    "overview": "Приквел A Plague Tale – история Софии. Отправляйтесь на остров Минотавра, где вам придется обманывать врагов, раскрывать древние тайны и встретиться с мифическим созданием, которое сокрыто в сердце сокрушительного проклятия.",
+    "detailedDesc": "Действие происходит за 15 лет до событий A Plague Tale: Requiem. Свирепая молодая разбойница София в бегах, но она твердо намерена раскрыть тайны своего прошлого. Погрузитесь в оригинальную историю, где в водовороте сражений, мифов и воли судьбы вселенная A Plague Tale предстанет перед вами с новой стороны. Путешествие Софии приводит ее на остров Минотавра, где ей придется преодолевать смертельные испытания, отыскивать путь по неверным следам и решать головоломки, постоянно сражаясь и на шаг опережая идущую по пятам армию. Но впереди ее ждет настоящее бедствие – пугающее создание, чья истинная сущность скрыта пеленой мифов и которое скоро обнаружит свою связь с девушкой...     София – искусная, ловкая и волевая воительница, она прекрасно показывает себя в ближнем бою. За ней охотится много разных врагов, которых манит на остров загадочное сокровище, и спасаясь от них, ей придется преодолеть коварный лабиринт. Полагайтесь на свое проворство, хитрые приемы и отточенные рефлексы, обманывайте врагов, совершенствуйте контратаки и решайте исход смертельных поединков мощными ударами.    Переключайтесь между средневековым миром Софии и античными временами Минойской цивилизации, где эхо прошлого звучит в битвах настоящего. Перед вами развернется новая история во вселенной A Plague Tale, где жизни двух героев сплетает судьба и непостижимое наследие Макулы.   Следуя подсказкам в вашем журнале, идите по следам вашего экипажа и исследуйте богатый деталями мир, раскрывайте его тайны и проходите смертельные испытания. С помощью украденной минойской сферы решайте хитроумные загадки, управляя светом, силой которого Дедал напитал самое сердце острова.   Говорят, немногим удалось вернуться с острова. В тенях таится нечто беспокойное. Оно охотится в недрах острова и неотступно следует за вами, будто предугадывая каждый ваш следующий ход. Каждый шаг – риск. Каждое промедление грозит гибелью. Останавливаться нельзя, остается только прятаться, побеждать врага смекалкой и идти дальше. Сможете ли вы пережить все испытания или станете одной из тех, кто так и не вернулся с острова?",
+    "metacriticScore": "85",
+    "metacriticUrl": "https://www.metacritic.com/game/pc/resonance-a-plague-tale-legacy?ftag=MCD-06-10aaa1f",
+    "website": "https://www.focus-entmt.com/en/games/resonance-a-plague-tale-legacy",
+    "dlcCount": "0",
+    "datePriceUpdated": "30.08.2026",
+    "altPoster": "https://upload.wikimedia.org/wikipedia/ru/9/95/Resonance_cover_art.jpg?utm_source=ru.wikipedia.org&utm_campaign=index&utm_content=original"
   }
 ]
