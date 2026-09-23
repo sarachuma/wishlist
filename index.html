@@ -6,6 +6,7 @@
     <title>WishLIST</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Geologica:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
     
     <style>
         @font-face {
@@ -25,18 +26,18 @@
         }
 
         :root {
-            --bg-deep: #030624;         
-            --bg-velvet: #0C1E5B;       
-            --bg-sunset: #002daa;       
+            --bg-deep: #030624;          
+            --bg-velvet: #0C1E5B;        
+            --bg-sunset: #002daa;        
             
             --accent-light: #ff4d4d;      
-            --accent-main: #fe0000;       
-            --accent-dark: #741511;       
+            --accent-main: #fe0000;        
+            --accent-dark: #741511;        
             
-            --warm-star: #fce8a1;       
-            --cute-pink: #ff8fa3;       
+            --warm-star: #fce8a1;        
+            --cute-pink: #ff8fa3;        
             
-            --text-main: #f0edf5;       
+            --text-main: #f0edf5;        
             --text-muted: #8b9dc3;      
             
             --font-title: 'Geologica Local', 'Geologica', sans-serif;
@@ -94,12 +95,14 @@
             padding: 35px 30px 25px; text-align: center; position: relative;
             border-bottom: 2px solid rgba(254, 0, 0, 0.3); 
             background: radial-gradient(circle at 50% 0%, rgba(254, 0, 0, 0.15) 0%, transparent 80%);
+            z-index: 30;
         }
         
         .header::after {
             content: '♥'; position: absolute; bottom: -14px; left: 50%; transform: translateX(-50%);
             color: var(--accent-main); font-size: 20px; background: var(--bg-deep); padding: 0 15px;
             border: 1px solid rgba(254, 0, 0, 0.4); text-shadow: 0 0 10px var(--accent-main);
+            z-index: 31;
         }
 
         .header-top h1 { 
@@ -161,10 +164,16 @@
         .view-toggle-btn:hover { background: var(--accent-main); color: #ffffff; box-shadow: 0 0 20px rgba(254, 0, 0, 0.5); text-shadow: none; }
 
         table { width: 100%; border-collapse: separate; border-spacing: 0; text-align: left; table-layout: fixed; }
-        th { text-align: center; color: #ffffff; text-shadow: 2px 2px 0px var(--accent-dark), 0 0 15px var(--accent-main); font-weight: 700; font-size: 18px; text-transform: uppercase; padding: 25px 12px 15px; border-bottom: 2px solid rgba(254, 0, 0, 0.3); font-family: var(--font-title); letter-spacing: 2px; }
+        th { 
+            text-align: center; color: #ffffff; text-shadow: 2px 2px 0px var(--accent-dark), 0 0 15px var(--accent-main); 
+            font-weight: 700; font-size: 18px; text-transform: uppercase; padding: 25px 12px 15px; 
+            border-bottom: 2px solid rgba(254, 0, 0, 0.3); font-family: var(--font-title); letter-spacing: 2px; 
+            position: sticky; top: 0; z-index: 20; background: rgba(3, 6, 36, 0.95); backdrop-filter: blur(10px);
+        }
         td { padding: 20px 15px; vertical-align: top; border-bottom: 1px dashed rgba(254, 0, 0, 0.15); }
         tr:last-child td { border-bottom: none; }
-        td:nth-child(1), td:nth-child(3), td:nth-child(4), td:nth-child(5) { text-align: center; }
+        td:nth-child(1), td:nth-child(3), td:nth-child(4), td:nth-child(5), td:nth-child(6) { text-align: center; }
+        
         tr.movie-row { cursor: pointer; transition: all 0.3s ease; position: relative; }
         tr.movie-row:hover { background-color: rgba(254, 0, 0, 0.05); } 
         td:nth-child(2) { text-align: left; position: relative; z-index: 1; overflow: hidden; }
@@ -183,7 +192,7 @@
         
         .copy-btn { background: rgba(254, 0, 0, 0.1); border: 1px solid transparent; color: var(--accent-main); cursor: pointer; padding: 4px; border-radius: 2px; display: flex; align-items: center; justify-content: center; transition: all 0.3s; opacity: 0; transform: scale(0.8); position: relative; top: 2px; flex-shrink: 0; }
         tr.movie-row:hover .copy-btn { opacity: 1; transform: scale(1); }
-        .copy-btn:hover { background: var(--accent-main); color: var(--bg-deep); box-shadow: 0 0 15px rgba(254, 0, 0, 0.5); } 
+        .copy-btn:hover { background: var(--accent-main); color: #ffffff; box-shadow: 0 0 15px rgba(254, 0, 0, 0.5); }
 
         .badges-container { display: flex; align-items: center; gap: 8px; margin: 2px 0; flex-wrap: wrap; }
         .content-type-badge { background: var(--bg-deep); color: #ffffff; padding: 3px 10px; font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; font-family: var(--font-title); border-radius: 2px; box-shadow: 0 2px 8px rgba(254, 0, 0, 0.5); border: 1px solid var(--accent-main); }
@@ -192,28 +201,60 @@
         .movie-genres { font-size: 12px; color: var(--text-main); font-weight: 600; opacity: 0.9; text-transform: uppercase; letter-spacing: 1px; font-family: var(--font-title); }
         .movie-studios-list { font-size: 14px; color: var(--accent-light); font-weight: 600; letter-spacing: 1px; margin-top: 2px; font-family: var(--font-title); }
 
-        .movie-overview-wrapper { margin-top: 8px; max-height: 48px; overflow: hidden; transition: max-height 0.4s ease; }
-        .movie-overview-text { font-size: 15px; line-height: 1.6; color: var(--text-muted); font-family: var(--font-text); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-        tr.movie-row:has(.poster-wrapper:hover) .movie-overview-wrapper { max-height: 250px; }
+        .list-tabs-container { display: flex; gap: 8px; margin-top: 8px; margin-bottom: 4px; }
+        .list-tab-btn { background: rgba(3, 6, 36, 0.6); border: 1px dashed rgba(254, 0, 0, 0.3); color: var(--text-muted); padding: 2px 10px 2px 8px; border-radius: 2px; font-size: 10px; font-family: var(--font-title); font-weight: 700; text-transform: uppercase; cursor: pointer; transition: all 0.3s ease; letter-spacing: 1px;}
+        .list-tab-btn:hover { border-color: var(--accent-main); color: var(--accent-light); }
+        .list-tab-btn.active { background: rgba(254, 0, 0, 0.15); border-color: var(--accent-main); border-style: solid; color: #ffffff; box-shadow: 0 0 10px rgba(254, 0, 0, 0.3); }
+
+        .movie-overview-wrapper, .movie-review-wrapper { margin-top: 4px; max-height: 48px; overflow: hidden; transition: max-height 0.4s ease; cursor: pointer; user-select: none; }
+        .movie-overview-text { font-size: 15px; line-height: 1.6; color: var(--text-muted); font-family: var(--font-text); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; transition: color 0.3s; }
+        
+        .movie-review-text { font-size: 14px; line-height: 1.5; color: var(--text-main); font-style: italic; border-left: 2px solid var(--accent-main); padding: 6px 10px; background: rgba(254, 0, 0, 0.05); border-radius: 0 2px 2px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; transition: color 0.3s, background-color 0.3s; }
+        
+        tr.movie-row:has(.poster-wrapper:hover) .movie-overview-wrapper, tr.movie-row:has(.poster-wrapper:hover) .movie-review-wrapper { max-height: 250px; }
         tr.movie-row:has(.poster-wrapper:hover) .movie-overview-text { -webkit-line-clamp: 20; color: var(--text-main); }
+        tr.movie-row:has(.poster-wrapper:hover) .movie-review-text { -webkit-line-clamp: 20; color: #fff; background: rgba(254, 0, 0, 0.1); }
         
+        .movie-overview-wrapper.expanded, .movie-review-wrapper.expanded { max-height: 1500px !important; }
+        .movie-overview-wrapper.expanded .movie-overview-text { -webkit-line-clamp: unset !important; color: var(--text-main); }
+        .movie-review-wrapper.expanded .movie-review-text { -webkit-line-clamp: unset !important; color: #fff; background: rgba(254, 0, 0, 0.15); }
+
         .date-badge { font-size: 12px; color: var(--accent-light); font-weight: 600; background: rgba(3, 6, 36, 0.9); border: 1px solid rgba(254, 0, 0, 0.3); padding: 6px 14px; border-radius: 2px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); display: inline-flex; justify-content: center; align-items: center; gap: 6px; font-family: var(--font-title); letter-spacing: 1px; margin-top: 10px;}
-        
         .badge-status { font-size: 12px; font-weight: 900; text-align: center; display: inline-flex; justify-content: center; align-items: center; text-transform: uppercase; letter-spacing: 2px; font-family: var(--font-title); color: var(--bg-deep); border-radius: 2px; padding: 4px 12px; margin-bottom: 8px; box-shadow: 0 4px 15px rgba(254, 0, 0, 0.5); min-width: 85px; }
 
         .steam-link-btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: rgba(254, 0, 0, 0.15); color: #ffffff !important; border: 1px solid rgba(254, 0, 0, 0.3); padding: 6px 12px; border-radius: 2px; text-decoration: none; font-family: var(--font-title); font-size: 13px; font-weight: 700; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.5); text-transform: uppercase; letter-spacing: 1px; width: 100%; box-sizing: border-box; }
         .steam-link-btn:hover { background: var(--accent-main); color: #ffffff !important; box-shadow: 0 0 15px rgba(254, 0, 0, 0.6); transform: translateY(-2px); }
 
-        .tg-link-btn {
-            display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-            background: rgba(41, 128, 185, 0.1); color: #38bdf8; border: 1px solid rgba(41, 128, 185, 0.3);
-            padding: 6px 12px; border-radius: 2px; text-decoration: none; font-family: var(--font-title); letter-spacing: 1px;
-            font-size: 13px; font-weight: 700; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-            width: 100%; box-sizing: border-box;
-        }
+        .tg-link-btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: rgba(41, 128, 185, 0.1); color: #38bdf8; border: 1px solid rgba(41, 128, 185, 0.3); padding: 6px 12px; border-radius: 2px; text-decoration: none; font-family: var(--font-title); letter-spacing: 1px; font-size: 13px; font-weight: 700; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.5); width: 100%; box-sizing: border-box; margin-top: 4px; }
         .tg-link-btn:hover { background: rgba(41, 128, 185, 1); color: #ffffff; box-shadow: 0 0 15px rgba(41, 128, 185, 0.8); transform: translateY(-2px); border-color: rgba(41, 128, 185, 1); }
 
+        .play-link-btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 3px 12px 2px 10px; border-radius: 2px; text-decoration: none; font-family: var(--font-title); font-size: 13px; font-weight: 700; transition: all 0.3s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.5); width: 100%; box-sizing: border-box; margin-top: 4px; text-transform: uppercase; letter-spacing: 1px;}
+        .play-link-btn.tg-rec { background: rgba(41, 128, 185, 0.1); color: #38bdf8; border: 1px solid rgba(41, 128, 185, 0.3); }
+        .play-link-btn.tg-rec:hover { background: rgba(41, 128, 185, 1); color: #ffffff; box-shadow: 0 0 12px rgba(41, 128, 185, 0.8); transform: translateY(-2px); border-color: rgba(41, 128, 185, 1); }
+        .play-link-btn.boosty { background: rgba(245, 130, 32, 0.1); color: #f58220; border: 1px solid rgba(245, 130, 32, 0.3); }
+        .play-link-btn.boosty:hover { background: #f58220; color: #130f1c; box-shadow: 0 0 12px rgba(245, 130, 32, 0.5); transform: translateY(-2px); }
+        .play-link-btn.yt { background: rgba(255, 74, 74, 0.1); color: #ff4a4a; border: 1px solid rgba(255, 74, 74, 0.3); }
+        .play-link-btn.yt:hover { background: #ff4a4a; color: #130f1c; box-shadow: 0 0 12px rgba(255, 74, 74, 0.5); transform: translateY(-2px); }
+
+        .play-modal-badge { display: inline-flex; align-items: center; gap: 4px; text-decoration: none; cursor: pointer; transition: all 0.3s ease; }
+        .play-modal-badge.tg-rec { color: #38bdf8 !important; border-color: rgba(41, 128, 185, 0.5); background: rgba(41, 128, 185, 0.05); }
+        .play-modal-badge.tg-rec:hover { background: rgba(41, 128, 185, 1); color: #ffffff !important; box-shadow: 0 0 10px rgba(41, 128, 185, 0.8); border-color: rgba(41, 128, 185, 1); }
+        .play-modal-badge.boosty { color: #f58220 !important; border-color: rgba(245, 130, 32, 0.5); background: rgba(245, 130, 32, 0.05); }
+        .play-modal-badge.boosty:hover { background: #f58220; color: #130f1c !important; box-shadow: 0 0 10px rgba(245, 130, 32, 0.5); }
+        .play-modal-badge.yt { color: #ff4a4a !important; border-color: rgba(255, 74, 74, 0.5); background: rgba(255, 74, 74, 0.05); }
+        .play-modal-badge.yt:hover { background: #ff4a4a; color: #130f1c !important; box-shadow: 0 0 10px rgba(255, 74, 74, 0.5); }
+
+        .card-actions-col { position: absolute; right: 8px; bottom: 8px; z-index: 16; display: flex; flex-direction: column; gap: 6px; align-items: center; }
+        .card-actions-col .card-copy-btn, .card-actions-col .card-tg-btn, .card-actions-col .card-play-btn { position: relative; right: auto; bottom: auto; margin: 0; }
         
+        .card-play-btn { background: rgba(3, 6, 36, 0.9); cursor: pointer; padding: 6px; border-radius: 2px; display: flex; align-items: center; justify-content: center; transition: all 0.3s; text-decoration: none; position: relative; width: 30px; height: 30px; box-sizing: border-box; }
+        .card-play-btn.yt { border: 1px solid rgba(255, 74, 74, 0.5); color: #ff4a4a; }
+        .card-play-btn.yt:hover { background: #ff4a4a; color: #130f1c; box-shadow: 0 0 10px rgba(255, 74, 74, 0.6); transform: scale(1.05); }
+        .card-play-btn.boosty { border: 1px solid rgba(245, 130, 32, 0.5); color: #f58220; }
+        .card-play-btn.boosty:hover { background: #f58220; color: #130f1c; box-shadow: 0 0 10px rgba(245, 130, 32, 0.6); transform: scale(1.05); }
+        .card-play-btn.tg-rec, .card-play-btn.tg { border: 1px solid rgba(56, 189, 248, 0.5); color: #38bdf8; }
+        .card-play-btn.tg-rec:hover, .card-play-btn.tg:hover { background: #38bdf8; color: var(--bg-deep); box-shadow: 0 0 10px rgba(56, 189, 248, 0.6); border-color: rgba(56, 189, 248, 1); transform: scale(1.05); }
+
         .list-don-btn {
             display: inline-flex; align-items: center; justify-content: center; gap: 6px;
             padding: 6px 10px; border-radius: 2px; text-decoration: none; font-family: var(--font-title);
@@ -221,23 +262,17 @@
             width: 100%; box-sizing: border-box; text-transform: uppercase; letter-spacing: 1px; line-height: 1;
         }
         
-        .list-da-btn { background: rgba(245, 130, 32, 0.1); color: #f58220; border: 1px solid rgba(245, 130, 32, 0.3); transition: all 0.3s ease;  font-size: 10px; }
+        .list-da-btn { background: rgba(245, 130, 32, 0.1); color: #f58220; border: 1px solid rgba(245, 130, 32, 0.3); transition: all 0.3s ease; font-size: 11px; }
         .list-da-btn:hover { background: #f58220; color: #130f1c; box-shadow: 0 0 15px rgba(245, 130, 32, 0.5); transform: translateY(-2px); border-color: #f58220; }
-
         
-        .list-dx-btn { background: rgba(176, 91, 255, 0.1); color: #b05bff; border: 1px solid rgba(176, 91, 255, 0.3); transition: all 0.3s ease; }
+        .list-dx-btn { background: rgba(176, 91, 255, 0.1); color: #b05bff; border: 1px solid rgba(176, 91, 255, 0.3); transition: all 0.3s ease; font-size: 11px; }
         .list-dx-btn:hover { background: #b05bff; color: #ffffff; box-shadow: 0 0 15px rgba(176, 91, 255, 0.5); transform: translateY(-2px); border-color: #b05bff; }
         
         .dx-btn { background: rgba(176, 91, 255, 0.1); color: #b05bff; border: 1px solid rgba(176, 91, 255, 0.3); transition: all 0.3s ease; }
         .dx-btn:hover { background: #b05bff; color: #ffffff; box-shadow: 0 0 15px rgba(176, 91, 255, 0.5); transform: translateY(-2px); border-color: #b05bff; }
 
-        
-        .list-dx-btn svg, .dx-btn svg {
-            transition: filter 0.3s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-        }
-        .list-dx-btn:hover svg, .dx-btn:hover svg {
-            filter: brightness(0) invert(1);
-        }
+        .list-dx-btn svg, .dx-btn svg { transition: filter 0.3s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important; }
+        .list-dx-btn:hover svg, .dx-btn:hover svg { filter: brightness(0) invert(1); }
 
         .movies-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 15px; padding: 20px; }
         
@@ -265,12 +300,11 @@
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             background: linear-gradient(to bottom, rgba(3,6,36,0.1) 40%, rgba(3,6,36,0.45) 100%);
             display: flex; flex-direction: column; justify-content: space-between; padding: 10px; z-index: 2;
-            box-sizing: border-box;
+            box-sizing: border-box; pointer-events: none;
         }
 
-        .card-badges-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 4px; width: 100%; box-sizing: border-box; overflow: hidden; white-space: nowrap; }
+        .card-badges-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 4px; width: 100%; box-sizing: border-box; overflow: hidden; white-space: nowrap; pointer-events: auto; }
         .card-type-badge { background: var(--bg-deep); border: 1px solid var(--accent-main); padding: 2px 4px; border-radius: 2px; font-size: 8px; font-family: var(--font-title); color: #ffffff; letter-spacing: 1px; box-shadow: 0 5px 15px rgba(0,0,0,0.8); max-width: 50%; overflow: hidden; text-overflow: ellipsis; text-transform: uppercase; }
-        .card-status { background: var(--accent-main); color: var(--text-main); padding: 2px 4px; border-radius: 2px; font-size: 8px; font-family: var(--font-title); font-weight: 900; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 5px 15px rgba(0,0,0,0.8); max-width: 50%; overflow: hidden; text-overflow: ellipsis; }
         
         .card-content { padding: 15px 10px 15px 10px; display: flex; flex-direction: column; align-items: center; text-align: center; z-index: 11; position: relative; flex-grow: 1; box-sizing: border-box; width: 100%; }
         .card-title-container { height: 48px; display: flex; align-items: center; justify-content: center; width: 100%; margin-bottom: 6px; overflow: hidden; }
@@ -291,15 +325,6 @@
             background: var(--accent-main); color: var(--bg-deep); box-shadow: 0 0 15px rgba(254, 0, 0, 0.6); transform: translateY(-1px); 
         }
 
-        .card-queue-box {
-            background: rgba(3, 6, 36, 0.95); padding: 6px 8px; border-radius: 2px; border: 1px solid rgba(254, 0, 0, 0.3);
-            display: flex; flex-direction: column; align-items: center; width: 100%; box-shadow: inset 0 0 15px rgba(0,0,0,0.8); box-sizing: border-box;
-        }
-        .card-queue-label { font-size: 10px; font-family: var(--font-title); color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; }
-        .card-user-info-row { display: flex; align-items: center; justify-content: center; gap: 6px; width: 100%; }
-        .card-user-avatar { width: 22px; height: 22px; border-radius: 2px; border: 1.5px solid var(--accent-main); object-fit: cover; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 14px; font-family: var(--font-title); font-weight: 700; background: var(--bg-deep); color: var(--text-main); }
-        .card-queue-name { font-size: 14px; font-family: var(--font-title); font-weight: 700; color: var(--text-main); white-space: nowrap; display: block; max-width: calc(100% - 28px); overflow: hidden; text-overflow: clip; letter-spacing: 1px; }
-
         .card-copy-btn {
             position: absolute; right: 8px; bottom: 8px; z-index: 16;
             background: rgba(3, 6, 36, 0.9); border: 1px solid rgba(254, 0, 0, 0.5); color: var(--accent-main);
@@ -307,7 +332,7 @@
             transition: all 0.3s; opacity: 0; transform: scale(0.8); width: 30px; height: 30px; box-sizing: border-box;
         }
         .card-view-item:hover .card-copy-btn { opacity: 1; transform: scale(1); }
-        .card-copy-btn:hover { background: var(--accent-main); color: var(--bg-deep); box-shadow: 0 0 15px rgba(254, 0, 0, 0.6); }
+        .card-copy-btn:hover { background: var(--accent-main); color: #ffffff; box-shadow: 0 0 15px rgba(254, 0, 0, 0.6); transform: scale(1.05); }
         .card-copy-btn.shifted { bottom: 42px; }
 
         .card-tg-btn {
@@ -323,6 +348,21 @@
             color: #ffffff; border-color: rgba(41, 128, 185, 0.6); background: rgba(41, 128, 185, 0.3);
         }
         .tg-modal-badge:hover { background: rgba(41, 128, 185, 1); box-shadow: 0 0 15px rgba(41, 128, 185, 0.8); border-color: rgba(41, 128, 185, 1); }
+
+        .media-grid { display: flex; flex-wrap: wrap; gap: 10px; padding-bottom: 5px; }
+        .media-thumb {
+            width: 110px; height: 65px; border-radius: 2px; object-fit: cover;
+            border: 1px solid rgba(254, 0, 0, 0.4); cursor: pointer;
+            transition: all 0.3s; background: var(--bg-velvet);
+            background-size: cover; background-position: center; position: relative;
+        }
+        .media-thumb:hover { border-color: var(--accent-main); transform: scale(1.05); box-shadow: 0 5px 15px rgba(0,0,0,0.5); z-index: 2; }
+        .video-thumb::after {
+            content: '▶'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            font-size: 14px; color: var(--bg-deep); background: rgba(254, 0, 0, 0.9); 
+            width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; padding-left: 2px; box-sizing: border-box; box-shadow: 0 2px 8px rgba(0,0,0,0.6); transition: all 0.3s;
+        }
+        .video-thumb:hover::after { background: #fff; transform: translate(-50%, -50%) scale(1.15); box-shadow: 0 0 15px rgba(254, 0, 0, 0.8); }
 
         .modal-overlay {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -374,9 +414,9 @@
         .modal-title-extras { display: flex; align-items: center; gap: 10px; flex-shrink: 0; margin-top: 4px; }
         .modal-year { color: var(--text-main); font-family: var(--font-title); font-size: 28px; font-weight: 600; opacity: 0.9; } 
 
-        .modal-title-wrapper .copy-btn { opacity: 0.8; transform: scale(1); background: rgba(254, 0, 0, 0.15); border: 1px solid var(--accent-dark); color: var(--accent-main); padding: 6px; display: inline-flex; align-items: center; justify-content: center; transition: all 0.3s; cursor: pointer; border-radius: 2px; }
+        .modal-title-wrapper .copy-btn { opacity: 0.8; transform: scale(1); background: rgba(254, 0, 0, 0.15); border: 1px solid var(--accent-dark); color: var(--accent-main); padding: 6px; display: inline-flex; align-items: center; justify-content: center; transition: all 0.3s; cursor: pointer; border-radius: 2px; position: static; }
         .modal-title-wrapper:hover .copy-btn { opacity: 1; }
-        .modal-title-wrapper .copy-btn:hover { background: var(--accent-main); color: var(--bg-deep); box-shadow: 0 0 20px rgba(254, 0, 0, 0.6); border-color: var(--accent-main); }
+        .modal-title-wrapper .copy-btn:hover { background: var(--accent-main); color: #ffffff; box-shadow: 0 0 20px rgba(254, 0, 0, 0.6); border-color: var(--accent-main); }
 
         .modal-meta-wrapper { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; border-bottom: 1px dashed rgba(254, 0, 0, 0.3); padding-bottom: 15px; flex-wrap: wrap; }
         
@@ -411,7 +451,6 @@
         .footer-badge:hover .creator-name { text-shadow: 0 0 8px rgba(254, 0, 0, 0.8); color: var(--text-main); }
         .footer-badge .creator-label { display:block; font-size:12px; font-family: var(--font-title); color: var(--text-main); text-transform: uppercase; letter-spacing: 2px; font-weight: 800; }
 
-        
         .card-price-box {
             display: flex;
             flex-wrap: wrap;
@@ -448,59 +487,173 @@
             transform: translateY(-1px);
         }
 
-        .donate-buttons-grid {
-            display: flex;
-            flex-direction: row;
-            gap: 8px;
-            width: 100%;
+        .donate-buttons-grid { display: flex; flex-direction: row; gap: 8px; width: 100%; }
+        
+        .don-btn { display: flex; align-items: center; justify-content: center; flex: 1; height: 38px; border-radius: 2px; text-decoration: none; transition: all 0.3s ease; box-sizing: border-box; }
+        .don-btn svg { transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .don-btn:hover svg { transform: scale(1.15); }
+
+        .lightbox-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(3, 6, 36, 0.95); backdrop-filter: blur(10px); z-index: 2000; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s ease; }
+        .lightbox-overlay.active { display: flex; opacity: 1; }
+        .lightbox-content { position: relative; max-width: 90vw; max-height: 90vh; display: flex; justify-content: center; align-items: center; }
+        .lightbox-img { max-width: 100%; max-height: 90vh; border-radius: 4px; border: 2px solid var(--accent-main); box-shadow: 0 15px 40px rgba(0,0,0,0.8); display: none; }
+        .lightbox-video { width: 80vw; max-width: 1200px; aspect-ratio: 16/9; border-radius: 4px; border: 2px solid var(--accent-main); box-shadow: 0 15px 40px rgba(0,0,0,0.8); display: none; outline: none; background: #000; }
+        .lightbox-close { position: absolute; top: -45px; right: 0px; color: var(--text-main); cursor: pointer; background: rgba(3, 6, 36, 0.8); border: 1px solid var(--accent-main); width: 36px; height: 36px; border-radius: 2px; display: flex; justify-content: center; align-items: center; transition: all 0.3s; z-index: 2005; }
+        .lightbox-close:hover { color: var(--bg-deep); background: var(--accent-main); transform: rotate(90deg); box-shadow: 0 0 15px rgba(254, 0, 0, 0.5); }
+        .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); color: var(--accent-main); font-size: 30px; cursor: pointer; background: rgba(3, 6, 36, 0.6); border: 1px solid var(--accent-main); width: 50px; height: 50px; border-radius: 2px; display: flex; justify-content: center; align-items: center; transition: all 0.3s; z-index: 2001; user-select: none; }
+        .lightbox-nav:hover { background: var(--accent-main); color: #ffffff; box-shadow: 0 0 15px rgba(254, 0, 0, 0.5); }
+        .lightbox-prev { left: 20px; }
+        .lightbox-next { right: 20px; }
+
+        #partsModalOverlay { z-index: 3000; }
+        .parts-modal-content { background: var(--bg-deep); padding: 25px 20px 20px; border-radius: 4px; border: 2px solid var(--accent-main); box-shadow: 0 15px 50px rgba(0,0,0,0.9); width: 320px; max-width: 90vw; position: relative; }
+        .part-item-btn { display: flex; align-items: center; justify-content: space-between; padding: 12px 15px; background: rgba(254, 0, 0, 0.05); border: 1px dashed rgba(254, 0, 0, 0.3); border-radius: 2px; color: var(--text-main); text-decoration: none; font-family: var(--font-title); font-weight: 800; font-size: 15px; transition: all 0.3s; letter-spacing: 1px; }
+        .part-item-btn:hover { background: var(--accent-main); color: #ffffff; box-shadow: 0 0 15px rgba(254, 0, 0, 0.4); transform: translateX(4px); border-color: transparent; }
+        #partsContainer::-webkit-scrollbar { width: 6px; }
+        #partsContainer::-webkit-scrollbar-track { background: rgba(3, 6, 36, 0.5); border-radius: 2px; }
+        #partsContainer::-webkit-scrollbar-thumb { background: var(--accent-dark); border-radius: 2px; }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-deep); }
+        ::-webkit-scrollbar-thumb { background: var(--accent-dark); border-radius: 2px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent-main); }
+
+		
+		
+        #starsCanvas { display: none !important; }
+
+
+        @media (min-width: 1920px) {
+            .container { max-width: 1450px; }
+            .movies-grid { grid-template-columns: repeat(7, 1fr); gap: 20px; }
+            .modal-content { max-width: 1150px; }
+            .modal-poster { width: 250px; }
+            .header-top h1 { font-size: 64px; }
         }
         
-        .don-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex: 1;
-            height: 38px;
-            border-radius: 2px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-sizing: border-box;
+        @media (min-width: 2560px) {
+            .container { max-width: 1900px; }
+            .movies-grid { grid-template-columns: repeat(9, 1fr); }
+            .modal-content { max-width: 1500px; }
+            .modal-poster { width: 300px; }
+			
+			
+            #starsCanvas { display: block !important; }
+            
+            body::after { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(3, 6, 36, 0); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: -2; pointer-events: none; }
+            
+            th:nth-child(1), td:nth-child(1) { width: 200px !important; min-width: 200px !important; }
+            .poster-wrapper { width: 170px !important; height: 255px !important; } 
+            
+            
+            th:nth-child(3), td:nth-child(3) { width: 160px !important; min-width: 160px !important; }
+            th:nth-child(4), td:nth-child(4) { width: 180px !important; min-width: 180px !important; }
+            th:nth-child(5), td:nth-child(5) { width: 180px !important; min-width: 180px !important; }
+            th:nth-child(6), td:nth-child(6) { width: 200px !important; min-width: 200px !important; }
+            
+            .movie-overview-text, .movie-review-text { font-size: 16px; line-height: 1.6; }
+
+            .steam-link-btn, .tg-link-btn, .play-link-btn { max-width: 140px !important; }
+            .list-don-btn { max-width: 160px !important; }
+            .price-badge { max-width: 120px !important; }
+            .date-badge { white-space: nowrap !important; }
         }
 
-        .don-btn svg {
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .don-btn:hover svg {
-            transform: scale(1.15);
+        @media (max-width: 1400px) {
+            th:nth-child(1), td:nth-child(1) { width: 120px !important; min-width: 120px !important; padding-left: 5px !important; padding-right: 5px !important; }
+            .poster-wrapper { width: 105px !important; height: 160px !important; } 
+            
+            
+            th:nth-child(3), td:nth-child(3) { width: 110px !important; min-width: 110px !important; padding-left: 5px !important; padding-right: 5px !important; }
+            th:nth-child(4), td:nth-child(4) { width: 120px !important; min-width: 120px !important; padding-left: 5px !important; padding-right: 5px !important; }
+            th:nth-child(5), td:nth-child(5) { width: 140px !important; min-width: 140px !important; padding-left: 5px !important; padding-right: 5px !important; }
+            th:nth-child(6), td:nth-child(6) { width: 135px !important; min-width: 135px !important; padding-left: 5px !important; padding-right: 5px !important; }
+            
+            .steam-link-btn, .play-link-btn, .tg-link-btn, .list-don-btn { 
+                width: 95% !important; font-size: 11px !important; padding: 4px !important; box-sizing: border-box !important; 
+            }
+            .date-badge { 
+                width: 100% !important; max-width: 125px !important; font-size: 11px !important; padding: 4px 6px !important; 
+                box-sizing: border-box !important; white-space: normal !important; text-align: center !important; line-height: 1.1 !important; 
+            }
+            .price-badge { font-size: 11px !important; padding: 4px !important; }
         }
 
-        
-        .da-btn { background: rgba(245, 130, 32, 0.1); color: #f58220; border: 1px solid rgba(245, 130, 32, 0.3); transition: all 0.3s ease; }
-        .da-btn:hover { background: #f58220; color: #130f1c; box-shadow: 0 0 15px rgba(245, 130, 32, 0.5); transform: translateY(-2px); border-color: #f58220; }
-
-        
-        .dx-btn { background: rgba(176, 91, 255, 0.1); color: #b05bff; border: 1px solid rgba(176, 91, 255, 0.3); transition: all 0.3s ease; }
-        .dx-btn:hover { background: #b05bff; color: #ffffff; box-shadow: 0 0 15px rgba(176, 91, 255, 0.5); transform: translateY(-2px); border-color: #b05bff; }
+        @media (max-width: 1150px) {
+            #viewToggleBtn { display: none !important; }
+            .movies-grid { grid-template-columns: repeat(4, 1fr); }
+        }
 
         @media (max-width: 1024px) {
             .movies-grid { grid-template-columns: repeat(4, 1fr); }
+            .header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; padding: 25px 20px 20px; }
+            .back-btn, .creator-badge { position: relative; top: auto; left: auto; right: auto; order: 1; }
+            .header-top { width: 100%; order: 2; margin-top: 15px; }
+            .header-top h1 { font-size: 38px; }
+            .controls-panel { width: 100%; order: 3; margin-top: 10px; }
+
+            .modal-body { padding: 0 20px 30px 20px; gap: 20px; }
+            .modal-poster { width: 180px; }
         }
+
+        @media (max-width: 1023px) {
+            .modal-body { flex-direction: column; margin-top: -120px; padding: 20px; }
+            .modal-poster { display: block; width: 160px; margin: 0 auto; }
+        }
+
         @media (max-width: 768px) {
-            #viewToggleBtn { display: none !important; }
             th:nth-child(4), td:nth-child(4) { display: none; }
             .movies-grid { grid-template-columns: repeat(2, 1fr); padding: 10px; gap: 10px; }
-            .modal-body { flex-direction: column; margin-top: -60px; padding: 20px; }
-            .modal-poster { width: 140px; margin: 0 auto; }
+            .modal-poster { width: 140px; margin: 0 auto; } 
             .modal-grid { grid-template-columns: 1fr !important; }
             .grid-item.border-right { border-right: none !important; }
             .grid-item { border-bottom: 1px dashed rgba(254, 0, 0, 0.4); }
             .grid-item.full-width { border-bottom: none; }
             
-            .header { display: flex; flex-direction: column; align-items: center; gap: 15px;  padding: 20px 10px; }
-            .back-btn { position: relative; top: 0; left: 0; }
-            .creator-badge { position: relative; top: 0; right: 0; }
+            .header { flex-direction: column; align-items: center; gap: 15px;  padding: 20px 10px; }
+            .back-btn { position: relative; top: 0; left: 0; width: auto; margin: 0; order: 1; justify-content: center; }
+            .creator-badge { position: relative; top: 0; right: 0; order: 2; margin: 0; }
+            .header-top { order: 3; width: 100%; margin-top: 5px; text-align: center;}
             .header-top h1 { font-size: 32px; margin: 5px 0 10px 0; }
             .header-top h1::before, .header-top h1::after { display: none; }
+            .controls-panel { order: 4; flex-direction: column; align-items: center; width: 100%; gap: 10px; margin-top: 0; box-sizing: border-box; }
+            .search-box, .sort-select { width: 100%; max-width: 100%; margin: 0; box-sizing: border-box; }
+        }
+
+        @media (max-width: 767px) {
+            .modal-grid { grid-template-columns: 1fr !important; }
+            .grid-item.border-right { border-right: none !important; }
+            .grid-item { border-bottom: 1px dashed rgba(254, 0, 0, 0.3); align-items: center !important; text-align: center; }
+            .grid-item.full-width { border-bottom: none; }
+
+            #modalDateReqCol > div, #modalStudiosCol > div, #modalPriceCol > div > div { 
+                align-items: center !important; justify-content: center !important; width: 100% !important; 
+            }
+
+            .modal-title-wrapper { flex-direction: column; align-items: center; text-align: center; }
+            .modal-title { font-size: 26px !important; white-space: normal !important; text-align: center; }
+            .modal-title-extras { justify-content: center; margin-top: 8px; }
+            .modal-meta-wrapper { justify-content: center; }
+            
+            #modalGenres { justify-content: center !important; }
+            #modalScreenshotsWrapper .grid-label, #modalTrailersWrapper .grid-label { text-align: center !important; margin-bottom: 12px !important; }
+            .media-grid { justify-content: center !important; }
+            
+            #modalPrice > div { display: flex !important; flex-direction: column !important; align-items: center !important; }
+            .price-badge { width: 100% !important; max-width: 250px !important; margin: 0 0 6px 0 !important; }
+            
+            #modalPriceCol .donate-buttons-grid { flex-direction: column !important; align-items: center !important; }
+            #modalPriceCol .list-don-btn { width: 100% !important; max-width: 250px !important; }
+            
+            #modalUpdateCmd { white-space: normal !important; word-break: break-word !important; text-align: center; display: block; max-width: 250px; }
+            .lightbox-nav { display: none; }
+        }
+
+        @media (max-width: 480px) {
+            .movies-grid { grid-template-columns: 1fr; } 
+            .header-top h1 { font-size: 28px; line-height: 1.2; }
+            .modal-title { font-size: 24px !important; }
+            .modal-poster { width: 120px; }
         }
 
         .text-3d-effect {
@@ -605,7 +758,7 @@
                             <div class="modal-title-extras">
                                 <span class="modal-year text-3d-effect" id="modalYear"></span>
                                 <button class="copy-btn" id="modalCopyBtn" onclick="copyMovieNameFromModal()" title="Скопировать название">
-                                    <svg class="icon-3d-effect" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+                                    <svg class="icon-3d-effect" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 12.9V17.1C16 20.6 14.6 22 11.1 22H6.9C3.4 22 2 20.6 2 17.1V12.9C2 9.4 3.4 8 6.9 8H11.1C14.6 8 16 9.4 16 12.9Z"/><path d="M22 6.9V11.1C22 14.6 20.6 16 17.1 16H16V12.9C16 9.4 14.6 8 11.1 8H8V6.9C8 3.4 9.4 2 12.9 2H17.1C20.6 2 22 3.4 22 6.9Z"/></svg>
                                 </button>
                             </div>
                         </div>
@@ -613,10 +766,12 @@
                         <div class="modal-meta-wrapper" id="modalBadges"></div>
                         <div id="modalGenres" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;"></div>
                         
-                        <div class="modal-overview" id="modalOverview"></div>
+                        <div id="modalReviewBlock" style="display: none; margin-bottom: 25px;"></div>
+
+                        <div class="text-3d-effect" style="font-size: 11px; color: #ffffff; text-transform: uppercase; font-family: var(--font-title); font-weight: 800; letter-spacing: 1px; margin-bottom: 8px;" id="modalOverviewLabel">♦ Описание</div>
+                        <div class="modal-overview" id="modalOverview" style="margin-bottom: 30px;"></div>
                         
                         <div class="modal-grid" id="modalMainGrid" style="gap: 0; padding: 0;">
-                            
                             
                             <div class="grid-item full-width border-bottom" id="modalPriceCol">
                                 <div style="display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; width: 100%;">
@@ -640,7 +795,7 @@
                                             <code id="modalUpdateCmd" style="font-family: monospace; font-size: 13px; color: var(--accent-main); font-weight: bold;"></code>
                                         </div>
                                         <button class="copy-btn" id="modalPriceCopyBtn" onclick="copyUpdateCmdFromModal(this)" style="padding: 8px; margin: 0; position: static; opacity: 1; transform: scale(1); border-radius: 2px;" title="Скопировать команду">
-                                            <svg class="icon-3d-effect" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                                            <svg class="icon-3d-effect" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 12.9V17.1C16 20.6 14.6 22 11.1 22H6.9C3.4 22 2 20.6 2 17.1V12.9C2 9.4 3.4 8 6.9 8H11.1C14.6 8 16 9.4 16 12.9Z"/><path d="M22 6.9V11.1C22 14.6 20.6 16 17.1 16H16V12.9C16 9.4 14.6 8 11.1 8H8V6.9C8 3.4 9.4 2 12.9 2H17.1C20.6 2 22 3.4 22 6.9Z"/></svg>
                                         </button>
                                     </div>
 
@@ -674,6 +829,17 @@
                                     </div>
                                 </div>
                             </div>
+                            
+                            <div class="grid-item full-width border-bottom" id="modalMediaCol" style="display: none; padding: 20px 25px;">
+                                <div id="modalScreenshotsWrapper" style="display: none; margin-bottom: 20px;">
+                                    <div class="grid-label" style="margin-bottom: 12px;">Скриншоты</div>
+                                    <div id="modalScreenshots" class="media-grid"></div>
+                                </div>
+                                <div id="modalTrailersWrapper" style="display: none;">
+                                    <div class="grid-label" style="margin-bottom: 12px;">Видео / Трейлеры</div>
+                                    <div id="modalTrailers" class="media-grid"></div>
+                                </div>
+                            </div>
 
                             <div class="grid-item border-right" id="modalDateReqCol">
                                 <div class="grid-label">Добавлено в вишлист</div>
@@ -699,11 +865,152 @@
     </div>
 </div>
 
+<div class="lightbox-overlay" id="lightboxModal" onclick="closeLightbox(event)">
+    <div class="lightbox-nav lightbox-prev" onclick="changeLightboxMedia(-1, event)">&#10094;</div>
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+        <div class="lightbox-close" onclick="closeLightbox(event)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </div>
+        <img id="lightboxImg" class="lightbox-img" src="" alt="">
+        <video id="lightboxVideo" class="lightbox-video" controls playsinline preload="metadata"></video>
+    </div>
+    <div class="lightbox-nav lightbox-next" onclick="changeLightboxMedia(1, event)">&#10095;</div>
+</div>
+
+<div class="lightbox-overlay" id="partsModalOverlay" onclick="closePartsModal(event)">
+    <div class="parts-modal-content" onclick="event.stopPropagation()">
+        <div class="close-btn" onclick="closePartsModal(event)" style="top: -15px; right: -15px; width: 34px; height: 34px; background: var(--accent-main); color: #fff; border-color: transparent;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </div>
+        <div style="font-family: var(--font-title); font-size: 20px; font-weight: 900; color: #fff; text-align: center; margin-bottom: 5px; line-height: 1.2; letter-spacing: 1px;" id="partsModalTitle">Название</div>
+        <div style="font-size: 11px; font-family: var(--font-title); color: var(--text-muted); text-align: center; margin-bottom: 15px; text-transform: uppercase; font-weight: 800; letter-spacing: 2px;" id="partsModalPlatform">ПЛАТФОРМА</div>
+        
+        <div id="partsContainer" style="display: flex; flex-direction: column; gap: 8px; max-height: 50vh; overflow-y: auto; padding-right: 5px;"></div>
+    </div>
+</div>
+
 <script>
     let rawMoviesData = []; 
     let currentViewData = []; 
     let currentModalMovie = null; 
     let viewMode = localStorage.getItem('siteViewModeWishlist') || 'list'; 
+    let modalMediaItems = []; 
+    let currentLightboxIndex = 0; 
+    let hlsInstance = null; 
+
+    window.switchListTab = function(event, btn, tabName) {
+        event.stopPropagation(); 
+        const container = btn.closest('.movie-info');
+        container.querySelectorAll('.list-tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        container.querySelectorAll('.movie-content-block').forEach(c => c.style.display = 'none');
+        container.querySelector(`.content-${tabName}`).style.display = 'block';
+    };
+
+    window.toggleTextExpand = function(event, element) {
+        event.stopPropagation();
+        element.classList.toggle('expanded');
+    };
+
+    window.getMediaButtonHtml = function(movie, baseKey, label, cssClass, svgIcon, styleType) {
+        let parts = [];
+        if (movie[baseKey]) parts.push({ part: 1, url: movie[baseKey] });
+        let i = 2;
+        while (movie[baseKey + i]) { parts.push({ part: i, url: movie[baseKey + i] }); i++; }
+        if (parts.length === 0) return '';
+        
+        const safeTitle = escapeHTML(movie.title || 'Игра').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+        const partsJson = encodeURIComponent(JSON.stringify(parts));
+        
+        if (styleType === 'table') {
+            if (parts.length === 1) return `<a href="${parts[0].url}" target="_blank" class="play-link-btn ${cssClass}" onclick="event.stopPropagation();">${svgIcon} ${label}</a>`;
+            return `<div class="play-link-btn ${cssClass}" onclick="openPartsModal(event, '${label}', '${safeTitle}', '${partsJson}', '${cssClass}')" style="border-style: dashed; cursor: pointer;">${svgIcon} ${label}</div>`;
+        }
+        if (styleType === 'grid') {
+            if (parts.length === 1) return `<a href="${parts[0].url}" target="_blank" class="card-play-btn ${cssClass}" onclick="event.stopPropagation();" title="${label}">${svgIcon}</a>`;
+            return `<div class="card-play-btn ${cssClass}" onclick="openPartsModal(event, '${label}', '${safeTitle}', '${partsJson}', '${cssClass}')" title="${label} (Несколько частей)" style="cursor: pointer; border-style: dashed;">${svgIcon}</div>`;
+        }
+        if (styleType === 'modal') {
+            if (parts.length === 1) return `<a href="${parts[0].url}" target="_blank" class="outline-badge play-modal-badge ${cssClass} text-3d-effect" onclick="event.stopPropagation();">${svgIcon} ${label}</a>`;
+            return `<div class="outline-badge play-modal-badge ${cssClass} text-3d-effect" onclick="openPartsModal(event, '${label}', '${safeTitle}', '${partsJson}', '${cssClass}')" style="cursor: pointer; border-style: dashed;">${svgIcon} ${label}</div>`;
+        }
+        return '';
+    };
+
+    window.openPartsModal = function(event, platform, title, partsJson, cssClass) {
+        event.stopPropagation();
+        const parts = JSON.parse(decodeURIComponent(partsJson));
+        let color = 'var(--accent-main)';
+        let beautifulPlatformName = 'ЗАПИСИ ПРОХОЖДЕНИЯ';
+        if (cssClass === 'yt') { color = '#ff4a4a'; beautifulPlatformName = 'ЗАПИСИ НА YOUTUBE'; } 
+        else if (cssClass === 'boosty') { color = '#f58220'; beautifulPlatformName = 'ЗАПИСИ НА BOOSTY'; } 
+        else if (cssClass === 'tg' || cssClass === 'tg-rec') { color = '#38bdf8'; beautifulPlatformName = 'ЗАПИСИ В TELEGRAM'; }
+        
+        document.getElementById('partsModalTitle').textContent = title;
+        document.getElementById('partsModalPlatform').textContent = beautifulPlatformName;
+        document.getElementById('partsModalPlatform').style.color = color;
+        
+        document.getElementById('partsContainer').innerHTML = parts.map(p => `
+            <a href="${p.url}" target="_blank" class="part-item-btn" onclick="event.stopPropagation()">
+                <span style="color: ${color};">ЧАСТЬ ${p.part}</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+            </a>
+        `).join('');
+        document.getElementById('partsModalOverlay').classList.add('active');
+    };
+
+    window.closePartsModal = function(event) {
+        if (event && event.stopPropagation) event.stopPropagation();
+        document.getElementById('partsModalOverlay').classList.remove('active');
+    };
+
+    window.openLightbox = function(index) {
+        currentLightboxIndex = index;
+        const item = modalMediaItems[index];
+        const lightbox = document.getElementById('lightboxModal');
+        const imgEl = document.getElementById('lightboxImg');
+        const videoEl = document.getElementById('lightboxVideo');
+
+        imgEl.style.display = 'none';
+        videoEl.style.display = 'none';
+        videoEl.pause();
+        if (hlsInstance) { hlsInstance.destroy(); hlsInstance = null; }
+
+        if (item.type === 'image') {
+            imgEl.src = item.src; imgEl.style.display = 'block';
+        } else if (item.type === 'video') {
+            videoEl.style.display = 'block';
+            if (item.src.includes('.m3u8')) {
+                if (typeof Hls !== 'undefined' && Hls.isSupported()) {
+                    hlsInstance = new Hls();
+                    hlsInstance.loadSource(item.src);
+                    hlsInstance.attachMedia(videoEl);
+                    hlsInstance.on(Hls.Events.MANIFEST_PARSED, function() { videoEl.play().catch(e => console.log(e)); });
+                } else if (videoEl.canPlayType('application/vnd.apple.mpegurl')) {
+                    videoEl.src = item.src; videoEl.play().catch(e => console.log(e));
+                }
+            } else {
+                videoEl.src = item.src; videoEl.play().catch(e => console.log(e));
+            }
+        }
+        lightbox.classList.add('active');
+    };
+
+    window.closeLightbox = function(event) {
+        if (event && event.stopPropagation) event.stopPropagation();
+        document.getElementById('lightboxModal').classList.remove('active');
+        const videoEl = document.getElementById('lightboxVideo');
+        videoEl.pause(); videoEl.removeAttribute('src'); videoEl.load();
+        if (hlsInstance) { hlsInstance.destroy(); hlsInstance = null; }
+    };
+
+    window.changeLightboxMedia = function(dir, event) {
+        if (event && event.stopPropagation) event.stopPropagation();
+        let newIndex = currentLightboxIndex + dir;
+        if (newIndex < 0) newIndex = modalMediaItems.length - 1;
+        if (newIndex >= modalMediaItems.length) newIndex = 0;
+        openLightbox(newIndex);
+    };
 
     const fallbackPosterUrl = "data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='750' viewBox='0 0 500 750'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230C1E5B'/%3E%3Cstop offset='100%25' stop-color='%23030624'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='500' height='750' fill='url(%23bg)'/%3E%3Cg transform='translate(0, -30)'%3E%3Cpath d='M150 400 c0-50 40-90 90-90 h20 c50 0 90 40 90 90 v20 c0 30 15 50 30 70 l10 15 c15 20 0 45-20 45 h-30 c-20 0-30-10-35-30 l-5-20 h-100 l-5 20 c-5 20-15 30-35 30 h-30 c-20 0-35-25-20-45 l10-15 c15-20 30-40 30-70 v-20 z' fill='%23030624' stroke='%23fe0000' stroke-width='6' stroke-linejoin='round'/%3E%3Cpath d='M180 390 h20 v-20 h20 v20 h20 v20 h-20 v20 h-20 v-20 h-20 z' fill='%230C1E5B'/%3E%3Ccircle cx='210' cy='400' r='3' fill='%23fe0000'/%3E%3Ccircle cx='330' cy='380' r='14' fill='%23ff4d4d'/%3E%3Ccircle cx='360' cy='410' r='14' fill='%23fce8a1'/%3E%3Crect x='235' y='395' width='30' height='10' rx='5' fill='%230C1E5B'/%3E%3C/g%3E%3C/svg%3E";
     const fallbackBackdropUrl = "data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='320' viewBox='0 0 1000 320'%3E%3Cdefs%3E%3ClinearGradient id='bgH' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230C1E5B'/%3E%3Cstop offset='100%25' stop-color='%23030624'/%3E%3C/linearGradient%3E%3Cpattern id='grid' width='60' height='60' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 60 0 L 0 0 0 60' fill='none' stroke='%23fe0000' stroke-width='1' opacity='0.05'/%3E%3C/pattern%3E%3Cpattern id='dots' width='20' height='20' patternUnits='userSpaceOnUse'%3E%3Ccircle cx='2' cy='2' r='1' fill='%23fce8a1' opacity='0.1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='1000' height='320' fill='url(%23bgH)'/%3E%3Crect width='1000' height='320' fill='url(%23grid)'/%3E%3Crect width='1000' height='320' fill='url(%23dots)'/%3E%3Cg transform='translate(500, 160) scale(1.5)'%3E%3Cpath d='M-50,0 C-50,-20 -30,-40 0,-40 C30,-40 50,-20 50,0 C50,20 40,30 25,30 C15,30 10,20 0,20 C-10,20 -15,30 -25,30 C-40,30 -50,20 -50,0 Z' fill='%23741511' stroke='%23fe0000' stroke-width='3' opacity='0.8'/%3E%3Cpath d='M-30,-5 h5 v-5 h5 v5 h5 v5 h-5 v5 h-5 v-5 h-5 z' fill='%230C1E5B' opacity='0.9'/%3E%3Ccircle cx='20' cy='-5' r='3' fill='%23ff4d4d' opacity='0.9'/%3E%3Ccircle cx='30' cy='5' r='3' fill='%23fce8a1' opacity='0.9'/%3E%3C/g%3E%3C/svg%3E";
@@ -882,9 +1189,10 @@
                     <tr>
                         <th style="width: 160px; min-width: 160px;">Постер</th>
                         <th style="width: 100%;">Описание</th>
-                        <th style="width: 145px; min-width: 145px;">Добавлено</th>
-                        <th style="width: 155px; min-width: 155px;">Ссылки</th>
-                        <th style="width: 130px; min-width: 130px;">Цена</th>
+                        <th style="width: 155px; min-width: 155px;">Добавлено</th>
+                        <th style="width: 170px; min-width: 170px;">Цены</th>
+                        <th style="width: 145px; min-width: 145px;">Ссылки</th>
+                        <th style="width: 160px; min-width: 160px;">Донат</th>
                     </tr>
                 </thead>
                 <tbody id="table-body"></tbody>
@@ -902,11 +1210,33 @@
             const idBadge = `<span class="outline-badge text-3d-effect">ID №${movie.id || 0}</span>`;
             const typeLabel = `<span class="content-type-badge text-3d-effect">${escapeHTML(movie.type || 'Игра')}</span>`;
             const cleanTitle = escapeHTML(movie.title || 'Безымянный');
-            const cleanOverview = escapeHTML(movie.overview || '');
             const safeTitle = (movie.title || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
 
             let displayStudios = movie.studios && movie.studios !== "Нет данных" ? movie.studios : "";
             const studiosHTML = displayStudios ? `<div class="movie-studios-list text-3d-effect">${escapeHTML(displayStudios)}</div>` : '';
+
+            const hasReview = movie.reviewText && movie.reviewText.trim() !== ""; 
+            const cleanReview = hasReview ? escapeHTML(movie.reviewText).replace(/\n/g, '<br>') : "";
+            const cleanOverview = escapeHTML(movie.overview || 'Описание утеряно...').replace(/&amp;quot;/g, '&quot;');
+
+            let tabsHTML = `<div class="list-tabs-container">`;
+            if (hasReview) tabsHTML += `<button class="list-tab-btn active text-3d-effect" onclick="switchListTab(event, this, 'review')">✦ Отзыв</button>`;
+            tabsHTML += `<button class="list-tab-btn text-3d-effect ${!hasReview ? 'active' : ''}" onclick="switchListTab(event, this, 'overview')">♦ Описание</button>`;
+            tabsHTML += `</div>`;
+
+            let reviewBlock = hasReview ? `
+                <div class="movie-content-block content-review" style="display: block;">
+                    <div class="movie-review-wrapper" onclick="toggleTextExpand(event, this)" title="Нажмите, чтобы развернуть/свернуть">
+                        <div class="movie-review-text">«${cleanReview}»</div>
+                    </div>
+                </div>` : '';
+
+            let overviewBlock = `
+                <div class="movie-content-block content-overview" style="display: ${hasReview ? 'none' : 'block'};">
+                    <div class="movie-overview-wrapper" style="margin-top: 4px;" onclick="toggleTextExpand(event, this)" title="Нажмите, чтобы развернуть/свернуть">
+                        <div class="movie-overview-text">${cleanOverview}</div>
+                    </div>
+                </div>`;
 
             let steamButtonHTML = '';
             if (movie.steamAppId && !movie.steamAppId.startsWith('IGDB_')) {
@@ -915,47 +1245,64 @@
 
             let tgButtonHTML = '';
             if (movie.postUrl) {
-                tgButtonHTML = `<a href="${movie.postUrl}" target="_blank" class="tg-link-btn" onclick="event.stopPropagation();"><svg class="icon-3d-effect" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg> ТГ ПОСТ</a>`;
+                tgButtonHTML += `<a href="${movie.postUrl}" target="_blank" class="tg-link-btn" onclick="event.stopPropagation();" title="Открыть основной пост"><svg class="icon-3d-effect" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg> ТГ ПОСТ</a>`;
             }
+            if (movie.reviewUrl) {
+                tgButtonHTML += `<a href="${movie.reviewUrl}" target="_blank" class="tg-link-btn" style="margin-top: 4px;" onclick="event.stopPropagation();" title="Читать отзыв в Telegram"><svg class="icon-3d-effect" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg> ТГ ПОСТ</a>`;
+            }
+
+            const playIcon = `<svg class="icon-3d-effect" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>`;
+            let tgRecButtonHTML = getMediaButtonHtml(movie, 'tgRecordUrl', 'ТГ ЗАПИСЬ', 'tg-rec', playIcon, 'table');
+            let boostyButtonHTML = getMediaButtonHtml(movie, 'boostyUrl', 'BOOSTY', 'boosty', playIcon, 'table');
+            let ytButtonHTML = getMediaButtonHtml(movie, 'youtubeUrl', 'YOUTUBE', 'yt', playIcon, 'table');
 
             let donateButtonsHTML = `
-                <div style="display: flex; flex-direction: column; gap: 8px; width: 100%; margin-top: 4px; border-top: 1px dashed rgba(254, 0, 0, 0.3); padding-top: 12px;">
-                    <a href="https://www.donationalerts.com/r/sarachuma" target="_blank" class="list-don-btn list-da-btn" onclick="event.stopPropagation();" title="Донат через DonationAlerts">
-                        <svg width="14" height="14" viewBox="0 0 69 80" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M34.8586103,46.5882227 L29.4383109,46.5882227 C29.1227896,46.5896404 28.8214241,46.4709816 28.6091788,46.2617625 C28.3969336,46.0525435 28.2937566,45.7724279 28.325313,45.4910942 L28.8039021,40.6038855 C28.8504221,40.0844231 29.3353656,39.684617 29.9168999,39.6862871 L35.3371993,39.6862871 C35.6527206,39.6848694 35.9540862,39.8035282 36.1663314,40.0127473 C36.3785767,40.2219663 36.4817536,40.5020819 36.4501972,40.7834156 L35.9716081,45.6706244 C35.9250881,46.1900867 35.4401446,46.5898928 34.8586103,46.5882227 Z M35.7273704,37.0196078 L30.2062624,37.0196078 C29.5964177,37.0196078 29.1020408,36.5436108 29.1020408,35.9564386 L30.6037822,19.445421 C30.6711655,18.9085577 31.1463683,18.5059261 31.7080038,18.5098321 L37.2291117,18.5098321 C37.8389565,18.5098321 38.3333333,18.9858292 38.3333333,19.5730013 L36.7874231,36.0946506 C36.71732,36.6114677 36.2684318,37.0031485 35.7273704,37.0196078 Z M68.1907868,17.7655375 C68.7783609,18.4477209 69.0654113,19.3359027 68.9874243,20.2304671 L66.8294442,44.7595227 C66.7602449,45.5618649 66.4022166,46.3125114 65.8210422,46.8737509 L48.1740082,63.9078173 C47.5440361,64.5136721 46.7011436,64.8515656 45.8244317,64.849701 L27.0379034,64.849701 L10.5001116,80 L11.780782,64.8396809 L3.37070981,64.8396809 C2.42614186,64.8404154 1.52467299,64.4469919 0.886144518,63.7553546 C0.247616048,63.0637173 -0.0692823639,62.1374374 0.0127313353,61.2024067 L5.14549723,3.00601995 C5.32162283,1.29571214 6.77326374,-0.00377492304 8.50347571,8.23911697e-06 L51.3303063,8.23911697e-06 C52.3155567,-0.000274507348 53.2515294,0.428127083 53.8916472,1.17235281 L68.1907868,17.7655375 Z M55.1118136,40.0801644 L56.4832402,24.9398854 C56.5364472,24.0422509 56.2238954,23.1611024 55.6160145,22.4949959 L47.548799,13.2364798 C46.9095165,12.5050105 45.982605,12.084699 45.0076261,12.0841753 L19.5958971,12.0841753 C17.8656851,12.0803922 16.4140442,13.3798792 16.2379186,15.090187 L13.2127128,49.1583198 C13.1430685,50.0904539 13.4642119,51.0097453 14.1001037,51.6985265 C14.7359954,52.3873077 15.6300918,52.7843324 16.5706913,52.795594 L41.5588914,52.795594 C42.4258216,52.7976549 43.2601656,52.4674704 43.8882999,51.8737504 L54.1034116,42.2044127 C54.6867718,41.6406314 55.0449815,40.8860452 55.1118136,40.0801644 Z" /></svg>
-                        DONATIONALERTS
-                    </a>
-                    
-                    <a href="https://donatex.gg/donate/sarachuma" target="_blank" class="list-don-btn list-dx-btn" onclick="event.stopPropagation();" title="Донат через DonateX">
-                        <svg width="18" height="18" viewBox="22 1 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient id="ring1" x1="23" y1="44" x2="66" y2="4" gradientUnits="userSpaceOnUse">
-                                    <stop offset="0" stop-color="#20B8FF"/>
-                                    <stop offset="0.48" stop-color="#6678FF"/>
-                                    <stop offset="1" stop-color="#B05BFF"/>
-                                </linearGradient>
-                                <linearGradient id="x1" x1="32" y1="36" x2="58" y2="10" gradientUnits="userSpaceOnUse">
-                                    <stop offset="0" stop-color="#37AFFF"/>
-                                    <stop offset="0.48" stop-color="#6D79FF"/>
-                                    <stop offset="1" stop-color="#C46AFF"/>
-                                </linearGradient>
-                            </defs>
-                            <circle cx="45" cy="24" r="21.15" stroke="url(#ring1)" stroke-width="1.05"/>
-                            <path d="M31.2 10.2h8.1l19.1 27.6h-8.2L31.2 10.2Z" fill="url(#x1)"/>
-                            <path d="M51.7 10.2h7.4L40.7 37.8h-7.6l18.6-27.6Z" fill="url(#x1)"/>
-                        </svg>
-                        DONATEX
-                    </a>
-                </div>
+                <a href="https://www.donationalerts.com/r/sarachuma" target="_blank" class="list-don-btn list-da-btn" onclick="event.stopPropagation();" title="Донат через DonationAlerts">
+                    <svg width="14" height="14" viewBox="0 0 69 80" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M34.8586103,46.5882227 L29.4383109,46.5882227 C29.1227896,46.5896404 28.8214241,46.4709816 28.6091788,46.2617625 C28.3969336,46.0525435 28.2937566,45.7724279 28.325313,45.4910942 L28.8039021,40.6038855 C28.8504221,40.0844231 29.3353656,39.684617 29.9168999,39.6862871 L35.3371993,39.6862871 C35.6527206,39.6848694 35.9540862,39.8035282 36.1663314,40.0127473 C36.3785767,40.2219663 36.4817536,40.5020819 36.4501972,40.7834156 L35.9716081,45.6706244 C35.9250881,46.1900867 35.4401446,46.5898928 34.8586103,46.5882227 Z M35.7273704,37.0196078 L30.2062624,37.0196078 C29.5964177,37.0196078 29.1020408,36.5436108 29.1020408,35.9564386 L30.6037822,19.445421 C30.6711655,18.9085577 31.1463683,18.5059261 31.7080038,18.5098321 L37.2291117,18.5098321 C37.8389565,18.5098321 38.3333333,18.9858292 38.3333333,19.5730013 L36.7874231,36.0946506 C36.71732,36.6114677 36.2684318,37.0031485 35.7273704,37.0196078 Z M68.1907868,17.7655375 C68.7783609,18.4477209 69.0654113,19.3359027 68.9874243,20.2304671 L66.8294442,44.7595227 C66.7602449,45.5618649 66.4022166,46.3125114 65.8210422,46.8737509 L48.1740082,63.9078173 C47.5440361,64.5136721 46.7011436,64.8515656 45.8244317,64.849701 L27.0379034,64.849701 L10.5001116,80 L11.780782,64.8396809 L3.37070981,64.8396809 C2.42614186,64.8404154 1.52467299,64.4469919 0.886144518,63.7553546 C0.247616048,63.0637173 -0.0692823639,62.1374374 0.0127313353,61.2024067 L5.14549723,3.00601995 C5.32162283,1.29571214 6.77326374,-0.00377492304 8.50347571,8.23911697e-06 L51.3303063,8.23911697e-06 C52.3155567,-0.000274507348 53.2515294,0.428127083 53.8916472,1.17235281 L68.1907868,17.7655375 Z M55.1118136,40.0801644 L56.4832402,24.9398854 C56.5364472,24.0422509 56.2238954,23.1611024 55.6160145,22.4949959 L47.548799,13.2364798 C46.9095165,12.5050105 45.982605,12.084699 45.0076261,12.0841753 L19.5958971,12.0841753 C17.8656851,12.0803922 16.4140442,13.3798792 16.2379186,15.090187 L13.2127128,49.1583198 C13.1430685,50.0904539 13.4642119,51.0097453 14.1001037,51.6985265 C14.7359954,52.3873077 15.6300918,52.7843324 16.5706913,52.795594 L41.5588914,52.795594 C42.4258216,52.7976549 43.2601656,52.4674704 43.8882999,51.8737504 L54.1034116,42.2044127 C54.6867718,41.6406314 55.0449815,40.8860452 55.1118136,40.0801644 Z" /></svg>
+                    DONATIONALERTS
+                </a>
+                
+                <a href="https://donatex.gg/donate/sarachuma" target="_blank" class="list-don-btn list-dx-btn" onclick="event.stopPropagation();" title="Донат через DonateX">
+                    <svg width="14" height="14" viewBox="22 1 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="ring1" x1="23" y1="44" x2="66" y2="4" gradientUnits="userSpaceOnUse">
+                                <stop offset="0" stop-color="#20B8FF"/>
+                                <stop offset="0.48" stop-color="#6678FF"/>
+                                <stop offset="1" stop-color="#B05BFF"/>
+                            </linearGradient>
+                            <linearGradient id="x1" x1="32" y1="36" x2="58" y2="10" gradientUnits="userSpaceOnUse">
+                                <stop offset="0" stop-color="#37AFFF"/>
+                                <stop offset="0.48" stop-color="#6D79FF"/>
+                                <stop offset="1" stop-color="#C46AFF"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="45" cy="24" r="21.15" stroke="url(#ring1)" stroke-width="1.05"/>
+                        <path d="M31.2 10.2h8.1l19.1 27.6h-8.2L31.2 10.2Z" fill="url(#x1)"/>
+                        <path d="M51.7 10.2h7.4L40.7 37.8h-7.6l18.6-27.6Z" fill="url(#x1)"/>
+                    </svg>
+                    DONATEX
+                </a>
             `;
 
+            const datePriceText = movie.datePriceUpdated ? movie.datePriceUpdated.split(' ')[0] : 'неизвестно';
             const priceText = movie.price && movie.price !== "Неизвестно" ? movie.price : "Цена не найдена";
-            let priceBadgesMarkup = '';
+            
+            let tablePriceBadgesMarkup = '';
             if (priceText !== "Цена не найдена") {
                 const prices = priceText.split('/').map(p => p.trim());
-                priceBadgesMarkup = prices.map(p => `<span class="price-badge" style="flex: none; width: 100%; margin-bottom: 6px; padding: 6px; font-size: 15px;">${escapeHTML(p)}</span>`).join('');
+                tablePriceBadgesMarkup = prices.map(p => `<span class="price-badge text-3d-effect" style="display: block; width: 90%; max-width: 130px; margin: 0 auto 6px auto; padding: 6px 4px; font-size: 16px; cursor: default; box-sizing: border-box; letter-spacing: 1px;">${escapeHTML(p)}</span>`).join('');
             } else {
-                priceBadgesMarkup = `<span class="price-badge" style="flex: none; width: 100%; opacity: 0.6; padding: 6px; font-size: 14px;">Нет цены</span>`;
+                tablePriceBadgesMarkup = `<span class="price-badge text-3d-effect" style="display: block; width: 90%; max-width: 130px; margin: 0 auto 6px auto; opacity: 0.6; padding: 6px 4px; font-size: 15px; cursor: default; box-sizing: border-box;">Нет цены</span>`;
             }
+            
+            const priceColumnHTML = `
+                <div style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; width: 100%;">
+                    <div style="font-size: 10px; color: var(--text-muted); text-transform: uppercase; font-family: var(--font-title); font-weight: 800; letter-spacing: 1px; margin-bottom: 8px; text-align: center;">Обновлено:<br><span style="color: var(--text-main); font-size: 13px; display: inline-block; margin-top: 2px;">${datePriceText}</span></div>
+                    <div style="width: 100%;">
+                        ${tablePriceBadgesMarkup}
+                    </div>
+                </div>
+            `;
 
             tr.innerHTML = `
                 <td><div class="poster-wrapper"><img src="${posterUrl}" onerror="handlePosterError(this)" alt=""></div></td>
@@ -966,19 +1313,21 @@
                             <div class="movie-meta-box">
                                 <span class="movie-year text-3d-effect">${movie.year || '----'}</span>
                                 <button class="copy-btn" onclick="copyMovieNameFromTable(event, '${safeTitle}', '${movie.year || ''}', this)" title="Скопировать">
-                                    <svg class="icon-3d-effect" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+                                    <svg class="icon-3d-effect" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 12.9V17.1C16 20.6 14.6 22 11.1 22H6.9C3.4 22 2 20.6 2 17.1V12.9C2 9.4 3.4 8 6.9 8H11.1C14.6 8 16 9.4 16 12.9Z"/><path d="M22 6.9V11.1C22 14.6 20.6 16 17.1 16H16V12.9C16 9.4 14.6 8 11.1 8H8V6.9C8 3.4 9.4 2 12.9 2H17.1C20.6 2 22 3.4 22 6.9Z"/></svg>
                                 </button>
                             </div>
                         </div>
-                        <div class="badges-container">${typeLabel} ${idBadge}</div>
+                        <div class="badges-container" style="${idBadge ? '' : 'display: none;'}">${idBadge}</div>
                         <div class="movie-genres">${escapeHTML(movie.genres || '')}</div>
-                        ${studiosHTML}
-                        <div class="movie-overview-wrapper"><div class="movie-overview-text">${cleanOverview}</div></div>
+                        ${tabsHTML}
+                        ${reviewBlock}
+                        ${overviewBlock}
                     </div>
                 </td>
                 <td style="vertical-align: top;"><div style="display: flex; flex-direction: column; align-items: center; padding-top: 10px;">${movie.dateRequested ? `<div class="date-badge" style="margin-top: 0;"><span class="text-3d-effect">${movie.dateRequested}</span></div>` : ''}</div></td>
-                <td style="vertical-align: top;"><div style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 8px; height: 100%; padding-top: 10px; width: 100%; box-sizing: border-box;">${steamButtonHTML}${tgButtonHTML}${donateButtonsHTML}</div></td>
-                <td style="vertical-align: top;"><div style="display: flex; flex-direction: column; align-items: center; padding-top: 10px; width: 100%; box-sizing: border-box;">${priceBadgesMarkup}</div></td>
+                <td style="vertical-align: top;"><div style="display: flex; flex-direction: column; align-items: center; padding-top: 10px; width: 100%; box-sizing: border-box;">${priceColumnHTML}</div></td>
+                <td style="vertical-align: top;"><div style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 8px; height: 100%; padding-top: 10px; width: 100%; box-sizing: border-box;">${steamButtonHTML}${tgButtonHTML}${ytButtonHTML}${boostyButtonHTML}${tgRecButtonHTML}</div></td>
+                <td style="vertical-align: top;"><div style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 8px; height: 100%; padding-top: 10px; width: 100%; box-sizing: border-box;">${donateButtonsHTML}</div></td>
             `;
             tbody.appendChild(tr);
         });
@@ -999,20 +1348,30 @@
             let priceBadgesMarkup = '';
             if (priceText !== "Цена не найдена") {
                 const prices = priceText.split('/').map(p => p.trim());
-                priceBadgesMarkup = prices.map(p => `<span class="price-badge">${escapeHTML(p)}</span>`).join('');
+                priceBadgesMarkup = prices.map(p => `<span class="price-badge text-3d-effect" style="flex: 1 1 calc(50% - 4px); margin: 0; padding: 6px 2px; font-size: 13px; letter-spacing: 1px;">${escapeHTML(p)}</span>`).join('');
             } else {
-                priceBadgesMarkup = `<span class="price-badge" style="opacity: 0.6; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">Нет цены</span>`;
+                priceBadgesMarkup = `<span class="price-badge text-3d-effect" style="flex: 1 1 100%; opacity: 0.6; display: flex; align-items: center; justify-content: center; padding: 6px; font-size: 15px;">Нет цены</span>`;
             }
 
             const hasPost = !!movie.postUrl;
-            let copyBtnClass = 'card-copy-btn';
-            if (hasPost) { copyBtnClass += ' shifted'; } 
+            let copyBtnClass = 'card-copy-btn'; 
 
             let tgBtnMarkup = hasPost ? `
                 <a href="${movie.postUrl}" target="_blank" class="card-tg-btn" onclick="event.stopPropagation();" title="Открыть пост в Telegram">
                     <svg class="icon-3d-effect" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
                 </a>
             ` : '';
+
+            let tgReviewBtnMarkup = movie.reviewUrl ? `
+                <a href="${movie.reviewUrl}" target="_blank" class="card-tg-btn" onclick="event.stopPropagation();" title="Открыть отзыв в Telegram">
+                    <svg class="icon-3d-effect" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </a>
+            ` : '';
+
+            const playIconGrid = `<svg class="icon-3d-effect" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>`;
+            let ytGridBtn = getMediaButtonHtml(movie, 'youtubeUrl', 'YOUTUBE', 'yt', playIconGrid, 'grid');
+            let boostyGridBtn = getMediaButtonHtml(movie, 'boostyUrl', 'BOOSTY', 'boosty', playIconGrid, 'grid');
+            let tgRecGridBtn = getMediaButtonHtml(movie, 'tgRecordUrl', 'ТГ ЗАПИСЬ', 'tg', playIconGrid, 'grid');
 
             let gridSteamBtn = '';
             if (movie.steamAppId && !movie.steamAppId.startsWith('IGDB_')) {
@@ -1029,21 +1388,22 @@
             card.innerHTML = `
                 <div class="card-top">
                     <img src="${posterUrl}" class="card-poster" onerror="handlePosterError(this)" alt="">
-                    <button class="${copyBtnClass}" onclick="copyMovieNameFromTable(event, '${safeTitle}', '${movie.year || ''}', this)" title="Скопировать название">
-                        <svg class="icon-3d-effect" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
-                    </button>
-                    ${tgBtnMarkup}
-                    <div class="card-overlay">
-                        <div class="card-badges-top">
-                            <!-- <div class="card-type-badge">${escapeHTML(movie.type || 'Игра')}</div> -->
-                            <!-- <div class="card-status">В вишлисте</div> -->
-                        </div>
+                    
+                    <div class="card-actions-col">
+                        <button class="${copyBtnClass}" onclick="copyMovieNameFromTable(event, '${safeTitle}', '${movie.year || ''}', this)" title="Скопировать название">
+                            <svg class="icon-3d-effect" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 12.9V17.1C16 20.6 14.6 22 11.1 22H6.9C3.4 22 2 20.6 2 17.1V12.9C2 9.4 3.4 8 6.9 8H11.1C14.6 8 16 9.4 16 12.9Z"/><path d="M22 6.9V11.1C22 14.6 20.6 16 17.1 16H16V12.9C16 9.4 14.6 8 11.1 8H8V6.9C8 3.4 9.4 2 12.9 2H17.1C20.6 2 22 3.4 22 6.9Z"/></svg>
+                        </button>
+                        ${ytGridBtn}
+                        ${boostyGridBtn}
+                        ${tgRecGridBtn}
+                        ${tgBtnMarkup}
+                        ${tgReviewBtnMarkup}
                     </div>
+
+                    
                 </div>
                 <div class="card-content">
-				
-				
-				
+                
                     <div class="card-title-container" style="margin-bottom: 4px;">
                         <h3 class="card-title-text resize-title">${cleanTitle}</h3>
                     </div>
@@ -1051,54 +1411,47 @@
                     <div style="width: 100%; border-bottom: 1px solid rgba(254, 0, 0, 0.25); margin: 3px 0 5px 0;"></div>
                     <div style="font-family: var(--font-title); font-size: 11px; font-weight: 700; color: var(--text-muted); width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: center; letter-spacing: 1px;" title="${escapeHTML(movie.genres || 'Нет жанра')}">${escapeHTML(movie.genres || 'Нет жанра')}</div>
                     
-					
-					
-					<div style="width: 100%; border-bottom: 1px solid rgba(254, 0, 0, 0.25); margin: 5px 0 8px 0;"></div>
-
+                    <div style="width: 100%; border-bottom: 1px solid rgba(254, 0, 0, 0.25); margin: 5px 0 8px 0;"></div>
                     
                     <div class="card-date-meta" style="display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 6px;">
                         <span class="text-3d-effect">${movie.year || '----'}</span>
                         ${gridSteamBtn ? `<span style="color: var(--accent-main);">♦</span> ${gridSteamBtn}` : ''}
                     </div>
                     
-                    
                     <div class="card-price-box" style="flex-grow: 1; align-items: stretch; margin: 4px 0 12px 0;">
                         ${priceBadgesMarkup}
                     </div>
                     
-                    
-                    <div class="donate-buttons-grid">
-                        <a href="https://www.donationalerts.com/r/sarachuma" target="_blank" class="don-btn da-btn" onclick="event.stopPropagation();" title="Донат через DonationAlerts">
-                            <svg width="20" height="20" viewBox="0 0 69 80" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M34.8586103,46.5882227 L29.4383109,46.5882227 C29.1227896,46.5896404 28.8214241,46.4709816 28.6091788,46.2617625 C28.3969336,46.0525435 28.2937566,45.7724279 28.325313,45.4910942 L28.8039021,40.6038855 C28.8504221,40.0844231 29.3353656,39.684617 29.9168999,39.6862871 L35.3371993,39.6862871 C35.6527206,39.6848694 35.9540862,39.8035282 36.1663314,40.0127473 C36.3785767,40.2219663 36.4817536,40.5020819 36.4501972,40.7834156 L35.9716081,45.6706244 C35.9250881,46.1900867 35.4401446,46.5898928 34.8586103,46.5882227 Z M35.7273704,37.0196078 L30.2062624,37.0196078 C29.5964177,37.0196078 29.1020408,36.5436108 29.1020408,35.9564386 L30.6037822,19.445421 C30.6711655,18.9085577 31.1463683,18.5059261 31.7080038,18.5098321 L37.2291117,18.5098321 C37.8389565,18.5098321 38.3333333,18.9858292 38.3333333,19.5730013 L36.7874231,36.0946506 C36.71732,36.6114677 36.2684318,37.0031485 35.7273704,37.0196078 Z M68.1907868,17.7655375 C68.7783609,18.4477209 69.0654113,19.3359027 68.9874243,20.2304671 L66.8294442,44.7595227 C66.7602449,45.5618649 66.4022166,46.3125114 65.8210422,46.8737509 L48.1740082,63.9078173 C47.5440361,64.5136721 46.7011436,64.8515656 45.8244317,64.849701 L27.0379034,64.849701 L10.5001116,80 L11.780782,64.8396809 L3.37070981,64.8396809 C2.42614186,64.8404154 1.52467299,64.4469919 0.886144518,63.7553546 C0.247616048,63.0637173 -0.0692823639,62.1374374 0.0127313353,61.2024067 L5.14549723,3.00601995 C5.32162283,1.29571214 6.77326374,-0.00377492304 8.50347571,8.23911697e-06 L51.3303063,8.23911697e-06 C52.3155567,-0.000274507348 53.2515294,0.428127083 53.8916472,1.17235281 L68.1907868,17.7655375 Z M55.1118136,40.0801644 L56.4832402,24.9398854 C56.5364472,24.0422509 56.2238954,23.1611024 55.6160145,22.4949959 L47.548799,13.2364798 C46.9095165,12.5050105 45.982605,12.084699 45.0076261,12.0841753 L19.5958971,12.0841753 C17.8656851,12.0803922 16.4140442,13.3798792 16.2379186,15.090187 L13.2127128,49.1583198 C13.1430685,50.0904539 13.4642119,51.0097453 14.1001037,51.6985265 C14.7359954,52.3873077 15.6300918,52.7843324 16.5706913,52.795594 L41.5588914,52.795594 C42.4258216,52.7976549 43.2601656,52.4674704 43.8882999,51.8737504 L54.1034116,42.2044127 C54.6867718,41.6406314 55.0449815,40.8860452 55.1118136,40.0801644 Z"></path>
-                            </svg>
+                    <div class="donate-buttons-grid" style="flex-direction: column; gap: 6px;">
+                        <a href="https://www.donationalerts.com/r/sarachuma" target="_blank" class="list-don-btn list-da-btn" onclick="event.stopPropagation();" title="Донат через DonationAlerts">
+                            <svg width="14" height="14" viewBox="0 0 69 80" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M34.8586103,46.5882227 L29.4383109,46.5882227 C29.1227896,46.5896404 28.8214241,46.4709816 28.6091788,46.2617625 C28.3969336,46.0525435 28.2937566,45.7724279 28.325313,45.4910942 L28.8039021,40.6038855 C28.8504221,40.0844231 29.3353656,39.684617 29.9168999,39.6862871 L35.3371993,39.6862871 C35.6527206,39.6848694 35.9540862,39.8035282 36.1663314,40.0127473 C36.3785767,40.2219663 36.4817536,40.5020819 36.4501972,40.7834156 L35.9716081,45.6706244 C35.9250881,46.1900867 35.4401446,46.5898928 34.8586103,46.5882227 Z M35.7273704,37.0196078 L30.2062624,37.0196078 C29.5964177,37.0196078 29.1020408,36.5436108 29.1020408,35.9564386 L30.6037822,19.445421 C30.6711655,18.9085577 31.1463683,18.5059261 31.7080038,18.5098321 L37.2291117,18.5098321 C37.8389565,18.5098321 38.3333333,18.9858292 38.3333333,19.5730013 L36.7874231,36.0946506 C36.71732,36.6114677 36.2684318,37.0031485 35.7273704,37.0196078 Z M68.1907868,17.7655375 C68.7783609,18.4477209 69.0654113,19.3359027 68.9874243,20.2304671 L66.8294442,44.7595227 C66.7602449,45.5618649 66.4022166,46.3125114 65.8210422,46.8737509 L48.1740082,63.9078173 C47.5440361,64.5136721 46.7011436,64.8515656 45.8244317,64.849701 L27.0379034,64.849701 L10.5001116,80 L11.780782,64.8396809 L3.37070981,64.8396809 C2.42614186,64.8404154 1.52467299,64.4469919 0.886144518,63.7553546 C0.247616048,63.0637173 -0.0692823639,62.1374374 0.0127313353,61.2024067 L5.14549723,3.00601995 C5.32162283,1.29571214 6.77326374,-0.00377492304 8.50347571,8.23911697e-06 L51.3303063,8.23911697e-06 C52.3155567,-0.000274507348 53.2515294,0.428127083 53.8916472,1.17235281 L68.1907868,17.7655375 Z M55.1118136,40.0801644 L56.4832402,24.9398854 C56.5364472,24.0422509 56.2238954,23.1611024 55.6160145,22.4949959 L47.548799,13.2364798 C46.9095165,12.5050105 45.982605,12.084699 45.0076261,12.0841753 L19.5958971,12.0841753 C17.8656851,12.0803922 16.4140442,13.3798792 16.2379186,15.090187 L13.2127128,49.1583198 C13.1430685,50.0904539 13.4642119,51.0097453 14.1001037,51.6985265 C14.7359954,52.3873077 15.6300918,52.7843324 16.5706913,52.795594 L41.5588914,52.795594 C42.4258216,52.7976549 43.2601656,52.4674704 43.8882999,51.8737504 L54.1034116,42.2044127 C54.6867718,41.6406314 55.0449815,40.8860452 55.1118136,40.0801644 Z" /></svg>
+                            DONATIONALERTS
                         </a>
-                        <a href="https://donatex.gg/sarachuma" target="_blank" class="don-btn dx-btn" onclick="event.stopPropagation();" title="Донат через DonateX">
-                            <svg width="22" height="22" viewBox="22 1 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        
+                        <a href="https://donatex.gg/donate/sarachuma" target="_blank" class="list-don-btn list-dx-btn" onclick="event.stopPropagation();" title="Донат через DonateX">
+                            <svg width="14" height="14" viewBox="22 1 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <defs>
-                                    <linearGradient id="ring2" x1="23" y1="44" x2="66" y2="4" gradientUnits="userSpaceOnUse">
+                                    <linearGradient id="ring1" x1="23" y1="44" x2="66" y2="4" gradientUnits="userSpaceOnUse">
                                         <stop offset="0" stop-color="#20B8FF"/>
                                         <stop offset="0.48" stop-color="#6678FF"/>
                                         <stop offset="1" stop-color="#B05BFF"/>
                                     </linearGradient>
-                                    <linearGradient id="x2" x1="32" y1="36" x2="58" y2="10" gradientUnits="userSpaceOnUse">
+                                    <linearGradient id="x1" x1="32" y1="36" x2="58" y2="10" gradientUnits="userSpaceOnUse">
                                         <stop offset="0" stop-color="#37AFFF"/>
                                         <stop offset="0.48" stop-color="#6D79FF"/>
                                         <stop offset="1" stop-color="#C46AFF"/>
                                     </linearGradient>
                                 </defs>
-                                <circle cx="45" cy="24" r="21.15" stroke="url(#ring2)" stroke-width="1.05"/>
-                                <path d="M31.2 10.2h8.1l19.1 27.6h-8.2L31.2 10.2Z" fill="url(#x2)"/>
-                                <path d="M51.7 10.2h7.4L40.7 37.8h-7.6l18.6-27.6Z" fill="url(#x2)"/>
+                                <circle cx="45" cy="24" r="21.15" stroke="url(#ring1)" stroke-width="1.05"/>
+                                <path d="M31.2 10.2h8.1l19.1 27.6h-8.2L31.2 10.2Z" fill="url(#x1)"/>
+                                <path d="M51.7 10.2h7.4L40.7 37.8h-7.6l18.6-27.6Z" fill="url(#x1)"/>
                             </svg>
+                            DONATEX
                         </a>
                     </div>
                 </div>
             `;
-			
-			
-			
-			
+            
             gridContainer.appendChild(card);
         });
         
@@ -1215,8 +1568,6 @@
         }, 10);
         
         let badgesHtml = '';
-        let displayType = escapeHTML(movie.type || 'Игра');
-        badgesHtml += `<span class="content-type-badge text-3d-effect" style="border: 1px solid var(--accent-main); box-shadow: 0 0 10px rgba(254,0,0,0.5);">${displayType}</span>`;
         badgesHtml += `<span class="outline-badge text-3d-effect">ID №${movie.id || 0}</span>`;
         
         if (movie.steamAppId && !movie.steamAppId.startsWith('IGDB_')) {
@@ -1234,6 +1585,19 @@
                 ТГ ПОСТ
             </a>`;
         }
+        
+        if (movie.reviewUrl) {
+            badgesHtml += `
+            <a href="${escapeHTML(movie.reviewUrl)}" target="_blank" class="outline-badge tg-modal-badge text-3d-effect" onclick="event.stopPropagation();" title="Читать отзыв">
+                <svg class="icon-3d-effect" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                ТГ ПОСТ
+            </a>`;
+        }
+
+        const playIconModal = `<svg class="icon-3d-effect" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" style="margin-right: 4px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>`;
+        badgesHtml += getMediaButtonHtml(movie, 'youtubeUrl', 'YOUTUBE', 'yt', playIconModal, 'modal');
+        badgesHtml += getMediaButtonHtml(movie, 'boostyUrl', 'BOOSTY', 'boosty', playIconModal, 'modal');
+        badgesHtml += getMediaButtonHtml(movie, 'tgRecordUrl', 'ТГ ЗАПИСЬ', 'tg-rec', playIconModal, 'modal');
 
         document.getElementById('modalBadges').innerHTML = badgesHtml;
         
@@ -1248,8 +1612,58 @@
         }
         document.getElementById('modalGenres').innerHTML = genresHtml;
 
-        document.getElementById('modalOverview').textContent = movie.overview || 'Данные об игре утеряны...';
+        const reviewBlock = document.getElementById('modalReviewBlock');
+        if (movie.reviewText && movie.reviewText.trim() !== "") {
+            reviewBlock.style.display = 'block';
+            reviewBlock.innerHTML = `
+                <div class="text-3d-effect" style="font-size: 11px; color: #ffffff; text-transform: uppercase; font-family: var(--font-title); font-weight: 800; letter-spacing: 1px; margin-bottom: 8px;">✦ Отзыв от стримера</div>
+                <div class="movie-review-text" style="font-size: 15px; line-height: 1.6; color: #fff; font-style: italic; font-family: var(--font-text); border-left: 3px solid var(--accent-main); padding: 12px 16px; background: rgba(254, 0, 0, 0.05); border-radius: 0 4px 4px 0;">
+                    ${escapeHTML(movie.reviewText).replace(/\n/g, '<br>')}
+                </div>
+            `;
+        } else {
+            reviewBlock.style.display = 'none';
+        }
+
+        document.getElementById('modalOverview').innerHTML = escapeHTML(movie.overview || 'Данные об игре утеряны...').replace(/\n/g, '<br>');
         
+        const mediaCol = document.getElementById('modalMediaCol');
+        const screenshotsWrapper = document.getElementById('modalScreenshotsWrapper');
+        const trailersWrapper = document.getElementById('modalTrailersWrapper');
+        const screenshotsContainer = document.getElementById('modalScreenshots');
+        const trailersContainer = document.getElementById('modalTrailers');
+
+        modalMediaItems = []; 
+
+        let screenshotsHtml = '';
+        if (movie.screenshots && Array.isArray(movie.screenshots) && movie.screenshots.length > 0) {
+            movie.screenshots.forEach(src => {
+                const index = modalMediaItems.length;
+                modalMediaItems.push({ type: 'image', src: src });
+                screenshotsHtml += `<img src="${src}" class="media-thumb" onclick="openLightbox(${index})" alt="Скриншот">`;
+            });
+            screenshotsContainer.innerHTML = screenshotsHtml;
+            screenshotsWrapper.style.display = 'block';
+        } else {
+            screenshotsWrapper.style.display = 'none';
+        }
+
+        let trailersHtml = '';
+        if (movie.trailers && Array.isArray(movie.trailers) && movie.trailers.length > 0) {
+            const bgImg = movie.backdrop && !movie.backdrop.includes('via.placeholder') ? movie.backdrop : fallbackBackdropUrl;
+            movie.trailers.forEach(src => {
+                const index = modalMediaItems.length;
+                modalMediaItems.push({ type: 'video', src: src });
+                trailersHtml += `<div class="media-thumb video-thumb" style="background-image: url('${bgImg}')" onclick="openLightbox(${index})" title="Смотреть трейлер"></div>`;
+            });
+            trailersContainer.innerHTML = trailersHtml;
+            trailersWrapper.style.display = 'block';
+        } else {
+            trailersWrapper.style.display = 'none';
+        }
+
+        mediaCol.style.display = modalMediaItems.length > 0 ? 'block' : 'none';
+
         const dateReqEl = document.getElementById('modalDateReq');
         if (movie.dateRequested) {
              dateReqEl.innerHTML = `<div class="modal-grid-box text-3d-effect" style="margin-top: 0;">${movie.dateRequested.split(' ')[0]}</div>`;
@@ -1269,9 +1683,9 @@
         let modalPriceBadgesMarkup = '';
         if (priceText !== "Цена не найдена / Скрыта") {
             const prices = priceText.split('/').map(p => p.trim());
-            modalPriceBadgesMarkup = prices.map(p => `<span class="price-badge text-3d-effect" style="flex: 0 0 auto; padding: 6px 14px; font-size: 18px; cursor: default;">${escapeHTML(p)}</span>`).join('');
+            modalPriceBadgesMarkup = prices.map(p => `<span class="price-badge text-3d-effect" style="flex: 0 0 auto; padding: 6px 16px; font-size: 18px; cursor: default; letter-spacing: 1px;">${escapeHTML(p)}</span>`).join('');
         } else {
-            modalPriceBadgesMarkup = `<span class="price-badge text-3d-effect" style="flex: 0 0 auto; opacity: 0.6; padding: 6px 14px; font-size: 15px; cursor: default;">Нет цены</span>`;
+            modalPriceBadgesMarkup = `<span class="price-badge text-3d-effect" style="flex: 0 0 auto; opacity: 0.6; padding: 6px 16px; font-size: 16px; cursor: default;">Нет цены</span>`;
         }
         
         priceEl.innerHTML = `<div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 8px; width: 100%; margin-top: 4px;">${modalPriceBadgesMarkup}</div>`;
@@ -1294,10 +1708,86 @@
         if (arg === true || (arg && arg.target && arg.target.id === 'movieModal')) {
             document.getElementById('movieModal').classList.remove('active'); 
             document.body.style.overflow = ''; 
+            
+            document.querySelectorAll('.video-item').forEach(video => {
+                video.pause();
+                video.removeAttribute('src'); 
+                video.load();
+            });
+            closeLightbox();
         }
     }
     
     loadMovies();
 </script>
+
+<script>
+    
+    const canvas = document.createElement('canvas');
+    canvas.id = 'starsCanvas';
+    canvas.style.position = 'fixed';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.style.zIndex = '-1'; 
+    canvas.style.pointerEvents = 'none';
+    document.body.appendChild(canvas);
+
+    const ctx = canvas.getContext('2d');
+    let width, height, stars = [];
+
+    function initStars() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+        stars = [];
+        
+        const numStars = Math.floor((width * height) / 4000); 
+        for (let i = 0; i < numStars; i++) {
+            stars.push({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                radius: Math.random() * 1.5 + 0.3, 
+                velocity: Math.random() * 0.4 + 0.1, 
+                alpha: Math.random(), 
+                twinkleSpeed: (Math.random() * 0.02) + 0.005, 
+                fadeDir: Math.random() > 0.5 ? 1 : -1 
+            });
+        }
+    }
+
+    function drawStars() {
+        ctx.clearRect(0, 0, width, height);
+        
+        stars.forEach(star => {
+            ctx.beginPath();
+            ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(255, 255, 255, ${star.alpha})`;
+            ctx.fill();
+            
+            star.y -= star.velocity;
+            
+            if (star.y < 0) {
+                star.y = height;
+                star.x = Math.random() * width;
+            }
+
+            star.alpha += star.twinkleSpeed * star.fadeDir;
+            if (star.alpha <= 0.1) {
+                star.alpha = 0.1;
+                star.fadeDir = 1;
+            } else if (star.alpha >= 1) {
+                star.alpha = 1;
+                star.fadeDir = -1;
+            }
+        });
+        requestAnimationFrame(drawStars);
+    }
+    
+    initStars();
+    drawStars();
+    window.addEventListener('resize', initStars);
+</script>
+
 </body>
 </html>
